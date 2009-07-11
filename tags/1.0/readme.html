@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>AGS Tween Module 1.0 Help</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+body {
+	font: 10pt Verdana, Helvetica, Arial, sans-serif;
+	color: #000;
+	background: #FFFFE1;
+}
+h4 { font-weight: normal; color: #f00; }
+#container { }
+#nav { width: 15em; position: fixed; top: 0; left: 0; }
+#content { margin-left : 16em;}
+div { margin: 0; padding: 0; }
+pre { background: #fff; padding: .5em 0; border: 1px dashed #000; border-left: none; border-right: none; }
+</style>	
+</head>
+
+<body>
+<div id="container">
+
+<div id="nav">
+<h3>Enumerated types</h3>
+<ul>
+	<li><a href="#TweenTiming">TweenTiming</a></li>
+	<li><a href="#TweenStyle">TweenStyle</a></li>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+	<li><a href="#StopAllTweens">StopAllTweens</a></li>
+	<li><a href="#SecondsToLoops">SecondsToLoops</a></li>
+	<li><a href="#TweenPosition">TweenPosition</a></li>
+	<li><a href="#TweenScaling">TweenScaling</a></li>
+	<li><a href="#TweenSize">TweenSize</a></li>
+	<li><a href="#TweenStopAll">TweenStopAll</a></li>
+	<li><a href="#TweenTransparency">TweenTransparency</a></li>
+</ul>
+
+<p><a href="#t">Top of Page</a></p>
+</div>
+
+<div id="content">
+
+<h1><a name="t">Tween Module</a></h1>
+<p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
+<p>Version 1.0</p>
+<p>Created by Edmundo Ruiz (edmundo@edmundito.com)</p>
+
+<p>This module can be used to create programatic animations.
+It supports GUIs, room objects, and characters. It allows these
+effects to be  blocking, non blocking, or loop them, and it has
+acceleration/deceleration timing functions.</p>
+
+<p>Note that the script syntax differs a bit between AGS 3.x and AGS 2.x,
+which will be noted in this documentation. You can also make the AGS 2.x syntax also available in AGS 3.x by
+commenting out line 51 in the module script header, in case that you are porting your game to AGS 3.x and
+have written functions using Tween.</p>
+
+<h2>Enumerated types</h2>
+
+<h3><a name="TweenTiming">TweenTiming</a></h3>
+<pre>
+enum TweenTiming {
+  eLinearTween,
+  eEaseInTween,
+  eEaseOutTween, 
+  eEaseInEaseOutTween
+};
+</pre>
+
+<p>Used to set the timing of the tween, whether it's just a linear interpolation,
+one that only accelerates when it starts, one that only decelerates when it ends,
+or both accelerates at start and decelerates at end.</p>
+
+<hr />
+
+<h3><a name="TweenStyle">TweenStyle</a></h3>
+<pre>
+enum TweenStyle {
+  eBlockTween, 
+  eNoBlockTween, 
+  eRepeatTween, 
+  eReverseRepeatTween,
+};
+</pre>
+<p>Used to set the style of the tween, whether is blocking, non-blocking, repeating,
+or repeating reverse (where at the end of the tween cycle and repeats, it reverses
+the direction of the tween).</p>
+
+<hr />
+
+<h2>Functions</h2>
+
+<h3><a name="SecondsToLoops">SecondsToLoops</a></h3>
+<pre>
+// AGS 3.x and 2.x
+SecondsToLoops(float seconds);
+</pre>
+<p>Converts and returns the number of seconds into game loops.</p>
+<h4>Example:</h4>
+<pre>
+Wait(SecondsToLoops(5.0));
+</pre>
+<p>Will wait for 5 seconds.</p>
+
+<hr />
+
+<h3><a name="StopAllTweens">StopAllTweens</a></h3>
+<pre>
+// AGS 3.x
+Character.StopAllTweens()
+GUI.StopAllTweens()
+Object.StopAllTweens()
+
+// AGS 2.x
+TweenStopAllForCharacter(Character* character)
+TweenStopAllForGUI(GUI* gui)
+TweenStopAllForObject(Object* object)
+</pre>
+<p>Stops all the Tweens currently playing on the a character, GUI, or room object.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+cEgo.StopAllTweens();
+gIconbar.StopAllTweens();
+oBluecup.StopAllTweens();
+
+// AGS 2.x
+TweenStopAllForCharacter(cEgo);
+TweenStopAllForGUI(gIconbar);
+TweenStopAllForObject(oBluecup);
+</pre>
+<p>Will stop all the tweens for cEgo, cIconbar, and oBluecup.</p>
+<p><em>See Also</em>: <strong><a href="#TweenStopAll">TweenStopAll</a></strong></p>
+
+<hr />
+
+<h3><a name="TweenPosition">TweenPosition</a></h3>
+<pre>
+// AGS 3.x
+Character.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+GUI.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+Object.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+
+// AGS 2.x
+TweenCharacterPosition(Character* character, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+TweenGUIPosition(GUI* gui, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+TweenObjectPosition(Object* object, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+</pre>
+<p>Tweens the position of a character, GUI, or object from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
+<p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+cEgo.TweenPosition(2.5, 100, 100);
+
+// AGS 2.x
+TweenCharacterPosition(cEgo, 2.5, 100, 100);
+</pre>
+<p>Will tween the position of the character from its current position to x 100, y 100 in 2.5 seconds.</p>
+
+<hr />
+
+<h3><a name="TweenScaling">TweenScaling</a></h3>
+<pre>
+// AGS 3.x
+Character.TweenScaling(float timeInSeconds, short toScale, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+
+// AGS 2.x
+TweenCharacterScaling(Character* character, float timeInSeconds, short toScale, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+</pre>
+<p>Tweens the scaling of a character.</p>
+<p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+cEgo.TweenScaling(1.5, 200);
+
+// AGS 2.x
+TweenCharacterScaling(cEgo, 1.5, 200);
+</pre>
+<p>Will tween the scaling of Ego from its current scale to 200% in 1.5 seconds.</p>
+
+<hr />
+
+<h3><a name="TweenSize">TweenSize</a></h3>
+<pre>
+// AGS 3.x
+GUI.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+
+// AGS 2.x
+TweenGUISize(GUI* gui, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+</pre>
+<p>Tweens the size of a GUI.</p>
+<p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+gStatusline.TweenSize(1.0, 50, 50);
+
+// AGS 2.x
+TweenGUISize(gStatusline, 1.0, 50, 50);
+</pre>
+<p>Will tween the size the statusline GUI from its current size to 50x50 pixels in 1 second.</p>
+
+<hr />
+
+<h3><a name="TweenStopAll">TweenStopAll</a></h3>
+<pre>
+// AGS 3.x and 2.x
+TweenStopAll()
+</pre>
+<p>Stops all tweens currently playing.</p>
+<h4>Example:</h4>
+<pre>
+TweenStopAll();
+</pre>
+<p>Will stop whatever tweens where currently playing, whether it was a GUI, character, or room object tween.</p>
+
+<hr />
+
+<h3><a name="TweenTransparency">TweenTransparency</a></h3>
+<pre>
+// AGS 3.x
+Character.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+GUI.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+Object.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+
+// AGS 2.x
+TweenCharacterTransparency(Character* character, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+TweenGUITransparency(GUI* gui, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+TweenObjectTransparency(Object* object, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+</pre>
+<p>Tweens the transparency of a character, GUI, or object from its current transparecy to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
+<p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+oBluecup.TweenTransparency(3.0, 100);
+
+// AGS 2.x
+TweenObjectTransparency(oBluecup, 3.0, 100);
+</pre>
+<p>Will tween the transparency of the room object Bluecup to from its current value to 100% (thus fading it out).</p>
+
+</div>
+
+</div>
+</body>
+
+</html>
