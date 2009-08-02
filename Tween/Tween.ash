@@ -1,11 +1,12 @@
 // Script header for module 'Tween'
 // Author: Edmundo Ruiz (edmundito, netmonkey)
 //   Please use the PM function on the AGS forums to contact
-//   me about problems with this module
+//   me about problems with this module.
+// Additional scripting: Tzach Shabtay (tzachs)
 //
 // Revision history:
-//   1.2, July 14 2009, added ~30 new tweens
-//   1.1, July 9 2009, added license
+//   1.1, July 14 2009, added ~30 new tweens
+//   1.0L, July 9 2009, added license
 //   1.0, June 13 2009, created
 //
 // --------
@@ -37,15 +38,17 @@
 //
 // --------
 //
-// That said, you are most welcome but not obliged to give me some
+// That said, you are most welcome but not obliged to give us some
 // credit in your game or the AGS Games Page such as:
 //
 // Game:
 // Special Thanks
 // Edmundo Ruiz
+// Tzach Shabtay
 //
 // AGS Games page:
 // netmonkey Tween Module
+// tzachs Tween Module
 
 
 
