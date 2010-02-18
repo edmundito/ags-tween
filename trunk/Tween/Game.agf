@@ -2759,7 +2759,7 @@ return
       <Script>
         <FileName>Tween.asc</FileName>
         <Name>Tween</Name>
-        <Description>Used to create programatic animations. It supports GUIs, room objects, and characters. It allows these effects to be  blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
+        <Description>Used to create programatic animations. It allows these effects to be  blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
         <Author>Edmundo Ruiz, Tzach Shabtay</Author>
         <Version>1.1</Version>
         <Key>1249765699</Key>
