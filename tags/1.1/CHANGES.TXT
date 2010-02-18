@@ -1,0 +1,13 @@
+Revision History
+================
+
+1.1 (February 17 2010)
+- Now supports virtually every function that could be tweened in AGS
+- Improved documentation formatting, and validaded by w3c as strict
+- Created this changes document :)
+
+1.0L (July 11 2009)
+- Added MIT License
+
+1.0 (June 13 2009)
+- Initial Release
