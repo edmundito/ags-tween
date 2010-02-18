@@ -2,12 +2,13 @@
 // Author: Edmundo Ruiz (edmundito, netmonkey)
 //   Please use the PM function on the AGS forums to contact
 //   me about problems with this module.
-// Additional scripting: Tzach Shabtay (tzachs)
+// Contributors: Tzach Shabtay (tzachs)
 //
 // Revision history:
-//   1.1, July 14 2009, added ~30 new tweens
+//   1.1, February 17 2010, added ~30 new tweens
 //   1.0L, July 9 2009, added license
 //   1.0, June 13 2009, created
+//   See CHANGES.TXT for more detailed information.
 //
 // --------
 //
@@ -38,7 +39,7 @@
 //
 // --------
 //
-// That said, you are most welcome but not obliged to give us some
+// That said, you are most welcome but not obliged to give us 
 // credit in your game or the AGS Games Page such as:
 //
 // Game:
@@ -98,6 +99,9 @@ import int TweenAreaScaling(float timeInSeconds, short area, short fromMin, shor
 
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
+
+#define NO_VER_2_TWEENS // Comment this line if you would like to support AGS 2.x style Tween function calls
+
 import int TweenPosition(this GUI*, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
 import int TweenPosition(this Character*, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
 import int TweenPosition(this Object*, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
@@ -163,8 +167,6 @@ import int TweenSelectedItem(this ListBox*, float timeInSeconds, short toSelecte
 
 import int TweenTopItem(this ListBox*, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
 import int TweenTopItem(this InvWindow*, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-
-#define NO_VER_2_TWEENS // Comment this line if you would like to support AGS 2.x style Tween function calls
 
 #endif
 #endif

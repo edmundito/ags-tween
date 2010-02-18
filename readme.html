@@ -1,37 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>AGS Tween Module 1.0 Help</title>
+<title>AGS Tween Module 1.1 Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
+body, div, ul, li, pre { margin: 0; padding: 0; }
 body {
 	font: 10pt Verdana, Helvetica, Arial, sans-serif;
 	color: #000;
 	background: #FFFFE1;
+	width: 100%; height: 100%;
 }
-h4 { font-weight: normal; color: #f00; }
-#container { }
-#nav { width: 15em; position: fixed; top: 0; left: 0; }
-#content { margin-left : 16em;}
-div { margin: 0; padding: 0; }
-pre { background: #fff; padding: .5em 0; border: 1px dashed #000; border-left: none; border-right: none; }
+h2 { margin: 2em 0 1em; }
+pre { background: #fff; padding: 1em; border: 1px dashed #999; overflow: auto; }
+hr { border: 1px solid #999; margin: 2em 0; }
+ul { padding-left: 1.5em; }
+h4 { margin-bottom: 0.2em; }
+#container { width: 100%; height: 100%; position: absolute; }
+#nav {
+	width: 16.5em; height: 100%; padding: 0 .5em;
+	position: fixed; overflow: auto;  top: 0; left: 0;
+	background: white; border-right: 1px solid #CCC;
+}
+#content { margin-left: 17.5em; padding: 0 .5em; overflow: auto; height: 100%; }
+#content p { width: 42em; }
+#content h4 { font-weight: normal; margin-bottom: 0.2em; font-size: 0.9em; color: #f00; }
 </style>	
 </head>
 
 <body>
 <div id="container">
 
-<div id="nav" style="height:650px;overflow:scroll;">
-<h3>Enumerated types</h3>
+<div id="nav">
+<h4>General</h4>
+<ul>
+	<li><a href="#about">About</a></li>
+	<li><a href="#license">License</a></li>
+</ul>
+
+<h4>Enumerated types</h4>
 <ul>
 	<li><a href="#TweenTiming">TweenTiming</a></li>
 	<li><a href="#TweenStyle">TweenStyle</a></li>
 </ul>
 
-<h3>Functions</h3>
+<h4>Functions</h4>
 <ul>
-	<li><a href="#StopAllTweens">StopAllTweens</a></li>
 	<li><a href="#SecondsToLoops">SecondsToLoops</a></li>
+	<li><a href="#StopAllTweens">StopAllTweens</a></li>
 	<li><a href="#TweenPosition">TweenPosition</a></li>
 	<li><a href="#TweenScaling">TweenScaling</a></li>
 	<li><a href="#TweenSize">TweenSize</a></li>
@@ -64,28 +80,45 @@ pre { background: #fff; padding: .5em 0; border: 1px dashed #000; border-left: n
 	<li><a href="#TweenHandleOffset">TweenHandleOffset</a></li>
 	<li><a href="#TweenSelectedItem">TweenSelectedItem</a></li>
 	<li><a href="#TweenTopItem">TweenTopItem</a></li>
-
 </ul>
 
-<p><a href="#t">Top of Page</a></p>
 </div>
 
 <div id="content">
 
-<h1><a name="t">Tween Module</a></h1>
+<h1><a name="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.0</p>
-<p>Created by Edmundo Ruiz (edmundo@edmundito.com)</p>
+<p>Version 1.1</p>
+<p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
+Additional scripting by Tzach Shabtay</p>
 
 <p>This module can be used to create programatic animations.
-It supports GUIs, room objects, and characters. It allows these
+It supports most of the ags systems. It allows these
 effects to be  blocking, non blocking, or loop them, and it has
 acceleration/deceleration timing functions.</p>
 
 <p>Note that the script syntax differs a bit between AGS 3.x and AGS 2.x,
 which will be noted in this documentation. You can also make the AGS 2.x syntax also available in AGS 3.x by
-commenting out line 51 in the module script header, in case that you are porting your game to AGS 3.x and
+commenting out line 102 in the module script header, in case that you are porting your game to AGS 3.x and
 have written functions using Tween.</p>
+
+<h2><a name="license"></a>License</h2>
+
+<p>This module is distributed with the very liberal <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
+
+<p>That said, you are most welcome but not obliged to give us credit in your game as:</p>
+
+<p>
+<strong>Special Thanks</strong><br/>
+Edmundo Ruiz<br/>
+Tzach Shabtay
+</p>
+
+<p>And in the AGS Games database:</p>
+<p>
+netmonkey Tween Module<br/>
+tzachs Tween Module
+</p>
 
 <h2>Enumerated types</h2>
 
@@ -202,7 +235,7 @@ TweenListBoxPosition(ListBox* listBox, float timeInSeconds, short toX, short toY
 TweenSliderPosition(Slider* slider, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
 TweenInvWindowPosition(InvWindow* invWindow, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
 </pre>
-<p>Tweens the position of a character,GUI,object,etc. from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
+<p>Tweens the position of a character, GUI, object, etc. from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
 <p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
 <h4>Example:</h4>
 <pre>
@@ -375,7 +408,7 @@ if (System.SupportsGammaControl) {
 // AGS 3.x and 2.x
 TweenShakeScreen(float timeInSeconds, short fromDelay, short toDelay, short fromAmount,  short toAmount, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
 </pre>
-<p>Tweens the shake screen amount & delay from one value to another. Range: Delay: from -2 to ... Amount: from 1 to 30.</p>
+<p>Tweens the shake screen amount and delay from one value to another. Range: Delay: from -2 to ... Amount: from 1 to 30.</p>
 <h4>Example:</h4>
 <pre>
 TweenShakeScreen(3.0, 2, 2, 1, 15);
@@ -459,7 +492,7 @@ TweenSoundVolume(3.0, 100, 50);
 // AGS 3.x and 2.x
 TweenAreaScaling(float timeInSeconds, short area, short fromMin, short toMin, short fromMax, short toMax, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
 </pre>
-<p>Tweens the area scaling for a specific area from one min&max value to another. Range for min&max: 5 - 200.</p>
+<p>Tweens the area scaling for a specific area from one min and max value to another. Range for min and max: 5 - 200.</p>
 <h4>Example:</h4>
 <pre>
 TweenAreaScaling(3.0, 1, 50, 100, 100, 200);
@@ -761,8 +794,8 @@ Slider.TweenValue(float timeInSeconds, short toValue, TweenTiming timing=eLinear
 
 // AGS 2.x
 TweenSliderValue(float timeInSeconds, short toValue, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-
 </pre>
+
 <p>Tweens the value of the slider.</p>
 <p>Note that the value should be between the min and max values for the slider.</p>
 <h4>Example:</h4>
@@ -772,8 +805,8 @@ mySlider.TweenValue(1.5, 200);
 
 // AGS 2.x
 TweenSliderValue(mySlider, 1.5, 200);
-
 </pre>
+
 <p>Will tween the value of the slider from the current value to 200.</p>
 
 <hr />
@@ -783,30 +816,30 @@ TweenSliderValue(mySlider, 1.5, 200);
 // AGS 3.x
 Slider.TweenHandleOffset(float timeInSeconds, short toOffset, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
 
-// AGS 2.x
-NOT SUPPORTED
-
+// AGS 2.x NOT SUPPORTED
 </pre>
+
 <p>Tweens the offset of the slider handle.</p>
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
 mySlider.TweenHandleOffset(1.5, 20); 
-
 </pre>
+
 <p>Will tween the handle offset of the slider from the current value to 20.</p>
 
 <hr />
 
 <h3><a name="TweenSelectedItem">TweenSelectedItem</a></h3>
+
 <pre>
 // AGS 3.x
 ListBox.TweenSelectedItem(float timeInSeconds, short toSelectedItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
 
 // AGS 2.x
 TweenListBoxSelectedItem(ListBox* listBox, float timeInSeconds, short toSelectedItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-
 </pre>
+
 <p>Tweens the selected item for the list box.</p>
 <h4>Example:</h4>
 <pre>
@@ -815,8 +848,8 @@ myListBox.TweenSelectedItem(1.5, 20);
 
 // AGS 2.x
 TweenListBoxSelectedItem(myListBox, 1.5, 20);
-
 </pre>
+
 <p>Will tween the selected item of the listbox from the current value to 20.</p>
 
 <hr />
@@ -830,8 +863,8 @@ InvWindow.TweenTopItem(float timeInSeconds, short toTopItem, TweenTiming timing=
 // AGS 2.x
 TweenListBoxTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
 TweenInvWindowTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-
 </pre>
+
 <p>Tweens the top item for the list box or inventory window.</p>
 <h4>Example:</h4>
 <pre>
@@ -842,8 +875,8 @@ myInventory.TweenTopItem(1.5, 20);
 // AGS 2.x
 TweenListBoxTopItem(myListBox, 1.5, 20);
 TweenInvWindowTopItem(myInventory, 1.5, 20);
-
 </pre>
+
 <p>Will tween the top item of the listbox and inventory window from the current value to 20.</p>
 
 <hr />
