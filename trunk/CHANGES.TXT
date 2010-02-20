@@ -1,6 +1,10 @@
 Revision History
 ================
 
+1.2
+- You can now change the defaults for TweenTiming and TweenStyle.
+- GUIs have their own defaults, and NOTE that as of this version GUIs are blocking by default.
+
 1.1 (February 17 2010)
 - Now supports virtually every function that could be tweened in AGS
 - Improved documentation formatting, and validaded by w3c as strict
