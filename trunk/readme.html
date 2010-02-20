@@ -36,6 +36,7 @@ h4 { margin-bottom: 0.2em; }
 <ul>
 	<li><a href="#about">About</a></li>
 	<li><a href="#license">License</a></li>
+	<li><a href="#settings">Settings</a></li>
 </ul>
 
 <h4>Enumerated types</h4>
@@ -88,7 +89,7 @@ h4 { margin-bottom: 0.2em; }
 
 <h1><a name="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.1</p>
+<p>Version 1.2</p>
 <p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
 Additional scripting by Tzach Shabtay</p>
 
@@ -98,9 +99,8 @@ effects to be  blocking, non blocking, or loop them, and it has
 acceleration/deceleration timing functions.</p>
 
 <p>Note that the script syntax differs a bit between AGS 3.x and AGS 2.x,
-which will be noted in this documentation. You can also make the AGS 2.x syntax also available in AGS 3.x by
-commenting out line 102 in the module script header, in case that you are porting your game to AGS 3.x and
-have written functions using Tween.</p>
+which will be noted in this documentation. You can also make the AGS 2.x syntax also available in AGS 3.x; check out
+the <a href="#settings">Settings</a> section for more info.</p>
 
 <h2><a name="license"></a>License</h2>
 
@@ -119,6 +119,44 @@ Tzach Shabtay
 netmonkey Tween Module<br/>
 tzachs Tween Module
 </p>
+
+<h2><a name="settings">Settings</a></h2>
+
+At the top of the script module header, there are a few constants that affect how the Tween module works:
+
+<pre>
+#define MAX_TWEENS 10
+
+#define DEFAULT_TweenTiming eLinearTween
+#define DEFAULT_GUI_TweenTiming eLinearTween
+
+#define DEFAULT_TweenStyle eBlockTween
+#define DEFAULT_GUI_TweenStyle eBlockTween
+
+#ifdef AGS_SUPPORTS_IFVER
+#ifver 3.0
+
+#define NO_VER_2_TWEENS 
+
+#endif
+#endif
+</pre>
+
+<p>These #defines allow you to change some of the defaults very easily!</p>
+
+<ul>
+	<li><strong>MAX_TWEENS</strong> is the number of simultaneous tweens that can be played in the game. Note that increasing this number may slow down your game, so make sure you do it if you really need to.</li>
+	<li><strong>DEFAULT_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the Tween functions, except for GUI-Related tweens.</li>
+	<li><strong>DEFAULT_GUI_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the GUI-related Tween functions.</li>
+	<li><strong>DEFAULT_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the Tween functions, except for GUI-Related tweens.</li>
+	<li><strong>DEFAULT_GUI_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the GUI-related Tween functions.</li>
+	<li><strong>NO_VER_2_TWEENS</strong> Only available in AGS 3.0 and above, it turns off the 2.0 based Tween function syntax. If you're migrating Tween code from a game created in 2.0, you can comment this line out and it will work!</li>
+</ul>
+
+<p>GUI-related objects have been specifically chosen to have their own TweenTiming and TweenStyle setting because very often
+GUIs can have a more consistent and graceful transition animations as well as from a interface design standpoint
+it's much nicer to move the user interface around without blocking the user. This, however, would require more clever scripting and it
+may be a bit more advanced for beginning AGS scripters.</p>
 
 <h2>Enumerated types</h2>
 
@@ -214,26 +252,26 @@ TweenStopAllForObject(oBluecup);
 <h3><a name="TweenPosition">TweenPosition</a></h3>
 <pre>
 // AGS 3.x
-Character.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-GUI.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-Object.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-Label.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-Button.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-TextBox.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-ListBox.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-Slider.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-InvWindow.TweenPosition(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+Character.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+GUI.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Object.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Label.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Button.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TextBox.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+ListBox.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Slider.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+InvWindow.TweenPosition(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 
 // AGS 2.x
-TweenCharacterPosition(Character* character, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-TweenGUIPosition(GUI* gui, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenObjectPosition(Object* object, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-TweenLabelPosition(Label* label, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenButtonPosition(Button* button, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenTextBoxPosition(TextBox* textBox, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenListBoxPosition(ListBox* listBox, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenSliderPosition(Slider* slider, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenInvWindowPosition(InvWindow* invWindow, float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+TweenCharacterPosition(Character* character, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenGUIPosition(GUI* gui, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenObjectPosition(Object* object, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenLabelPosition(Label* label, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenButtonPosition(Button* button, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenTextBoxPosition(TextBox* textBox, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenListBoxPosition(ListBox* listBox, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenSliderPosition(Slider* slider, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenInvWindowPosition(InvWindow* invWindow, float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 </pre>
 <p>Tweens the position of a character, GUI, object, etc. from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
 <p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
@@ -252,10 +290,10 @@ TweenCharacterPosition(cEgo, 2.5, 100, 100);
 <h3><a name="TweenScaling">TweenScaling</a></h3>
 <pre>
 // AGS 3.x
-Character.TweenScaling(float timeInSeconds, short toScale, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+Character.TweenScaling(float timeInSeconds, short toScale, optional TweenTiming, optional TweenStyle)
 
 // AGS 2.x
-TweenCharacterScaling(Character* character, float timeInSeconds, short toScale, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+TweenCharacterScaling(Character* character, float timeInSeconds, short toScale, optional TweenTiming, optional TweenStyle)
 </pre>
 <p>Tweens the scaling of a character.</p>
 <p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
@@ -274,22 +312,22 @@ TweenCharacterScaling(cEgo, 1.5, 200);
 <h3><a name="TweenSize">TweenSize</a></h3>
 <pre>
 // AGS 3.x
-GUI.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-Label.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-Button.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TextBox.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-ListBox.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-Slider.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-InvWindow.TweenSize(float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+GUI.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+Label.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+Button.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TextBox.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+ListBox.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+Slider.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+InvWindow.TweenSize(float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
 
 // AGS 2.x
-TweenGUISize(GUI* gui, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenLabelSize(Label* label, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenButtonSize(Button* button, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenTextBoxSize(TextBox* textBox, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenListBoxSize(ListBox* listBox, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenSliderSize(Slider* slider, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenInvWindowSize(InvWindow* invWindow, float timeInSeconds, short toWidth, short toHeight, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
+TweenGUISize(GUI* gui, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenLabelSize(Label* label, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenButtonSize(Button* button, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenTextBoxSize(TextBox* textBox, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenListBoxSize(ListBox* listBox, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenSliderSize(Slider* slider, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
+TweenInvWindowSize(InvWindow* invWindow, float timeInSeconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
 </pre>
 <p>Tweens the size of a GUI, Label, Button etc.</p>
 <p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
@@ -322,14 +360,14 @@ TweenStopAll();
 <h3><a name="TweenTransparency">TweenTransparency</a></h3>
 <pre>
 // AGS 3.x
-Character.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-GUI.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-Object.TweenTransparency(float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+Character.TweenTransparency(float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
+GUI.TweenTransparency(float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
+Object.TweenTransparency(float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
 
 // AGS 2.x
-TweenCharacterTransparency(Character* character, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
-TweenGUITransparency(GUI* gui, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween)
-TweenObjectTransparency(Object* object, float timeInSeconds, short toTransparency, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween)
+TweenCharacterTransparency(Character* character, float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
+TweenGUITransparency(GUI* gui, float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
+TweenObjectTransparency(Object* object, float timeInSeconds, short toTransparency, optional TweenTiming, optional TweenStyle)
 </pre>
 <p>Tweens the transparency of a character, GUI, or object from its current transparecy to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.</p>
 <p>Returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
@@ -348,7 +386,7 @@ TweenObjectTransparency(oBluecup, 3.0, 100);
 <h3><a name="TweenViewportX">TweenViewportX</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenViewportX(float timeInSeconds, short toX, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenViewportX(float timeInSeconds, short toX, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the x axis from its current location to another.</p>
 <h4>Example:</h4>
@@ -362,7 +400,7 @@ TweenViewportX(3.0, 100);
 <h3><a name="TweenViewportY">TweenViewportY</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenViewportY(float timeInSeconds, short toY, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenViewportY(float timeInSeconds, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the y axis from its current location to another.</p>
 <h4>Example:</h4>
@@ -376,7 +414,7 @@ TweenViewportY(3.0, 100);
 <h3><a name="TweenViewportXY">TweenViewportXY</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenViewportX(float timeInSeconds, short toX, short toY, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenViewportX(float timeInSeconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the x axis and on the y axis from its current location to another.</p>
 <h4>Example:</h4>
@@ -390,7 +428,7 @@ TweenViewportX(3.0, 100, 20);
 <h3><a name="TweenGamma">TweenGamma</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenGamma(float timeInSeconds, short toGamma, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenGamma(float timeInSeconds, short toGamma, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the screen gamma level from its current value to another. Note that System.SupportGammaControl must return true in order for this method to have any effect. Range: 0 (black) - 200 (bright)</p>
 <h4>Example:</h4>
@@ -406,7 +444,7 @@ if (System.SupportsGammaControl) {
 <h3><a name="TweenShakeScreen">TweenShakeScreen</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenShakeScreen(float timeInSeconds, short fromDelay, short toDelay, short fromAmount,  short toAmount, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenShakeScreen(float timeInSeconds, short fromDelay, short toDelay, short fromAmount,  short toAmount, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the shake screen amount and delay from one value to another. Range: Delay: from -2 to ... Amount: from 1 to 30.</p>
 <h4>Example:</h4>
@@ -420,7 +458,7 @@ TweenShakeScreen(3.0, 2, 2, 1, 15);
 <h3><a name="TweenMusicMasterVolume">TweenMusicMasterVolume</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenMusicMasterVolume(float timeInSeconds, short fromVolume, short toVolume, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenMusicMasterVolume(float timeInSeconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the master music volume from one value to another. Range: 1 - 100.</p>
 <h4>Example:</h4>
@@ -434,7 +472,7 @@ TweenMusicMasterVolume(3.0, 100, 50);
 <h3><a name="TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenDigitalMasterVolume(float timeInSeconds, short fromVolume, short toVolume, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenDigitalMasterVolume(float timeInSeconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the master digital volume from one value to another. Range: 1 - 100.</p>
 <h4>Example:</h4>
@@ -448,7 +486,7 @@ TweenDigitalMasterVolume(3.0, 100, 50);
 <h3><a name="TweenChannelVolume">TweenChannelVolume</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenChannelVolume(float timeInSeconds, short channel, short fromVolume, short toVolume, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenChannelVolume(float timeInSeconds, short channel, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the volume for a given channel from one value to another. Range: 0 - 255.</p>
 <h4>Example:</h4>
@@ -462,7 +500,7 @@ TweenChannelVolume(3.0, 1, 100, 50);
 <h3><a name="TweenSpeechVolume">TweenSpeechVolume</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenSpeechVolume(float timeInSeconds, short fromVolume, short toVolume, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenSpeechVolume(float timeInSeconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the volume for speech from one value to another. Range: 0 - 255.</p>
 <h4>Example:</h4>
@@ -476,7 +514,7 @@ TweenSpeechVolume(3.0, 100, 50);
 <h3><a name="TweenSoundVolume">TweenSoundVolume</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenSoundVolume(float timeInSeconds, short fromVolume, short toVolume, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenSoundVolume(float timeInSeconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the sound effect volume from one value to another. Range: 0 - 255.</p>
 <h4>Example:</h4>
@@ -490,7 +528,7 @@ TweenSoundVolume(3.0, 100, 50);
 <h3><a name="TweenAreaScaling">TweenAreaScaling</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenAreaScaling(float timeInSeconds, short area, short fromMin, short toMin, short fromMax, short toMax, TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenAreaScaling(float timeInSeconds, short area, short fromMin, short toMin, short fromMax, short toMax, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the area scaling for a specific area from one min and max value to another. Range for min and max: 5 - 200.</p>
 <h4>Example:</h4>
@@ -504,10 +542,10 @@ TweenAreaScaling(3.0, 1, 50, 100, 100, 200);
 <h3><a name="TweenImage">TweenImage</a></h3>
 <pre>
 // AGS 3.x
-Object.TweenImage(Object* tmpObjectRef, float timeInSeconds,  short toSprite,  TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Object.TweenImage(Object* tmpObjectRef, float timeInSeconds,  short toSprite,  optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenObjectImage(Object* object, Object* tmpObjectRef,  float timeInSeconds,  short toSprite,  TweenTiming timing=eLinearTween,  TweenStyle style=eBlockTween);
+TweenObjectImage(Object* object, Object* tmpObjectRef,  float timeInSeconds,  short toSprite,  optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the image of the object.</p>
 <p>Note that this function currently requires the use of a second object for the transformation to take effect.
@@ -527,10 +565,10 @@ TweenObjectImage(oBlueCup, oTmpObject, 1.5, 167);
 <h3><a name="TweenAnimationSpeed">TweenAnimationSpeed</a></h3>
 <pre>
 // AGS 3.x
-Character.TweenAnimationSpeed(float timeInSeconds, short toAnimationSpeed, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Character.TweenAnimationSpeed(float timeInSeconds, short toAnimationSpeed, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenCharacterAnimationSpeed(Character* characterRef, float timeInSeconds, short toAnimationSpeed, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenCharacterAnimationSpeed(Character* characterRef, float timeInSeconds, short toAnimationSpeed, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the animation speed of the character.</p>
 <h4>Example:</h4>
@@ -548,10 +586,10 @@ TweenCharacterAnimationSpeed(cEgo, 1.5, -100);
 <h3><a name="TweenZOrder">TweenZOrder</a></h3>
 <pre>
 // AGS 3.x
-GUI.TweenZOrder(GUI* guiRef, float timeInSeconds, short toZOrder, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+GUI.TweenZOrder(GUI* guiRef, float timeInSeconds, short toZOrder, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenGUIZOrder(GUI* guiRef, float timeInSeconds, short toZOrder, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+TweenGUIZOrder(GUI* guiRef, float timeInSeconds, short toZOrder, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the Z Order of the gui.</p>
 <h4>Example:</h4>
@@ -569,10 +607,10 @@ TweenGUIZOrder(gStatusLine, 1.5, 100);
 <h3><a name="TweenLightLevel">TweenLightLevel</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenLightLevel(float timeInSeconds, short toLightLevel, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenLightLevel(float timeInSeconds, short toLightLevel, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionLightLevel(Region* regionRef, float timeInSeconds, short toLightLevel, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionLightLevel(Region* regionRef, float timeInSeconds, short toLightLevel, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the light level for the region. Range: -100 (very dark) to 100 (very bright)</p>
 <h4>Example:</h4>
@@ -590,10 +628,10 @@ TweenRegionLightLevel(rGarden, 1.5, 0);
 <h3><a name="TweenTintR">TweenTintR</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenTintR(float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenTintR(float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionTintR(Region* regionRef, float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionTintR(Region* regionRef, float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the Red portion for the region. Range: 0 to 255.</p>
 <p>Note that to diminish the effect of the tint you need to set the LightLevel property for the region.</p>
@@ -612,10 +650,10 @@ TweenRegionTintR(rGarden, 1.5, 200);
 <h3><a name="TweenTintG">TweenTintG</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenTintG(float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenTintG(float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionTintG(Region* regionRef, float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionTintG(Region* regionRef, float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the Green portion for the region. Range: 0 to 255.</p>
 <p>Note that to diminish the effect of the tint you need to set the LightLevel property for the region.</p>
@@ -634,10 +672,10 @@ TweenRegionTintG(rGarden, 1.5, 200);
 <h3><a name="TweenTintB">TweenTintB</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenTintB(float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenTintB(float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionTintB(Region* regionRef, float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionTintB(Region* regionRef, float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the Blue portion for the region. Range: 0 to 255.</p>
 <p>Note that to diminish the effect of the tint you need to set the LightLevel property for the region.</p>
@@ -656,10 +694,10 @@ TweenRegionTintB(rGarden, 1.5, 200);
 <h3><a name="TweenTintAmount">TweenTintAmount</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenTintAmount(float timeInSeconds, short toAmount, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenTintAmount(float timeInSeconds, short toAmount, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionTintAmount(Region* regionRef, float timeInSeconds, short toAmount, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionTintAmount(Region* regionRef, float timeInSeconds, short toAmount, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the amount of tint for the region. Range: 0 to 100.</p>
 <p>Note that to diminish the effect of the tint you need to set the LightLevel property for the region.</p>
@@ -678,10 +716,10 @@ TweenRegionTintAmount(rGarden, 1.5, 100);
 <h3><a name="TweenTintBlackAndWhite">TweenTintBlackAndWhite</a></h3>
 <pre>
 // AGS 3.x
-Region.TweenTintBlackAndWhite(float timeInSeconds, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Region.TweenTintBlackAndWhite(float timeInSeconds, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenRegionTintBlackAndWhite(Region* regionRef, float timeInSeconds, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenRegionTintBlackAndWhite(Region* regionRef, float timeInSeconds, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the region to appear black and white.</p>
 <p>Note that to diminish the effect of the tint you need to set the LightLevel property for the region.</p>
@@ -700,14 +738,14 @@ TweenRegionTintBlackAndWhite(rGarden, 1.5);
 <h3><a name="TweenColorR">TweenColorR</a></h3>
 <pre>
 // AGS 3.x
-Label.TweenColorR(float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TextBox.TweenColorR(float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-Button.TweenColorR(float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Label.TweenColorR(float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
+TextBox.TweenColorR(float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
+Button.TweenColorR(float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenLabelColorR(Label* label, float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenTextBoxColorR(TextBox* textBox, float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenButtonColorR(Button* button, float timeInSeconds, short toR, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenLabelColorR(Label* label, float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
+TweenTextBoxColorR(TextBox* textBox, float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
+TweenButtonColorR(Button* button, float timeInSeconds, short toR, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the red portion for the label, textbox or button. Range: 0 - 255</p>
 <p>Note that to get a better result start with a color that is bigger than 30 (since 0 - 30 are reserved colors).</p>
@@ -730,14 +768,14 @@ TweenButtonColorR(myButton, 1.5, 200);
 <h3><a name="TweenColorG">TweenColorG</a></h3>
 <pre>
 // AGS 3.x
-Label.TweenColorG(float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TextBox.TweenColorG(float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-Button.TweenColorG(float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Label.TweenColorG(float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
+TextBox.TweenColorG(float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
+Button.TweenColorG(float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenLabelColorG(Label* label, float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenTextBoxColorG(TextBox* textBox, float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenButtonColorG(Button* button, float timeInSeconds, short toG, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenLabelColorG(Label* label, float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
+TweenTextBoxColorG(TextBox* textBox, float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
+TweenButtonColorG(Button* button, float timeInSeconds, short toG, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the green portion for the label, textbox or button. Range: 0 - 255</p>
 <p>Note that to get a better result start with a color that is bigger than 30 (since 0 - 30 are reserved colors).</p>
@@ -760,14 +798,14 @@ TweenButtonColorG(myButton, 1.5, 200);
 <h3><a name="TweenColorB">TweenColorB</a></h3>
 <pre>
 // AGS 3.x
-Label.TweenColorB(float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TextBox.TweenColorB(float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-Button.TweenColorB(float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+Label.TweenColorB(float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
+TextBox.TweenColorB(float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
+Button.TweenColorB(float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenLabelColorB(Label* label, float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenTextBoxColorB(TextBox* textBox, float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
-TweenButtonColorB(Button* button, float timeInSeconds, short toB, TweenTiming timing=eLinearTween, TweenStyle style=eBlockTween);
+TweenLabelColorB(Label* label, float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
+TweenTextBoxColorB(TextBox* textBox, float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
+TweenButtonColorB(Button* button, float timeInSeconds, short toB, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the blue portion for the label, textbox or button. Range: 0 - 255</p>
 <p>Note that to get a better result start with a color that is bigger than 30 (since 0 - 30 are reserved colors).</p>
@@ -790,10 +828,10 @@ TweenButtonColorB(myButton, 1.5, 200);
 <h3><a name="TweenValue">TweenValue</a></h3>
 <pre>
 // AGS 3.x
-Slider.TweenValue(float timeInSeconds, short toValue, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+Slider.TweenValue(float timeInSeconds, short toValue, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenSliderValue(float timeInSeconds, short toValue, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+TweenSliderValue(float timeInSeconds, short toValue, optional TweenTiming, optional TweenStyle);
 </pre>
 
 <p>Tweens the value of the slider.</p>
@@ -814,7 +852,7 @@ TweenSliderValue(mySlider, 1.5, 200);
 <h3><a name="TweenHandleOffset">TweenHandleOffset</a></h3>
 <pre>
 // AGS 3.x
-Slider.TweenHandleOffset(float timeInSeconds, short toOffset, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+Slider.TweenHandleOffset(float timeInSeconds, short toOffset, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x NOT SUPPORTED
 </pre>
@@ -834,10 +872,10 @@ mySlider.TweenHandleOffset(1.5, 20);
 
 <pre>
 // AGS 3.x
-ListBox.TweenSelectedItem(float timeInSeconds, short toSelectedItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+ListBox.TweenSelectedItem(float timeInSeconds, short toSelectedItem, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenListBoxSelectedItem(ListBox* listBox, float timeInSeconds, short toSelectedItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+TweenListBoxSelectedItem(ListBox* listBox, float timeInSeconds, short toSelectedItem, optional TweenTiming, optional TweenStyle);
 </pre>
 
 <p>Tweens the selected item for the list box.</p>
@@ -857,12 +895,12 @@ TweenListBoxSelectedItem(myListBox, 1.5, 20);
 <h3><a name="TweenTopItem">TweenTopItem</a></h3>
 <pre>
 // AGS 3.x
-ListBox.TweenTopItem(float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-InvWindow.TweenTopItem(float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+ListBox.TweenTopItem(float timeInSeconds, short toTopItem, optional TweenTiming, optional TweenStyle);
+InvWindow.TweenTopItem(float timeInSeconds, short toTopItem, optional TweenTiming, optional TweenStyle);
 
 // AGS 2.x
-TweenListBoxTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
-TweenInvWindowTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, TweenTiming timing=eLinearTween, TweenStyle style=eNoBlockTween);
+TweenListBoxTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, optional TweenTiming, optional TweenStyle);
+TweenInvWindowTopItem(ListBox* listBox, float timeInSeconds, short toTopItem, optional TweenTiming, optional TweenStyle);
 </pre>
 
 <p>Tweens the top item for the list box or inventory window.</p>
