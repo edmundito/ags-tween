@@ -60,16 +60,16 @@
 
 enum TweenTiming {
   eLinearTween,
-	eEaseInTween,
-	eEaseOutTween, 
-	eEaseInEaseOutTween
+  eEaseInTween,
+  eEaseOutTween, 
+  eEaseInEaseOutTween
 };
 
 enum TweenStyle {
-	eBlockTween, 
-	eNoBlockTween, 
-	eRepeatTween, 
-	eReverseRepeatTween,
+  eBlockTween, 
+  eNoBlockTween, 
+  eRepeatTween, 
+  eReverseRepeatTween,
 };
 
 // Converts number of seconds to number of game loops 
@@ -244,58 +244,58 @@ import void TweenStopAllForInvWindow(InvWindow* guiRef);
 // For internal use by this module only.
 
 enum _TweenType {
-	_eTweenGUIPosition, 
-	_eTweenGUITransparency, 
-	_eTweenGUISize,
+  _eTweenGUIPosition, 
+  _eTweenGUITransparency, 
+  _eTweenGUISize,
         _eTweenGUIZOrder, 
-	_eTweenObjectPosition, 
-	_eTweenObjectTransparency,   
-	_eTweenCharacterPosition,
-	_eTweenCharacterScaling,
-	_eTweenCharacterTransparency,
-	_eTweenCharacterAnimationSpeed,   
-	_eTweenRegionLightLevel, 
-	_eTweenRegionTintR, 
-	_eTweenRegionTintG, 
-	_eTweenRegionTintB, 
-	_eTweenRegionTintAmount,   
-	_eTweenLabelColorR, 
-	_eTweenLabelColorG, 
-	_eTweenLabelColorB, 
-	_eTweenLabelPosition, 
-	_eTweenLabelSize, 
-	_eTweenButtonPosition, 
-	_eTweenButtonSize, 
-	_eTweenButtonColorR, 
-	_eTweenButtonColorG, 
-	_eTweenButtonColorB, 
-	_eTweenTextBoxPosition, 
-	_eTweenTextBoxSize, 
-	_eTweenTextBoxColorR, 
-	_eTweenTextBoxColorG, 
-	_eTweenTextBoxColorB, 
-	_eTweenSliderPosition, 
-	_eTweenSliderSize, 
-	_eTweenSliderValue, 
-	_eTweenSliderHandleOffset, 
-	_eTweenListBoxPosition, 
-	_eTweenListBoxSize,
-	_eTweenListBoxSelectedItem, 
-	_eTweenListBoxTopItem, 
-	_eTweenInvWindowPosition, 
-	_eTweenInvWindowSize,
-	_eTweenInvWindowTopItem, 
-	_eTweenViewportX,
-	_eTweenViewportY, 
-	_eTweenViewportXY, 
-	_eTweenGamma, 
-	_eTweenShakeScreen, 
-	_eTweenMusicMasterVolume, 
-	_eTweenDigitalMasterVolume, 
-	_eTweenChannelVolume, 
-	_eTweenSpeechVolume, 
-	_eTweenSoundVolume,  
-	_eTweenAreaScaling
+  _eTweenObjectPosition, 
+  _eTweenObjectTransparency,   
+  _eTweenCharacterPosition,
+  _eTweenCharacterScaling,
+  _eTweenCharacterTransparency,
+  _eTweenCharacterAnimationSpeed,   
+  _eTweenRegionLightLevel, 
+  _eTweenRegionTintR, 
+  _eTweenRegionTintG, 
+  _eTweenRegionTintB, 
+  _eTweenRegionTintAmount,   
+  _eTweenLabelColorR, 
+  _eTweenLabelColorG, 
+  _eTweenLabelColorB, 
+  _eTweenLabelPosition, 
+  _eTweenLabelSize, 
+  _eTweenButtonPosition, 
+  _eTweenButtonSize, 
+  _eTweenButtonColorR, 
+  _eTweenButtonColorG, 
+  _eTweenButtonColorB, 
+  _eTweenTextBoxPosition, 
+  _eTweenTextBoxSize, 
+  _eTweenTextBoxColorR, 
+  _eTweenTextBoxColorG, 
+  _eTweenTextBoxColorB, 
+  _eTweenSliderPosition, 
+  _eTweenSliderSize, 
+  _eTweenSliderValue, 
+  _eTweenSliderHandleOffset, 
+  _eTweenListBoxPosition, 
+  _eTweenListBoxSize,
+  _eTweenListBoxSelectedItem, 
+  _eTweenListBoxTopItem, 
+  _eTweenInvWindowPosition, 
+  _eTweenInvWindowSize,
+  _eTweenInvWindowTopItem, 
+  _eTweenViewportX,
+  _eTweenViewportY, 
+  _eTweenViewportXY, 
+  _eTweenGamma, 
+  _eTweenShakeScreen, 
+  _eTweenMusicMasterVolume, 
+  _eTweenDigitalMasterVolume, 
+  _eTweenChannelVolume, 
+  _eTweenSpeechVolume, 
+  _eTweenSoundVolume,  
+  _eTweenAreaScaling
 };
 
 struct _TweenData {
@@ -307,7 +307,7 @@ struct _TweenData {
   int duration;
   int frameCount;
   
-	short toX;
+  short toX;
   short toY;
   short fromX;
   short fromY;
