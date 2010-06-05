@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>AGS Tween Module 1.1 Help</title>
+<title>AGS Tween Module 1.2 Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 body, div, ul, li, pre { margin: 0; padding: 0; }
@@ -43,11 +43,13 @@ h4 { margin-bottom: 0.2em; }
 <ul>
 	<li><a href="#TweenTiming">TweenTiming</a></li>
 	<li><a href="#TweenStyle">TweenStyle</a></li>
+	<li><a href="#TweenStopResult">TweenStopResult</a></li>
 </ul>
 
 <h4>Functions</h4>
 <ul>
 	<li><a href="#SecondsToLoops">SecondsToLoops</a></li>
+	<li><a href="#WaitSeconds">WaitSeconds</a></li>
 	<li><a href="#StopAllTweens">StopAllTweens</a></li>
 	<li><a href="#TweenPosition">TweenPosition</a></li>
 	<li><a href="#TweenScaling">TweenScaling</a></li>
@@ -89,7 +91,7 @@ h4 { margin-bottom: 0.2em; }
 
 <h1><a name="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.2</p>
+<p>Version 1.2 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for details)</p>
 <p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
 Additional scripting by Tzach Shabtay</p>
 
@@ -133,6 +135,8 @@ At the top of the script module header, there are a few constants that affect ho
 #define DEFAULT_TweenStyle eBlockTween
 #define DEFAULT_GUI_TweenStyle eBlockTween
 
+#define DEFAULT_TweenStopResult ePauseTween
+
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
 
@@ -150,6 +154,7 @@ At the top of the script module header, there are a few constants that affect ho
 	<li><strong>DEFAULT_GUI_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the GUI-related Tween functions.</li>
 	<li><strong>DEFAULT_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the Tween functions, except for GUI-Related tweens.</li>
 	<li><strong>DEFAULT_GUI_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the GUI-related Tween functions.</li>
+	<li><strong>DEFAULT_TweenStopResult</strong> changes the default value for the optional <a href="#TweenStopResult">TweenStopResult</a> in all the Tween stop functions.</li>
 	<li><strong>NO_VER_2_TWEENS</strong> Only available in AGS 3.0 and above, it turns off the 2.0 based Tween function syntax. If you're migrating Tween code from a game created in 2.0, you can comment this line out and it will work!</li>
 </ul>
 
@@ -191,6 +196,20 @@ the direction of the tween).</p>
 
 <hr />
 
+<h3><a name="TweenStopResult">TweenStopResult</a></h3>
+<pre>
+enum TweenStopResult {
+  ePauseTween, 
+  eFinishTween, 
+  eResetTween,
+};
+</pre>
+<p>Used to set how a tween should stop when any of the stop functions is called, whether
+it should stay where it is (pause), complete the tween immediately (finish), or go back to where
+it started (reset).</p>
+
+<hr />
+
 <h2>Functions</h2>
 
 <h3><a name="SecondsToLoops">SecondsToLoops</a></h3>
@@ -203,6 +222,20 @@ SecondsToLoops(float seconds);
 <pre>
 Wait(SecondsToLoops(5.0));
 </pre>
+<p>Will wait for 5 seconds. However, see WaitSeconds below for an easier way.</p>
+
+<hr />
+
+<h3><a name="WaitSeconds">WaitSeconds</a></h3>
+<pre>
+// AGS 3.x and 2.x
+WaitSeconds(float seconds);
+</pre>
+<p>Waits for a number of seconds, as opposed to AGS's Wait which uses loops.</p>
+<h4>Example:</h4>
+<pre>
+WaitSeconds(5.0);
+</pre>
 <p>Will wait for 5 seconds.</p>
 
 <hr />
@@ -210,26 +243,26 @@ Wait(SecondsToLoops(5.0));
 <h3><a name="StopAllTweens">StopAllTweens</a></h3>
 <pre>
 // AGS 3.x
-Character.StopAllTweens()
-GUI.StopAllTweens()
-Object.StopAllTweens()
-Label.StopAllTweens()
-Button.StopAllTweens()
-TextBox.StopAllTweens()
-ListBox.StopAllTweens()
-Slider.StopAllTweens()
-InvWindow.StopAllTweens()
+Character.StopAllTweens(optional TweenStopResult)
+GUI.StopAllTweens(optional TweenStopResult)
+Object.StopAllTweens(optional TweenStopResult)
+Label.StopAllTweens(optional TweenStopResult)
+Button.StopAllTweens(optional TweenStopResult)
+TextBox.StopAllTweens(optional TweenStopResult)
+ListBox.StopAllTweens(optional TweenStopResult)
+Slider.StopAllTweens(optional TweenStopResult)
+InvWindow.StopAllTweens(optional TweenStopResult)
 
 // AGS 2.x
-TweenStopAllForCharacter(Character* character)
-TweenStopAllForGUI(GUI* gui)
-TweenStopAllForObject(Object* object)
-TweenStopAllForLabel(Label* label)
-TweenStopAllForButton(Button* button)
-TweenStopAllForTextBox(TextBox* textBox)
-TweenStopAllForListBox(ListBox* listBox)
-TweenStopAllForSlider(Slider* slider)
-TweenStopAllForInvWindow(InvWindow* invWindow)
+TweenStopAllForCharacter(Character* character, optional TweenStopResult)
+TweenStopAllForGUI(GUI* gui, optional TweenStopResult)
+TweenStopAllForObject(Object* object, optional TweenStopResult)
+TweenStopAllForLabel(Label* label, optional TweenStopResult)
+TweenStopAllForButton(Button* button, optional TweenStopResult)
+TweenStopAllForTextBox(TextBox* textBox, optional TweenStopResult)
+TweenStopAllForListBox(ListBox* listBox, optional TweenStopResult)
+TweenStopAllForSlider(Slider* slider, optional TweenStopResult)
+TweenStopAllForInvWindow(InvWindow* invWindow, optional TweenStopResult)
 </pre>
 <p>Stops all the Tweens currently playing on the a character, GUI, room object, etc.</p>
 <h4>Example:</h4>
@@ -346,9 +379,9 @@ TweenGUISize(gStatusline, 1.0, 50, 50);
 <h3><a name="TweenStopAll">TweenStopAll</a></h3>
 <pre>
 // AGS 3.x and 2.x
-TweenStopAll()
+TweenStopAll(optional TweenStopResult)
 </pre>
-<p>Stops all tweens currently playing.</p>
+<p>Stops every single tween currently playing.</p>
 <h4>Example:</h4>
 <pre>
 TweenStopAll();
