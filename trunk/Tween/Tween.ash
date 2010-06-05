@@ -26,7 +26,7 @@
 // copies of the Software, and to permit persons to whom the
 // Software is furnished to do so, subject to the following
 // conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
 
@@ -41,7 +41,7 @@
 //
 // --------
 //
-// That said, you are most welcome but not obliged to give us 
+// That said, you are most welcome but not obliged to give us
 // credit in your game or the AGS Games Page such as:
 //
 // Game:
@@ -76,7 +76,7 @@
 #ifver 3.0
 
 // Comment this line out if you would like to support AGS 2.x style Tween function calls in AGS 3.0+:
-#define NO_VER_2_TWEENS 
+#define NO_VER_2_TWEENS
 
 #endif
 #endif
@@ -88,14 +88,14 @@
 enum TweenTiming {
   eLinearTween,
   eEaseInTween,
-  eEaseOutTween, 
+  eEaseOutTween,
   eEaseInEaseOutTween
 };
 
 enum TweenStyle {
-  eBlockTween, 
-  eNoBlockTween, 
-  eRepeatTween, 
+  eBlockTween,
+  eNoBlockTween,
+  eRepeatTween,
   eReverseRepeatTween,
 };
 
@@ -103,7 +103,7 @@ enum TweenStyle {
 // UTILITY FUNCTIONS
 ///////////////////////////////////////////////////////////////////////////////
 
-// Converts number of seconds to number of game loops 
+// Converts number of seconds to number of game loops
 import int SecondsToLoops(float seconds);
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -272,79 +272,79 @@ import function TweenStopAllForInvWindow(InvWindow* guiRef);
 ///////////////////////////////////////////////////////////////////////////////
 
 enum _TweenType {
-  _eTweenGUIPosition, 
-  _eTweenGUITransparency, 
+  _eTweenGUIPosition,
+  _eTweenGUITransparency,
   _eTweenGUISize,
-  _eTweenGUIZOrder, 
-  _eTweenObjectPosition, 
-  _eTweenObjectTransparency, 
+  _eTweenGUIZOrder,
+  _eTweenObjectPosition,
+  _eTweenObjectTransparency,
   _eTweenCharacterPosition,
   _eTweenCharacterScaling,
   _eTweenCharacterTransparency,
-  _eTweenCharacterAnimationSpeed, 
-  _eTweenRegionLightLevel, 
-  _eTweenRegionTintR, 
-  _eTweenRegionTintG, 
-  _eTweenRegionTintB, 
-  _eTweenRegionTintAmount, 
-  _eTweenLabelColorR, 
-  _eTweenLabelColorG, 
-  _eTweenLabelColorB, 
-  _eTweenLabelPosition, 
-  _eTweenLabelSize, 
-  _eTweenButtonPosition, 
-  _eTweenButtonSize, 
-  _eTweenButtonColorR, 
-  _eTweenButtonColorG, 
-  _eTweenButtonColorB, 
-  _eTweenTextBoxPosition, 
-  _eTweenTextBoxSize, 
-  _eTweenTextBoxColorR, 
-  _eTweenTextBoxColorG, 
-  _eTweenTextBoxColorB, 
-  _eTweenSliderPosition, 
-  _eTweenSliderSize, 
-  _eTweenSliderValue, 
-  _eTweenSliderHandleOffset, 
-  _eTweenListBoxPosition, 
+  _eTweenCharacterAnimationSpeed,
+  _eTweenRegionLightLevel,
+  _eTweenRegionTintR,
+  _eTweenRegionTintG,
+  _eTweenRegionTintB,
+  _eTweenRegionTintAmount,
+  _eTweenLabelColorR,
+  _eTweenLabelColorG,
+  _eTweenLabelColorB,
+  _eTweenLabelPosition,
+  _eTweenLabelSize,
+  _eTweenButtonPosition,
+  _eTweenButtonSize,
+  _eTweenButtonColorR,
+  _eTweenButtonColorG,
+  _eTweenButtonColorB,
+  _eTweenTextBoxPosition,
+  _eTweenTextBoxSize,
+  _eTweenTextBoxColorR,
+  _eTweenTextBoxColorG,
+  _eTweenTextBoxColorB,
+  _eTweenSliderPosition,
+  _eTweenSliderSize,
+  _eTweenSliderValue,
+  _eTweenSliderHandleOffset,
+  _eTweenListBoxPosition,
   _eTweenListBoxSize,
-  _eTweenListBoxSelectedItem, 
-  _eTweenListBoxTopItem, 
-  _eTweenInvWindowPosition, 
+  _eTweenListBoxSelectedItem,
+  _eTweenListBoxTopItem,
+  _eTweenInvWindowPosition,
   _eTweenInvWindowSize,
-  _eTweenInvWindowTopItem, 
+  _eTweenInvWindowTopItem,
   _eTweenViewportX,
-  _eTweenViewportY, 
-  _eTweenViewportXY, 
-  _eTweenGamma, 
-  _eTweenShakeScreen, 
-  _eTweenMusicMasterVolume, 
-  _eTweenDigitalMasterVolume, 
-  _eTweenChannelVolume, 
-  _eTweenSpeechVolume, 
-  _eTweenSoundVolume, 
+  _eTweenViewportY,
+  _eTweenViewportXY,
+  _eTweenGamma,
+  _eTweenShakeScreen,
+  _eTweenMusicMasterVolume,
+  _eTweenDigitalMasterVolume,
+  _eTweenChannelVolume,
+  _eTweenSpeechVolume,
+  _eTweenSoundVolume,
   _eTweenAreaScaling
 };
 
 struct _TweenData {
   _TweenType type;
-  
+
   TweenTiming timing;
   TweenStyle style;
-  
+
   int duration;
   int frameCount;
-  
+
   short toX;
   short toY;
   short fromX;
   short fromY;
-  
+
   short extraParam1;
-  
+
   GUI* guiRef;
-  Object* objectRef;  
-  Character* characterRef;      
+  Object* objectRef;
+  Character* characterRef;
   Region* regionRef;
   Label* labelRef;
   Button* buttonRef;
@@ -352,6 +352,6 @@ struct _TweenData {
   ListBox* listBoxRef;
   Slider* sliderRef;
   InvWindow* invWindowRef;
-  
+
   import function step(float amount);
 };
