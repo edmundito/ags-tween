@@ -2,15 +2,16 @@
 //
 // Author: Edmundo Ruiz (edmundito, netmonkey)
 // Contributors: Tzach Shabtay (tzachs)
-//   Please use the messaging function in the AGS forums to contact
-//   us about problems or questions.
+//  Please use the messaging function in the AGS forums to contact
+//  us about problems or questions.
 //
 // Revision History:
-//    (See CHANGES.TXT for more detailed information)
-//    1.2, ???, Settings for default TweenTiming and TweenStyle
-//    1.1, February 17 2010, added ~30 new tweens
-//    1.0L, July 9 2009, added license
-//    1.0, June 13 2009, created
+//  (See CHANGES.TXT for more detailed information)
+//  1.2   Jun 5 2010  Better control over stopping tweens
+//                    Settings for default TweenTiming and TweenStyle
+//  1.1   Feb 17 2010 added ~30 new tweens
+//  1.0L  Jul 9 2009  added license
+//  1.0   Jun 13 2009 created
 //
 // --------
 //
@@ -71,6 +72,9 @@
 #define DEFAULT_TweenStyle eBlockTween // All Tweens Except GUI and GUI element Tweens
 #define DEFAULT_GUI_TweenStyle eBlockTween // For GUI and GUI element Tweens Only
 
+// Default TweenStopResult
+#define DEFAULT_TweenStopResult ePauseTween // The expected behavior for stopping all tweens
+
 // Settings for AGS 3 and ABOVE:
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
@@ -99,18 +103,27 @@ enum TweenStyle {
   eReverseRepeatTween,
 };
 
+enum TweenStopResult {
+  ePauseTween,
+  eResetTween,
+  eFinishTween,
+};
+
 ///////////////////////////////////////////////////////////////////////////////
-// UTILITY FUNCTIONS
+// HANDY-DANDY UTILITY FUNCTIONS
 ///////////////////////////////////////////////////////////////////////////////
 
-// Converts number of seconds to number of game loops
+/// Converts number of seconds to number of game loops. (Part of the Tween module)
 import int SecondsToLoops(float seconds);
 
+/// Waits a number of seconds. (Part of the Tween module)
+import function WaitSeconds(float seconds);
+
 ///////////////////////////////////////////////////////////////////////////////
-// TWEEENS
+// TWEENS
 ///////////////////////////////////////////////////////////////////////////////
 
-import function TweenStopAll();
+import function TweenStopAll(TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenViewportX(float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenViewportY(float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
@@ -146,17 +159,6 @@ import int TweenTransparency(this Object*, float seconds, short toTransparency, 
 import int TweenTransparency(this Character*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
 import int TweenZOrder(this GUI*, float seconds, short toZOrder, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-
-import function StopAllTweens(this GUI*);
-import function StopAllTweens(this Object*);
-import function StopAllTweens(this Character*);
-import function StopAllTweens(this Region*);
-import function StopAllTweens(this Label*);
-import function StopAllTweens(this Button*);
-import function StopAllTweens(this TextBox*);
-import function StopAllTweens(this ListBox*);
-import function StopAllTweens(this Slider*);
-import function StopAllTweens(this InvWindow*);
 
 import int TweenSize(this GUI*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSize(this Label*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -196,6 +198,17 @@ import int TweenSelectedItem(this ListBox*, float seconds, short toSelectedItem,
 
 import int TweenTopItem(this ListBox*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenTopItem(this InvWindow*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+
+import function StopAllTweens(this GUI*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Object*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Character*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Region*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Label*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Button*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this TextBox*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this ListBox*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this Slider*, TweenStopResult result=DEFAULT_TweenStopResult);
+import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_TweenStopResult);
 #endif
 #endif
 
@@ -206,18 +219,18 @@ import int TweenGUIPosition(GUI* guiRef, float seconds, short toX, short toY, Tw
 import int TweenGUITransparency(GUI* guiRef, float seconds, short toTransparency, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenGUISize(GUI* guiRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenGUIZOrder(GUI* guiRef, float seconds, short toZOrder, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForGUI(GUI* guiRef);
+import function TweenStopAllForGUI(GUI* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenObjectPosition(Object* objectRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenObjectTransparency(Object* objectRef, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenObjectImage(Object* objectRef, Object* tmpObjectRef, float seconds, short toSprite, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import function TweenStopAllForObject(Object* objectRef);
+import function TweenStopAllForObject(Object* objectRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenCharacterPosition(Character* characterRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenCharacterScaling(Character* characterRef, float seconds, short toScaling, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenCharacterTransparency(Character* characterRef, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenCharacterAnimationSpeed(Character* characterRef, float seconds, short toAnimationSpeed, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import function TweenStopAllForCharacter(Character* characterRef);
+import function TweenStopAllForCharacter(Character* characterRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenRegionLightLevel(Region* regionRef, float seconds, short toLightLevel, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenRegionTintR(Region* regionRef, float seconds, short toR, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
@@ -225,42 +238,42 @@ import int TweenRegionTintG(Region* regionRef, float seconds, short toG, TweenTi
 import int TweenRegionTintB(Region* regionRef, float seconds, short toB, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenRegionTintAmount(Region* regionRef, float seconds, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenRegionTintBlackAndWhite(Region* regionRef, float seconds, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import function TweenStopAllForRegion(Region* guiRef);
+import function TweenStopAllForRegion(Region* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenLabelSize(Label* labelRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenLabelPosition(Label* labelRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenLabelColorR(Label* labelRef, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenLabelColorG(Label* labelRef, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenLabelColorB(Label* labelRef, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForLabel(Label* guiRef);
+import function TweenStopAllForLabel(Label* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenButtonSize(Button* buttonRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenButtonPosition(Button* buttonRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenButtonColorR(Button* buttonRef, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenButtonColorG(Button* buttonRef, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenButtonColorB(Button* buttonRef, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForButton(Button* guiRef);
+import function TweenStopAllForButton(Button* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenTextBoxSize(TextBox* textBoxRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenTextBoxPosition(TextBox* textBoxRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForTextBox(TextBox* guiRef);
+import function TweenStopAllForTextBox(TextBox* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenListBoxSize(ListBox* listBoxRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenListBoxPosition(ListBox* listBoxRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenListBoxSelectedItem(ListBox* listBoxRef, float seconds, short toSelectedItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenListBoxTopItem(ListBox* listBoxRef, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForListBox(ListBox* guiRef);
+import function TweenStopAllForListBox(ListBox* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenSliderSize(Slider* sliderRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSliderPosition(Slider* sliderRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSliderValue(Slider* sliderRef, float seconds, short toValue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSliderHandleOffset(Slider* sliderRef, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForSlider(Slider* guiRef);
+import function TweenStopAllForSlider(Slider* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenInvWindowSize(InvWindow* invWindowRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenInvWindowPosition(InvWindow* invWindowRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenInvWindowTopItem(InvWindow* invWindowRef, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import function TweenStopAllForInvWindow(InvWindow* guiRef);
+import function TweenStopAllForInvWindow(InvWindow* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 #endif
 
 
