@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>AGS Tween Module 1.2 Help</title>
+<title>AGS Tween Module 1.21 Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 body, div, ul, li, pre { margin: 0; padding: 0; }
@@ -36,6 +36,7 @@ h4 { margin-bottom: 0.2em; }
 <ul>
 	<li><a href="#about">About</a></li>
 	<li><a href="#license">License</a></li>
+	<li><a href="#audio">Audio Compatibility</a></li>
 	<li><a href="#settings">Settings</a></li>
 </ul>
 
@@ -61,11 +62,6 @@ h4 { margin-bottom: 0.2em; }
 	<li><a href="#TweenViewportXY">TweenViewportXY</a></li>
 	<li><a href="#TweenGamma">TweenGamma</a></li>
 	<li><a href="#TweenShakeScreen">TweenShakeScreen</a></li>
-	<li><a href="#TweenMusicMasterVolume">TweenMusicMasterVolume</a></li>
-	<li><a href="#TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></li>
-	<li><a href="#TweenChannelVolume">TweenChannelVolume</a></li>
-	<li><a href="#TweenSpeechVolume">TweenSpeechVolume</a></li>
-	<li><a href="#TweenSoundVolume">TweenSoundVolume</a></li>
 	<li><a href="#TweenAreaScaling">TweenAreaScaling</a></li>
 	<li><a href="#TweenZOrder">TweenZOrder</a></li>
 	<li><a href="#TweenImage">TweenImage</a></li>
@@ -83,6 +79,11 @@ h4 { margin-bottom: 0.2em; }
 	<li><a href="#TweenHandleOffset">TweenHandleOffset</a></li>
 	<li><a href="#TweenSelectedItem">TweenSelectedItem</a></li>
 	<li><a href="#TweenTopItem">TweenTopItem</a></li>
+	<li><a href="#TweenSoundVolume">TweenSoundVolume</a></li>
+	<li><a href="#TweenMusicMasterVolume">TweenMusicMasterVolume</a></li>
+	<li><a href="#TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></li>
+	<li><a href="#TweenChannelVolume">TweenChannelVolume</a></li>
+	<li><a href="#TweenSpeechVolume">TweenSpeechVolume</a></li>
 </ul>
 
 </div>
@@ -91,7 +92,7 @@ h4 { margin-bottom: 0.2em; }
 
 <h1><a name="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.2 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for details)</p>
+<p>Version 1.21 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for details)</p>
 <p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
 Additional scripting by Tzach Shabtay</p>
 
@@ -122,9 +123,19 @@ netmonkey Tween Module<br/>
 tzachs Tween Module
 </p>
 
+<h2><a name="audio">Audio Compatibility</a></h2>
+
+<p>Please note that currently most of the functions for tweening music and sound effects are written with the old-style audio scripting system, which is the default
+up to AGS version 3.2.</p>
+
+<p>If you're using AGS 3.2 or later and would like to use these functions, you have to set the <em>"Enforce new-style audio scripting system"</em>
+to <strong>False</strong>. Either way, the Tween module is compatible with AGS 3.2 or later versions.
+
+<p>Better audio support will (hopefully) come in a future version.</p>
+
 <h2><a name="settings">Settings</a></h2>
 
-At the top of the script module header, there are a few constants that affect how the Tween module works:
+<p>At the top of the script module header, there are a few constants that affect how the Tween module works:</p>
 
 <pre>
 #define MAX_TWEENS 10
@@ -214,7 +225,7 @@ it started (reset).</p>
 
 <h3><a name="SecondsToLoops">SecondsToLoops</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 SecondsToLoops(float seconds);
 </pre>
 <p>Converts and returns the number of seconds into game loops.</p>
@@ -228,7 +239,7 @@ Wait(SecondsToLoops(5.0));
 
 <h3><a name="WaitSeconds">WaitSeconds</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 WaitSeconds(float seconds);
 </pre>
 <p>Waits for a number of seconds, as opposed to AGS's Wait which uses loops.</p>
@@ -378,7 +389,7 @@ TweenGUISize(gStatusline, 1.0, 50, 50);
 
 <h3><a name="TweenStopAll">TweenStopAll</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenStopAll(optional TweenStopResult)
 </pre>
 <p>Stops every single tween currently playing.</p>
@@ -418,7 +429,7 @@ TweenObjectTransparency(oBluecup, 3.0, 100);
 
 <h3><a name="TweenViewportX">TweenViewportX</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenViewportX(float seconds, short toX, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the x axis from its current location to another.</p>
@@ -432,7 +443,7 @@ TweenViewportX(3.0, 100);
 
 <h3><a name="TweenViewportY">TweenViewportY</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenViewportY(float seconds, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the y axis from its current location to another.</p>
@@ -446,7 +457,7 @@ TweenViewportY(3.0, 100);
 
 <h3><a name="TweenViewportXY">TweenViewportXY</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenViewportX(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the x axis and on the y axis from its current location to another.</p>
@@ -460,7 +471,7 @@ TweenViewportX(3.0, 100, 20);
 
 <h3><a name="TweenGamma">TweenGamma</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenGamma(float seconds, short toGamma, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the screen gamma level from its current value to another. Note that System.SupportGammaControl must return true in order for this method to have any effect. Range: 0 (black) - 200 (bright)</p>
@@ -476,7 +487,7 @@ if (System.SupportsGammaControl) {
 
 <h3><a name="TweenShakeScreen">TweenShakeScreen</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount,  short toAmount, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the shake screen amount and delay from one value to another. Range: Delay: from -2 to ... Amount: from 1 to 30.</p>
@@ -490,7 +501,7 @@ TweenShakeScreen(3.0, 2, 2, 1, 15);
 
 <h3><a name="TweenMusicMasterVolume">TweenMusicMasterVolume</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the master music volume from one value to another. Range: 1 - 100.</p>
@@ -502,65 +513,9 @@ TweenMusicMasterVolume(3.0, 100, 50);
 
 <hr />
 
-<h3><a name="TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></h3>
-<pre>
-// AGS 3.x and 2.x
-TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
-</pre>
-<p>Tweens the master digital volume from one value to another. Range: 1 - 100.</p>
-<h4>Example:</h4>
-<pre>
-TweenDigitalMasterVolume(3.0, 100, 50);
-</pre>
-<p>Will tween the digital volume from 100 to 50.</p>
-
-<hr />
-
-<h3><a name="TweenChannelVolume">TweenChannelVolume</a></h3>
-<pre>
-// AGS 3.x and 2.x
-TweenChannelVolume(float seconds, short channel, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
-</pre>
-<p>Tweens the volume for a given channel from one value to another. Range: 0 - 255.</p>
-<h4>Example:</h4>
-<pre>
-TweenChannelVolume(3.0, 1, 100, 50);
-</pre>
-<p>Will tween the volume for channel 1 from 100 to 50.</p>
-
-<hr />
-
-<h3><a name="TweenSpeechVolume">TweenSpeechVolume</a></h3>
-<pre>
-// AGS 3.x and 2.x
-TweenSpeechVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
-</pre>
-<p>Tweens the volume for speech from one value to another. Range: 0 - 255.</p>
-<h4>Example:</h4>
-<pre>
-TweenSpeechVolume(3.0, 100, 50);
-</pre>
-<p>Will tween the volume for speech from 100 to 50.</p>
-
-<hr />
-
-<h3><a name="TweenSoundVolume">TweenSoundVolume</a></h3>
-<pre>
-// AGS 3.x and 2.x
-TweenSoundVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
-</pre>
-<p>Tweens the sound effect volume from one value to another. Range: 0 - 255.</p>
-<h4>Example:</h4>
-<pre>
-TweenSoundVolume(3.0, 100, 50);
-</pre>
-<p>Will tween the sound effect volume from 100 to 50.</p>
-
-<hr />
-
 <h3><a name="TweenAreaScaling">TweenAreaScaling</a></h3>
 <pre>
-// AGS 3.x and 2.x
+// AGS 2.x and 3.x
 TweenAreaScaling(float seconds, short area, short fromMin, short toMin, short fromMax, short toMax, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the area scaling for a specific area from one min and max value to another. Range for min and max: 5 - 200.</p>
@@ -949,6 +904,65 @@ TweenInvWindowTopItem(myInventory, 1.5, 20);
 </pre>
 
 <p>Will tween the top item of the listbox and inventory window from the current value to 20.</p>
+
+<hr />
+
+<h3><a name="TweenSoundVolume">TweenSoundVolume</a></h3>
+<pre>
+// AGS 2.x and 3.x
+TweenSoundVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the sound effect volume from one value to another. Range: 0 - 255.</p>
+<h4>Example:</h4>
+<pre>
+TweenSoundVolume(3.0, 100, 50);
+</pre>
+
+<p>Will tween the sound effect volume from 100 to 50.</p>
+
+<hr />
+
+<h3><a name="TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></h3>
+<pre>
+// AGS 2.x and 3.x (without new-style audio scripting enforced)
+TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the master digital volume from one value to another. Range: 1 - 100.</p>
+<h4>Example:</h4>
+<pre>
+TweenDigitalMasterVolume(3.0, 100, 50);
+</pre>
+
+<p>Will tween the digital volume from 100 to 50.</p>
+<hr />
+
+<h3><a name="TweenChannelVolume">TweenChannelVolume</a></h3>
+<pre>
+// AGS 2.x and 3.x (without new-style audio scripting enforced)
+TweenChannelVolume(float seconds, short channel, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the volume for a given channel from one value to another. Range: 0 - 255.</p>
+<h4>Example:</h4>
+<pre>
+TweenChannelVolume(3.0, 1, 100, 50);
+</pre>
+
+<p>Will tween the volume for channel 1 from 100 to 50.</p>
+
+<hr />
+
+<h3><a name="TweenSpeechVolume">TweenSpeechVolume</a></h3>
+<pre>
+// AGS 2.x and 3.x (without new-style audio scripting enforced)
+TweenSpeechVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the volume for speech from one value to another. Range: 0 - 255.</p>
+<h4>Example:</h4>
+<pre>
+TweenSpeechVolume(3.0, 100, 50);
+</pre>
+
+<p>Will tween the volume for speech from 100 to 50.</p>
 
 <hr />
 

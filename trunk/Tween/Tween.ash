@@ -7,6 +7,7 @@
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
+//  1.21  Jun 12 2010 Compatible with AGS 3.2
 //  1.2   Jun 5 2010  Better control over stopping tweens
 //                    Settings for default TweenTiming and TweenStyle
 //  1.1   Feb 17 2010 added ~30 new tweens
@@ -131,17 +132,19 @@ import int TweenViewportXY(float seconds, short toX, short toY, TweenTiming timi
 
 import int TweenGamma(float seconds, short toGamma, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-
-import int TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenChannelVolume(float seconds, short channel, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenSpeechVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-
 import int TweenAreaScaling(float seconds, short area, short fromMin, short toMin, short fromMax, short toMax, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
-// FOR AGS 3.0 OR LATER ONLY:
+import int TweenSpeechVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+#ifndef STRICT_AUDIO
+import int TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenChannelVolume(float seconds, short channel, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+#endif
+// Sorry, no new-style audio support in AGS 3.2+ yet!
 
+
+// FOR AGS 3.0 OR LATER ONLY:
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
 import int TweenPosition(this GUI*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -213,7 +216,6 @@ import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_Tw
 #endif
 
 // FOR AGS 2.x AND LATER:
-
 #ifndef NO_VER_2_TWEENS
 import int TweenGUIPosition(GUI* guiRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenGUITransparency(GUI* guiRef, float seconds, short toTransparency, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -283,7 +285,6 @@ import function TweenStopAllForInvWindow(InvWindow* guiRef, TweenStopResult resu
 ///////////////////////////////////////////////////////////////////////////////
 // FOR INTERNAL USE BY THIS MODULE ONLY
 ///////////////////////////////////////////////////////////////////////////////
-
 enum _TweenType {
   _eTweenGUIPosition,
   _eTweenGUITransparency,
@@ -331,12 +332,14 @@ enum _TweenType {
   _eTweenViewportXY,
   _eTweenGamma,
   _eTweenShakeScreen,
+  _eTweenAreaScaling,
+  _eTweenSpeechVolume,
+#ifndef STRICT_AUDIO
   _eTweenMusicMasterVolume,
   _eTweenDigitalMasterVolume,
-  _eTweenChannelVolume,
-  _eTweenSpeechVolume,
   _eTweenSoundVolume,
-  _eTweenAreaScaling
+  _eTweenChannelVolume,
+#endif
 };
 
 struct _TweenData {
