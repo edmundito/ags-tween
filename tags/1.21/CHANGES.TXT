@@ -1,0 +1,24 @@
+Revision History
+================
+1.21 (June 12 2010)
+- Compatible with AGS 3.2. Note that support for most audio tweens only work if the "Enforce new-style audio scripting" is set to False.
+- New-style audio scripting support is coming in a future version!
+
+1.2 (June 5 2010)
+- New: You can now change the defaults for TweenTiming and TweenStyle.
+  (GUIs have their own defaults, and NOTE that as of this version GUIs are blocking by default.)
+- New: You can now set how tweens stop, whether they pause, finish, or reset (thanks to Dualnames for the inspiration!)
+- New: WaitSeconds(seconds), very handy for timing things instead of guessing number of loops with regular Wait()
+- General code cleanup, removed some redundancies
+- Better code documentation
+
+1.1 (February 17 2010)
+- Now supports virtually every function that could be tweened in AGS
+- Improved documentation formatting, and validaded by w3c as strict
+- Created this changes document :)
+
+1.0L (July 11 2009)
+- Added MIT License
+
+1.0 (June 13 2009)
+- Initial Release
