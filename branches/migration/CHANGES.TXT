@@ -1,5 +1,8 @@
 Revision History
 ================
+1.21
+- Compatible with AGS 3.2. Note that support for most audio tweens only work if the "Enforce new-style audio scripting" is set to False.
+- New-style audio scripting support is coming in a future version!
 
 1.2 (June 5 2010)
 - New: You can now change the defaults for TweenTiming and TweenStyle.
