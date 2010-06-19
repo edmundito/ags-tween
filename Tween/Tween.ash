@@ -7,6 +7,7 @@
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
+//  1.22  Jun 19 2010 Compatible with AGS 2.72 and 3.0 again!
 //  1.21  Jun 12 2010 Compatible with AGS 3.2
 //  1.2   Jun 5 2010  Better control over stopping tweens
 //                    Settings for default TweenTiming and TweenStyle
@@ -190,12 +191,8 @@ import int TweenColorB(this Label*, float seconds, short toB, TweenTiming timing
 import int TweenColorR(this Button*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenColorG(this Button*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenColorB(this Button*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorR(this TextBox*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorG(this TextBox*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorB(this TextBox*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenValue(this Slider*, float seconds, short toValue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenSelectedItem(this ListBox*, float seconds, short toSelectedItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
@@ -212,6 +209,13 @@ import function StopAllTweens(this TextBox*, TweenStopResult result=DEFAULT_Twee
 import function StopAllTweens(this ListBox*, TweenStopResult result=DEFAULT_TweenStopResult);
 import function StopAllTweens(this Slider*, TweenStopResult result=DEFAULT_TweenStopResult);
 import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_TweenStopResult);
+#endif
+#ifver 3.1
+import int TweenColorR(this TextBox*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenColorG(this TextBox*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenColorB(this TextBox*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+
+import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 #endif
 #endif
 
@@ -269,7 +273,6 @@ import function TweenStopAllForListBox(ListBox* guiRef, TweenStopResult result=D
 import int TweenSliderSize(Slider* sliderRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSliderPosition(Slider* sliderRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSliderValue(Slider* sliderRef, float seconds, short toValue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSliderHandleOffset(Slider* sliderRef, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import function TweenStopAllForSlider(Slider* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 
 import int TweenInvWindowSize(InvWindow* invWindowRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -313,13 +316,9 @@ enum _TweenType {
   _eTweenButtonColorB,
   _eTweenTextBoxPosition,
   _eTweenTextBoxSize,
-  _eTweenTextBoxColorR,
-  _eTweenTextBoxColorG,
-  _eTweenTextBoxColorB,
   _eTweenSliderPosition,
   _eTweenSliderSize,
   _eTweenSliderValue,
-  _eTweenSliderHandleOffset,
   _eTweenListBoxPosition,
   _eTweenListBoxSize,
   _eTweenListBoxSelectedItem,
@@ -334,6 +333,14 @@ enum _TweenType {
   _eTweenShakeScreen,
   _eTweenAreaScaling,
   _eTweenSpeechVolume,
+#ifdef AGS_SUPPORTS_IFVER
+#ifver 3.1
+  _eTweenTextBoxColorR,
+  _eTweenTextBoxColorG,
+  _eTweenTextBoxColorB,
+  _eTweenSliderHandleOffset,
+#endif
+#endif
 #ifndef STRICT_AUDIO
   _eTweenMusicMasterVolume,
   _eTweenDigitalMasterVolume,
