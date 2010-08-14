@@ -1,0 +1,6 @@
+#summary List of games that use the ags-tween module. Feel free to add yours!
+#labels Featured
+
+Here's a list of games that use the tween module. Feel free to edit this page and add your game as well. Please add them in alphabetical order.
+
+ * [http://www.losmunditos.com/backdoorman Back Door Man] (2009)
