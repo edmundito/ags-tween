@@ -1,5 +1,8 @@
 Revision History
 ================
+1.22 (August 14 2010)
+- Restored compatibility with AGS 2.72 and 3.0!
+- Added optional GetColorFromRGB(red, green, blue) function to 2.72. It can be exposed by uncommenting it in the script header.
 1.21 (June 12 2010)
 - Compatible with AGS 3.2. Note that support for most audio tweens only work if the "Enforce new-style audio scripting" is set to False.
 - New-style audio scripting support is coming in a future version!

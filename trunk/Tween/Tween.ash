@@ -7,7 +7,7 @@
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
-//  1.22  Jun 19 2010 Compatible with AGS 2.72 and 3.0 again!
+//  1.22  Aug 14 2010 Compatible with AGS 2.72 and 3.0 again!
 //  1.21  Jun 12 2010 Compatible with AGS 3.2
 //  1.2   Jun 5 2010  Better control over stopping tweens
 //                    Settings for default TweenTiming and TweenStyle
@@ -19,7 +19,7 @@
 //
 // License (MIT):
 //
-// Copyright (c) 2009 Edmundo Ruiz (http://www.edmundito.com/)
+// Copyright (c) 2009-2010 Edmundo Ruiz (http://www.edmundito.com/)
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -45,7 +45,7 @@
 // --------
 //
 // That said, you are most welcome but not obliged to give us
-// credit in your game or the AGS Games Page such as:
+// credit in your game or the AGS Games Page as such:
 //
 // Game:
 // Special Thanks
@@ -120,6 +120,10 @@ import int SecondsToLoops(float seconds);
 
 /// Waits a number of seconds. (Part of the Tween module)
 import function WaitSeconds(float seconds);
+
+// Uncomment if you would like to use this function in AGS 2.72
+/// Gets the AGS Colour Number for the specified RGB color. (Part of the Tween module)
+//import int GetColorFromRGB(int red, int green, int blue);
 
 ///////////////////////////////////////////////////////////////////////////////
 // TWEENS
