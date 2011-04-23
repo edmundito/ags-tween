@@ -1,5 +1,11 @@
 Revision History
 ================
+1.5 (2011)
+- Changed the way tween refers to objects internally, costing less memory per tween object and simplifying the code
+- Tween position, size, and stop functions for GUI Controls have been unified into one
+- Deprecated GUI Control functions can be enabled by commenting out the TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED define
+- Renamed the NO_VER_2_TWEENS define to AGS_2_COMPATIBLE_TWEENS_DISABLED
+
 1.22 (August 14 2010)
 - Restored compatibility with AGS 2.72 and 3.0!
 - Added optional GetColorFromRGB(red, green, blue) function to 2.72. It can be exposed by uncommenting it in the script header.
