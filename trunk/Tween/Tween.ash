@@ -161,15 +161,16 @@ import int TweenChannelVolume(float seconds, int channel, short fromVolume, shor
 // FOR AGS 3.0 OR LATER ONLY:
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
-import int TweenPosition(this GUI*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenPosition(this Character*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenPosition(this Object*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this Label*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this Button*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this TextBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this ListBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this Slider*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this InvWindow*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenPosition(this GUI*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this GUIControl*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Label*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Button*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this TextBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this ListBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Slider*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this InvWindow*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenTransparency(this GUI*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenTransparency(this Object*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
@@ -178,6 +179,7 @@ import int TweenTransparency(this Character*, float seconds, short toTransparenc
 import int TweenZOrder(this GUI*, float seconds, short toZOrder, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenSize(this GUI*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this GUIControl*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSize(this Label*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSize(this Button*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenSize(this TextBox*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -225,7 +227,7 @@ import function StopAllTweens(this Slider*, TweenStopResult result=DEFAULT_Tween
 import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_TweenStopResult);
 #endif
 #ifver 3.1
-// These Apply to AGS 3.1 and above
+// These apply to AGS 3.1 and above
 import int TweenColorR(this TextBox*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenColorG(this TextBox*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenColorB(this TextBox*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -233,7 +235,9 @@ import int TweenColorB(this TextBox*, float seconds, short toB, TweenTiming timi
 import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 #endif
 #ifdef STRICT_AUDIO
-// These Apply to AGS 3.2 and above when the Strict Audio setting is enabled
+// These apply to AGS 3.2 and above when the Strict Audio setting is enabled
+import int TweenMasterVolume(float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+
 import int TweenPanning(this AudioChannel*,  float seconds, short toPanning, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenVolume(this AudioChannel*,  float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenRoomLocation(this AudioChannel*,  float seconds, short toX, short toY, short fromX, short fromY, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
@@ -289,6 +293,7 @@ import int TweenSliderValue(Slider* sliderRef, float seconds, short toValue, Twe
 import int TweenInvWindowTopItem(InvWindow* invWindowRef, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 #ifndef TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED
+// These functions have been abandoned after tween 1.2
 import int TweenButtonSize(Button* buttonRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenButtonPosition(Button* buttonRef, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenLabelSize(Label* labelRef, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -308,7 +313,6 @@ import function TweenStopAllForListBox(ListBox* guiRef, TweenStopResult result=D
 import function TweenStopAllForSlider(Slider* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 import function TweenStopAllForInvWindow(InvWindow* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 #endif
-
 #endif
 
 
@@ -380,7 +384,7 @@ enum _TweenType {
   _eTweenChannelVolume,
 #endif
 #ifdef STRICT_AUDIO
-  _eTweenSystemVolume, 
+  _eTweenMasterVolume, 
   _eTweenAudioChannelVolume,  
   _eTweenAudioChannelRoomLocation,
   _eTweenAudioChannelPanning, 
