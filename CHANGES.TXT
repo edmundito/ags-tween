@@ -5,6 +5,11 @@ Revision History
 - Tween position, size, and stop functions for GUI Controls have been unified into one
 - Deprecated GUI Control functions can be enabled by commenting out the TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED define
 - Renamed the NO_VER_2_TWEENS define to AGS_2_COMPATIBLE_TWEENS_DISABLED
+- Migrated test code to AGS 3.2.1
+- Added new Strict audio tweens in AGS 3.2
+- Added support for tweening the System.Volume in AGS 3.2
+- Added custom default timing and styles for Audio Tweens
+- Increased max number of simultaneous tweens from 10 to 16
 
 1.22 (August 14 2010)
 - Restored compatibility with AGS 2.72 and 3.0!
