@@ -6,7 +6,7 @@
       <GameName>Tween</GameName>
       <UniqueID>5292578</UniqueID>
       <GUIDAsString>{55f183fa-23ea-4173-8402-2762f8778aff}</GUIDAsString>
-      <ColorDepth>HighColor</ColorDepth>
+      <ColorDepth>TrueColor</ColorDepth>
       <Resolution>R320x200</Resolution>
       <GraphicsDriver>DX5</GraphicsDriver>
       <CompressSprites>False</CompressSprites>

@@ -1,13 +1,12 @@
 // Script header for module 'Tween'
 //
-// Author: Edmundo Ruiz (edmundito, netmonkey)
-// Contributors: Tzach Shabtay (tzachs)
+// Authors: Edmundo Ruiz (edmundito [netmonkey]) and Tzach Shabtay (tzachs)
 //  Please use the messaging function in the AGS forums to contact
 //  us about problems or questions.
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
-//  1.5   2011
+//  1.5   Feb 2012
 //  1.22  Aug 14 2010 Compatible with AGS 2.72 and 3.0 again!
 //  1.21  Jun 12 2010 Compatible with AGS 3.2
 //  1.2   Jun 5 2010  Better control over stopping tweens
@@ -56,7 +55,7 @@
 // OR if you prefer something along these lines:
 // Tween Module by Edmundo Ruiz and Tzach Shabtay
 //
-// In the AGS Games page:
+// AND/OR In the AGS Games page:
 // netmonkey Tween Module
 // tzachs Tween Module
 
@@ -90,7 +89,7 @@
 // Comment out the following line if you would like to support AGS 2.x style Tween function calls in AGS 3.0+:
 #define AGS_2_COMPATIBLE_TWEENS_DISABLED
 
-// Comment out the following line if you want to support Tween 1.2 deprecated functions:
+// Comment out the following line if you want to support Tween 1.2's deprecated functions:
 #define TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED
 
 #endif
@@ -130,6 +129,9 @@ import int SecondsToLoops(float seconds);
 /// Waits a number of seconds. (Part of the Tween module)
 import function WaitSeconds(float seconds);
 
+/// Gets the distance between two points. (Part of the Tween module)
+import float GetDistance(int fromX, int fromY, int toX, int toY);
+
 // Uncomment if you would like to use this function in AGS 2.72
 /// Gets the AGS Colour Number for the specified RGB color. (Part of the Tween module)
 //import int GetColorFromRGB(int red, int green, int blue);
@@ -138,11 +140,16 @@ import function WaitSeconds(float seconds);
 // TWEENS
 ///////////////////////////////////////////////////////////////////////////////
 
+/// Stops all Tweens that are currently running.
 import function TweenStopAll(TweenStopResult result=DEFAULT_TweenStopResult);
+
+/// Waits until all non-looping Tweens are finished playing.
+import function WaitForTweensToStop();
 
 import int TweenViewportX(float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenViewportY(float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportXY(float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportPosition(float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportPositionByDistance(float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
 import int TweenGamma(float seconds, short toGamma, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
@@ -155,7 +162,6 @@ import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVol
 import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenChannelVolume(float seconds, int channel, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 #endif
-// Sorry, no new-style audio support in AGS 3.2+ yet!
 
 
 // FOR AGS 3.0 OR LATER ONLY:
@@ -312,6 +318,7 @@ import function TweenStopAllForTextBox(TextBox* guiRef, TweenStopResult result=D
 import function TweenStopAllForListBox(ListBox* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 import function TweenStopAllForSlider(Slider* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
 import function TweenStopAllForInvWindow(InvWindow* guiRef, TweenStopResult result=DEFAULT_TweenStopResult);
+#define TweenViewportXY TweenViewportPosition
 #endif
 #endif
 
