@@ -2,11 +2,11 @@ Revision History
 ================
 1.5 (2012)
 - Added WaitForTweensToStop which allows waiting for all non-looping tweens to be done.
-- Added ability to tween positions posititions based on distance instead of time
+- Added ability to tween positions based on distance instead of time
 - Added utility function GetDistance(fromX, fromY, toX, toY)
-- Changed the way tween refers to objects internally, costing less memory per tween object and simplifying the code
+- Changed the way the module refers to objects internally, costing less memory per tween object and simplifying the code
 - Tween position, size, and stop functions for GUI Controls have been unified into one
-- Deprecated GUI Control functions can be enabled by commenting out the TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED define
+- Deprecated GUI Control Specific functions for AGS 2.x can be enabled by commenting out the TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED define
 - Renamed TweenViewportXY to TweenViewportPosition for consistency
 -- Can be reenabled with the if TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED is commented
 - Renamed the NO_VER_2_TWEENS define to AGS_2_COMPATIBLE_TWEENS_DISABLED
@@ -14,7 +14,7 @@ Revision History
 - Added new Strict audio tweens in AGS 3.2
 - Added support for tweening the System.Volume in AGS 3.2
 - Added custom default timing and styles for Audio Tweens
-- Increased max number of simultaneous tweens from 10 to 16
+- Increased default max number of simultaneous tweens from 10 to 16
 
 1.22 (August 14 2010)
 - Restored compatibility with AGS 2.72 and 3.0!
