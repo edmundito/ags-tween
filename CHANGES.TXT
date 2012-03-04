@@ -2,7 +2,7 @@ Revision History
 ================
 1.5 (2012)
 - Added WaitForTweensToStop which allows waiting for all non-looping tweens to be done.
-- Added ability to tween positions based on distance instead of time
+- Added ability to tween positions based on speed instead of time
 - Added utility function GetDistance(fromX, fromY, toX, toY)
 - Changed the way the module refers to objects internally, costing less memory per tween object and simplifying the code
 - Tween position, size, and stop functions for GUI Controls have been unified into one
@@ -14,6 +14,7 @@ Revision History
 - Added new Strict audio tweens in AGS 3.2
 - Added support for tweening the System.Volume in AGS 3.2
 - Added custom default timing and styles for Audio Tweens
+- eReverseRepeatTween now reverses the timing, too!
 - Increased default max number of simultaneous tweens from 10 to 16
 
 1.22 (August 14 2010)
