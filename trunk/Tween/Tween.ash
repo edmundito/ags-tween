@@ -6,7 +6,7 @@
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
-//  1.5   Feb 2012    Added support for 3.2+ strict audio
+//  1.5   Mar 4 2012  Added support for 3.2+ strict audio
 //                    Added Position tweens by speed
 //                    Various GUI Control tweens have been merged
 //                    Internal module cleanup and improvements
@@ -258,7 +258,7 @@ import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenT
 #endif
 #ifdef STRICT_AUDIO
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
-import int TweenMasterVolume(float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenSystemVolume(float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 
 import int TweenPanning(this AudioChannel*,  float seconds, short toPanning, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenVolume(this AudioChannel*,  float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
@@ -411,7 +411,7 @@ enum _TweenType {
   _eTweenChannelVolume,
 #endif
 #ifdef STRICT_AUDIO
-  _eTweenMasterVolume, 
+  _eTweenSystemVolume, 
   _eTweenAudioChannelVolume,  
   _eTweenAudioChannelRoomLocation,
   _eTweenAudioChannelPanning, 
