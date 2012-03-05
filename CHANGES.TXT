@@ -10,7 +10,7 @@ Revision History
 - Renamed TweenViewportXY to TweenViewportPosition for consistency
 -- Can be reenabled with the if TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED is commented
 - Renamed the NO_VER_2_TWEENS define to AGS_2_COMPATIBLE_TWEENS_DISABLED
-- Migrated test code to AGS 3.2.1
+- Migrated demo code to AGS 3.2.1
 - Added new Strict audio tweens in AGS 3.2
 - Added support for tweening the System.Volume in AGS 3.2
 - Added custom default timing and styles for Audio Tweens

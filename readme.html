@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<title>AGS Tween Module 1.22 Help</title>
+<title>AGS Tween Module 1.5 Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 body, div, ul, li, pre { margin: 0; padding: 0; }
@@ -18,11 +18,12 @@ ul { padding-left: 1.5em; }
 h4 { margin-bottom: 0.2em; }
 #container { width: 100%; height: 100%; position: absolute; }
 #nav {
-	width: 16.5em; height: 100%; padding: 0 .5em;
+	width: 23.5em; height: 100%; padding: 0 .5em;
 	position: fixed; overflow: auto;  top: 0; left: 0;
 	background: white; border-right: 1px solid #CCC;
 }
-#content { margin-left: 17.5em; padding: 0 .5em; overflow: auto; height: 100%; }
+#nav ul { margin-bottom: 1em; }
+#content { margin-left: 24.5em; padding: 0 .5em; overflow: auto; height: 100%; }
 #content p { width: 42em; }
 #content h4 { font-weight: normal; margin-bottom: 0.2em; font-size: 0.9em; color: #f00; }
 </style>	
@@ -36,7 +37,6 @@ h4 { margin-bottom: 0.2em; }
 <ul>
 	<li><a href="#about">About</a></li>
 	<li><a href="#license">License</a></li>
-	<li><a href="#audio">Audio Compatibility</a></li>
 	<li><a href="#settings">Settings</a></li>
 </ul>
 
@@ -49,10 +49,13 @@ h4 { margin-bottom: 0.2em; }
 
 <h4>Functions</h4>
 <ul>
+	<li><a href="#GetDistance">GetDistance</a> (new)</li>
 	<li><a href="#SecondsToLoops">SecondsToLoops</a></li>
 	<li><a href="#WaitSeconds">WaitSeconds</a></li>
+	<li><a href="#WaitForTweensToStop">WaitForTweensToStop</a> (new)</li>
 	<li><a href="#StopAllTweens">StopAllTweens</a></li>
 	<li><a href="#TweenPosition">TweenPosition</a></li>
+	<li><a href="#TweenPositionBySpeed">TweenPositionBySpeed</a> (new)</li>
 	<li><a href="#TweenScaling">TweenScaling</a></li>
 	<li><a href="#TweenSize">TweenSize</a></li>
 	<li><a href="#TweenStopAll">TweenStopAll</a></li>
@@ -84,74 +87,76 @@ h4 { margin-bottom: 0.2em; }
 	<li><a href="#TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></li>
 	<li><a href="#TweenChannelVolume">TweenChannelVolume</a></li>
 	<li><a href="#TweenSpeechVolume">TweenSpeechVolume</a></li>
+	<li><a href="#TweenSystemVolume">TweenSystemVolume</a> (new)</li>
+	<li><a href="#AudioChannel.TweenPanning">AudioChannel.TweenPanning</a> (new)</li>
+	<li><a href="#AudioChannel.TweenVolume">AudioChannel.TweenVolume</a> (new)</li>
+	<li><a href="#AudioChannel.TweenRoomLocation">AudioChannel.TweenRoomLocation</a> (new)</li>
+
 </ul>
 
 </div>
 
 <div id="content">
 
-<h1><a name="about"></a>Tween Module</h1>
+<h1><a id="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.22 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for details)</p>
+<p>Version 1.5 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for version details)</p>
 <p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
 Additional scripting by Tzach Shabtay</p>
 
-<p>This module can be used to create programatic animations.
-It supports most of the ags systems. It allows these
-effects to be  blocking, non blocking, or loop them, and it has
+<p>This module can be used to create programatic "animations".
+It supports most of the AGS systems. It allows these
+effects to be blocking, non blocking, or loop them, and it has
 acceleration/deceleration timing functions.</p>
 
 <p>Note that the script syntax differs a bit between AGS 3.x and AGS 2.x,
 which will be noted in this documentation. You can also make the AGS 2.x syntax also available in AGS 3.x; check out
 the <a href="#settings">Settings</a> section for more info.</p>
 
-<h2><a name="license"></a>License</h2>
+<h2><a id="license"></a>License</h2>
 
-<p>This module is distributed with the very liberal <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
+<p>This module is distributed under the very liberal <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.</p>
 
-<p>That said, you are most welcome but not obliged to give us credit in your game as:</p>
+<p>That said, you are welcome but not obliged to give us credit in your game as:</p>
 
-<p>
+<p><em>
 <strong>Special Thanks</strong><br/>
 Edmundo Ruiz<br/>
 Tzach Shabtay
-</p>
+</em></p>
+
+<p>OR if you prefer something along these lines:</p>
+<p><em>Tween Module by Edmundo Ruiz and Tzach Shabtay</em></p>
 
 <p>And in the AGS Games database:</p>
-<p>
+<p><em>
 netmonkey Tween Module<br/>
 tzachs Tween Module
-</p>
+</em></p>
 
-<h2><a name="audio">Audio Compatibility</a></h2>
-
-<p>Please note that currently most of the functions for tweening music and sound effects are written with the old-style audio scripting system, which is the default
-up to AGS version 3.2.</p>
-
-<p>If you're using AGS 3.2 or later and would like to use these functions, you have to set the <em>"Enforce new-style audio scripting system"</em>
-to <strong>False</strong>. Either way, the Tween module is compatible with AGS 3.2 or later versions.
-
-<p>Better audio support will (hopefully) come in a future version.</p>
-
-<h2><a name="settings">Settings</a></h2>
+<h2><a id="settings">Settings</a></h2>
 
 <p>At the top of the script module header, there are a few constants that affect how the Tween module works:</p>
 
 <pre>
-#define MAX_TWEENS 10
+#define MAX_TWEENS 16
 
 #define DEFAULT_TweenTiming eLinearTween
 #define DEFAULT_GUI_TweenTiming eLinearTween
+#define DEFAULT_Audio_TweenTiming eLinearTween
 
 #define DEFAULT_TweenStyle eBlockTween
 #define DEFAULT_GUI_TweenStyle eBlockTween
+#define DEFAULT_Audio_TweenStyle eNoBlockTween
 
 #define DEFAULT_TweenStopResult ePauseTween
 
 #ifdef AGS_SUPPORTS_IFVER
 #ifver 3.0
 
-#define NO_VER_2_TWEENS 
+#define AGS_2_COMPATIBLE_TWEENS_DISABLED
+
+#define TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED 
 
 #endif
 #endif
@@ -163,10 +168,13 @@ to <strong>False</strong>. Either way, the Tween module is compatible with AGS 3
 	<li><strong>MAX_TWEENS</strong> is the number of simultaneous tweens that can be played in the game. Note that increasing this number may slow down your game, so make sure you do it if you really need to.</li>
 	<li><strong>DEFAULT_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the Tween functions, except for GUI-Related tweens.</li>
 	<li><strong>DEFAULT_GUI_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the GUI-related Tween functions.</li>
+	<li><strong>DEFAULT_Audio_TweenTiming</strong> changes the default value for the optional <a href="#TweenTiming">TweenTiming</a> in all the Audio-related Tween functions.</li>
 	<li><strong>DEFAULT_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the Tween functions, except for GUI-Related tweens.</li>
 	<li><strong>DEFAULT_GUI_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the GUI-related Tween functions.</li>
+	<li><strong>DEFAULT_Audio_TweenStyle</strong> changes the default value for the optional <a href="#TweenStyle">TweenStyle</a> in all the Audio-related Tween functions.</li>
 	<li><strong>DEFAULT_TweenStopResult</strong> changes the default value for the optional <a href="#TweenStopResult">TweenStopResult</a> in all the Tween stop functions.</li>
-	<li><strong>NO_VER_2_TWEENS</strong> Only available in AGS 3.0 and above, it turns off the 2.0 based Tween function syntax. If you're migrating Tween code from a game created in 2.0, you can comment this line out and it will work!</li>
+	<li><strong>AGS_2_COMPATIBLE_TWEENS_DISABLED</strong> Only available in AGS 3.0 and above, it turns off the 2.0 based Tween function syntax. If you're migrating Tween code from a game created in AGS 2, you can comment this line out and tweens will work again!</li>
+	<li><strong>TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED</strong> This disables pre-1.5 Tween functions for AGS 2 that were made redundant with changes in Tween 1.5. If you are updating the module and use some of these functions (all of them related to GUI controls), then you can comment this line and they will be available again.</li>
 </ul>
 
 <p>GUI-related objects have been specifically chosen to have their own TweenTiming and TweenStyle setting because very often
@@ -174,9 +182,13 @@ GUIs can have a more consistent and graceful transition animations as well as fr
 it's much nicer to move the user interface around without blocking the user. This, however, would require more clever scripting and it
 may be a bit more advanced for beginning AGS scripters.</p>
 
+<p>Audio-related tweens have their own TweenTiming and TweenStyle by default they should behave a little different from all visual objects when tweening.
+It's a lot nicer if audio-related tweens don't block the game, for example.
+</p>
+
 <h2>Enumerated types</h2>
 
-<h3><a name="TweenTiming">TweenTiming</a></h3>
+<h3><a id="TweenTiming">TweenTiming</a></h3>
 <pre>
 enum TweenTiming {
   eLinearTween,
@@ -192,7 +204,7 @@ or both accelerates at start and decelerates at end.</p>
 
 <hr />
 
-<h3><a name="TweenStyle">TweenStyle</a></h3>
+<h3><a id="TweenStyle">TweenStyle</a></h3>
 <pre>
 enum TweenStyle {
   eBlockTween, 
@@ -207,7 +219,7 @@ the direction of the tween).</p>
 
 <hr />
 
-<h3><a name="TweenStopResult">TweenStopResult</a></h3>
+<h3><a id="TweenStopResult">TweenStopResult</a></h3>
 <pre>
 enum TweenStopResult {
   ePauseTween, 
@@ -223,7 +235,21 @@ it started (reset).</p>
 
 <h2>Functions</h2>
 
-<h3><a name="SecondsToLoops">SecondsToLoops</a></h3>
+<h3><a id="GetDistance">GetDistance</a> (new)</h3>
+<pre>
+// AGS 2.x and 3.x
+GetDistance(int fromX, int fromY, int toX, int toY);
+</pre>
+<p>Returns the distance between two points as an integet.</p>
+<h4>Example:</h4>
+<pre>
+int distanceBetweenEgoAndBluecup = GetDistance(cEgo.X, cEgo.Y, oBluecup.X, oBluecup.Y);
+</pre>
+<p>Will return the distance between the Ego character and the Bluecup object.</p>
+
+<hr />
+
+<h3><a id="SecondsToLoops">SecondsToLoops</a></h3>
 <pre>
 // AGS 2.x and 3.x
 SecondsToLoops(float seconds);
@@ -237,7 +263,7 @@ Wait(SecondsToLoops(5.0));
 
 <hr />
 
-<h3><a name="WaitSeconds">WaitSeconds</a></h3>
+<h3><a id="WaitSeconds">WaitSeconds</a></h3>
 <pre>
 // AGS 2.x and 3.x
 WaitSeconds(float seconds);
@@ -251,7 +277,24 @@ WaitSeconds(5.0);
 
 <hr />
 
-<h3><a name="StopAllTweens">StopAllTweens</a></h3>
+<h3><a id="WaitForTweensToStop">WaitForTweensToStop</a> (new)</h3>
+<pre>
+// AGS 2.x and 3.x
+WaitForTweensToStop();
+</pre>
+<p>Waits for all currently playing non-repeat Tweens to stop.</p>
+<h4>Example:</h4>
+<pre>
+cEgo.TweenPosition(5.0, 320, 240, eLinearTween, eNoBlockTween);
+oBluecup.TweenTransparency(2.0, 100, eLinearTween, eNoBlockTween);
+gStatusBar.TweenSize(1.0, 100, 100, eLinearTween, eNoBlockTween);
+WaitForTweensToStop();
+</pre>
+<p>Will wait until cEgo stops tweening because it has the longest lasting tween.</p>
+
+<hr />
+
+<h3><a id="StopAllTweens">StopAllTweens</a></h3>
 <pre>
 // AGS 3.x
 Character.StopAllTweens(optional TweenStopResult)
@@ -263,6 +306,9 @@ TextBox.StopAllTweens(optional TweenStopResult)
 ListBox.StopAllTweens(optional TweenStopResult)
 Slider.StopAllTweens(optional TweenStopResult)
 InvWindow.StopAllTweens(optional TweenStopResult)
+
+// AGS 3.2+ (STRICT_AUDIO only)
+AudioChannel.StopAllTweens(optional TweenStopResult)
 
 // AGS 2.x
 TweenStopAllForCharacter(Character* character, optional TweenStopResult)
@@ -293,7 +339,7 @@ TweenStopAllForObject(oBluecup);
 
 <hr />
 
-<h3><a name="TweenPosition">TweenPosition</a></h3>
+<h3><a id="TweenPosition">TweenPosition</a></h3>
 <pre>
 // AGS 3.x
 Character.TweenPosition(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
@@ -331,7 +377,46 @@ TweenCharacterPosition(cEgo, 2.5, 100, 100);
 
 <hr />
 
-<h3><a name="TweenScaling">TweenScaling</a></h3>
+<h3><a id="TweenPositionBySpeed">TweenPositionBySpeed</a> (new)</h3>
+<pre>
+// AGS 3.x
+Character.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+GUI.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Object.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Label.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Button.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TextBox.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+ListBox.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+Slider.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+InvWindow.TweenPositionBySpeed(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+
+// AGS 2.x
+TweenCharacterPositionBySpeed(Character* character, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenGUIPositionBySpeed(GUI* gui, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenObjectPositionBySpeed(Object* object, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenLabelPositionBySpeed(Label* label, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenButtonPositionBySpeed(Button* button, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenTextBoxPositionBySpeed(TextBox* textBox, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenListBoxPositionBySpeed(ListBox* listBox, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenSliderPositionBySpeed(Slider* slider, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenInvWindowPositionBySpeed(InvWindow* invWindow, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+</pre>
+<p>Tweens the position of a character, GUI, object, etc. from its current position to another based on the givens speed. 
+	The duration is calculated based on the distance between the start position and the end position of the object.</p>
+<p>Same as TweenPosition, it returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
+<h4>Example:</h4>
+<pre>
+// AGS 3.x
+cEgo.TweenPositionBySpeed(2.5, 100, 100);
+
+// AGS 2.x
+TweenCharacterPositionBySpeed(cEgo, 2.5, 100, 100);
+</pre>
+<p>Will tween the position of the character from its current position to x 100, y 100 by 2.5 pixels per second.</p>
+
+<hr />
+
+<h3><a id="TweenScaling">TweenScaling</a></h3>
 <pre>
 // AGS 3.x
 Character.TweenScaling(float seconds, short toScale, optional TweenTiming, optional TweenStyle)
@@ -353,7 +438,7 @@ TweenCharacterScaling(cEgo, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenSize">TweenSize</a></h3>
+<h3><a id="TweenSize">TweenSize</a></h3>
 <pre>
 // AGS 3.x
 GUI.TweenSize(float seconds, short toWidth, short toHeight, optional TweenTiming, optional TweenStyle)
@@ -387,7 +472,7 @@ TweenGUISize(gStatusline, 1.0, 50, 50);
 
 <hr />
 
-<h3><a name="TweenStopAll">TweenStopAll</a></h3>
+<h3><a id="TweenStopAll">TweenStopAll</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenStopAll(optional TweenStopResult)
@@ -401,7 +486,7 @@ TweenStopAll();
 
 <hr />
 
-<h3><a name="TweenTransparency">TweenTransparency</a></h3>
+<h3><a id="TweenTransparency">TweenTransparency</a></h3>
 <pre>
 // AGS 3.x
 Character.TweenTransparency(float seconds, short toTransparency, optional TweenTiming, optional TweenStyle)
@@ -427,7 +512,7 @@ TweenObjectTransparency(oBluecup, 3.0, 100);
 
 <hr />
 
-<h3><a name="TweenViewportX">TweenViewportX</a></h3>
+<h3><a id="TweenViewportX">TweenViewportX</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenViewportX(float seconds, short toX, optional TweenTiming, optional TweenStyle);
@@ -441,7 +526,7 @@ TweenViewportX(3.0, 100);
 
 <hr />
 
-<h3><a name="TweenViewportY">TweenViewportY</a></h3>
+<h3><a id="TweenViewportY">TweenViewportY</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenViewportY(float seconds, short toY, optional TweenTiming, optional TweenStyle);
@@ -455,7 +540,7 @@ TweenViewportY(3.0, 100);
 
 <hr />
 
-<h3><a name="TweenViewportXY">TweenViewportXY</a></h3>
+<h3><a id="TweenViewportXY">TweenViewportXY</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenViewportX(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
@@ -469,7 +554,7 @@ TweenViewportX(3.0, 100, 20);
 
 <hr />
 
-<h3><a name="TweenGamma">TweenGamma</a></h3>
+<h3><a id="TweenGamma">TweenGamma</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenGamma(float seconds, short toGamma, optional TweenTiming, optional TweenStyle);
@@ -485,7 +570,7 @@ if (System.SupportsGammaControl) {
 
 <hr />
 
-<h3><a name="TweenShakeScreen">TweenShakeScreen</a></h3>
+<h3><a id="TweenShakeScreen">TweenShakeScreen</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount,  short toAmount, optional TweenTiming, optional TweenStyle);
@@ -499,21 +584,7 @@ TweenShakeScreen(3.0, 2, 2, 1, 15);
 
 <hr />
 
-<h3><a name="TweenMusicMasterVolume">TweenMusicMasterVolume</a></h3>
-<pre>
-// AGS 2.x and 3.x
-TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
-</pre>
-<p>Tweens the master music volume from one value to another. Range: 1 - 100.</p>
-<h4>Example:</h4>
-<pre>
-TweenMusicMasterVolume(3.0, 100, 50);
-</pre>
-<p>Will tween the music volume from 100 to 50.</p>
-
-<hr />
-
-<h3><a name="TweenAreaScaling">TweenAreaScaling</a></h3>
+<h3><a id="TweenAreaScaling">TweenAreaScaling</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenAreaScaling(float seconds, short area, short fromMin, short toMin, short fromMax, short toMax, optional TweenTiming, optional TweenStyle);
@@ -527,7 +598,7 @@ TweenAreaScaling(3.0, 1, 50, 100, 100, 200);
 
 <hr />
 
-<h3><a name="TweenImage">TweenImage</a></h3>
+<h3><a id="TweenImage">TweenImage</a></h3>
 <pre>
 // AGS 3.x
 Object.TweenImage(Object* tmpObjectRef, float seconds,  short toSprite,  optional TweenTiming, optional TweenStyle);
@@ -550,7 +621,7 @@ TweenObjectImage(oBlueCup, oTmpObject, 1.5, 167);
 
 <hr />
 
-<h3><a name="TweenAnimationSpeed">TweenAnimationSpeed</a></h3>
+<h3><a id="TweenAnimationSpeed">TweenAnimationSpeed</a></h3>
 <pre>
 // AGS 3.x
 Character.TweenAnimationSpeed(float seconds, short toAnimationSpeed, optional TweenTiming, optional TweenStyle);
@@ -571,7 +642,7 @@ TweenCharacterAnimationSpeed(cEgo, 1.5, -100);
 
 <hr />
 
-<h3><a name="TweenZOrder">TweenZOrder</a></h3>
+<h3><a id="TweenZOrder">TweenZOrder</a></h3>
 <pre>
 // AGS 3.x
 GUI.TweenZOrder(GUI* guiRef, float seconds, short toZOrder, optional TweenTiming, optional TweenStyle);
@@ -592,7 +663,7 @@ TweenGUIZOrder(gStatusLine, 1.5, 100);
 
 <hr />
 
-<h3><a name="TweenLightLevel">TweenLightLevel</a></h3>
+<h3><a id="TweenLightLevel">TweenLightLevel</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenLightLevel(float seconds, short toLightLevel, optional TweenTiming, optional TweenStyle);
@@ -613,7 +684,7 @@ TweenRegionLightLevel(rGarden, 1.5, 0);
 
 <hr />
 
-<h3><a name="TweenTintR">TweenTintR</a></h3>
+<h3><a id="TweenTintR">TweenTintR</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenTintR(float seconds, short toR, optional TweenTiming, optional TweenStyle);
@@ -635,7 +706,7 @@ TweenRegionTintR(rGarden, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenTintG">TweenTintG</a></h3>
+<h3><a id="TweenTintG">TweenTintG</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenTintG(float seconds, short toG, optional TweenTiming, optional TweenStyle);
@@ -657,7 +728,7 @@ TweenRegionTintG(rGarden, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenTintB">TweenTintB</a></h3>
+<h3><a id="TweenTintB">TweenTintB</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenTintB(float seconds, short toB, optional TweenTiming, optional TweenStyle);
@@ -679,7 +750,7 @@ TweenRegionTintB(rGarden, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenTintAmount">TweenTintAmount</a></h3>
+<h3><a id="TweenTintAmount">TweenTintAmount</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenTintAmount(float seconds, short toAmount, optional TweenTiming, optional TweenStyle);
@@ -701,7 +772,7 @@ TweenRegionTintAmount(rGarden, 1.5, 100);
 
 <hr />
 
-<h3><a name="TweenTintBlackAndWhite">TweenTintBlackAndWhite</a></h3>
+<h3><a id="TweenTintBlackAndWhite">TweenTintBlackAndWhite</a></h3>
 <pre>
 // AGS 3.x
 Region.TweenTintBlackAndWhite(float seconds, optional TweenTiming, optional TweenStyle);
@@ -723,7 +794,7 @@ TweenRegionTintBlackAndWhite(rGarden, 1.5);
 
 <hr />
 
-<h3><a name="TweenColorR">TweenColorR</a></h3>
+<h3><a id="TweenColorR">TweenColorR</a></h3>
 <pre>
 // AGS 3.1+
 TextBox.TweenColorR(float seconds, short toR, optional TweenTiming, optional TweenStyle);
@@ -750,7 +821,7 @@ TweenLabelColorR(myLabel, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenColorG">TweenColorG</a></h3>
+<h3><a id="TweenColorG">TweenColorG</a></h3>
 <pre>
 // AGS 3.1+
 TextBox.TweenColorG(float seconds, short toG, optional TweenTiming, optional TweenStyle);
@@ -777,7 +848,7 @@ TweenLabelColorG(myLabel, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenColorB">TweenColorB</a></h3>
+<h3><a id="TweenColorB">TweenColorB</a></h3>
 <pre>
 // AGS 3.1+
 TextBox.TweenColorB(float seconds, short toB, optional TweenTiming, optional TweenStyle);
@@ -804,7 +875,7 @@ TweenLabelColorB(myLabel, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenValue">TweenValue</a></h3>
+<h3><a id="TweenValue">TweenValue</a></h3>
 <pre>
 // AGS 3.x
 Slider.TweenValue(float seconds, short toValue, optional TweenTiming, optional TweenStyle);
@@ -828,7 +899,7 @@ TweenSliderValue(mySlider, 1.5, 200);
 
 <hr />
 
-<h3><a name="TweenHandleOffset">TweenHandleOffset</a></h3>
+<h3><a id="TweenHandleOffset">TweenHandleOffset</a></h3>
 <pre>
 // AGS 3.1+
 Slider.TweenHandleOffset(float seconds, short toOffset, optional TweenTiming, optional TweenStyle);
@@ -847,7 +918,7 @@ mySlider.TweenHandleOffset(1.5, 20);
 
 <hr />
 
-<h3><a name="TweenSelectedItem">TweenSelectedItem</a></h3>
+<h3><a id="TweenSelectedItem">TweenSelectedItem</a></h3>
 
 <pre>
 // AGS 3.x
@@ -871,7 +942,7 @@ TweenListBoxSelectedItem(myListBox, 1.5, 20);
 
 <hr />
 
-<h3><a name="TweenTopItem">TweenTopItem</a></h3>
+<h3><a id="TweenTopItem">TweenTopItem</a></h3>
 <pre>
 // AGS 3.x
 ListBox.TweenTopItem(float seconds, short toTopItem, optional TweenTiming, optional TweenStyle);
@@ -898,12 +969,12 @@ TweenInvWindowTopItem(myInventory, 1.5, 20);
 
 <hr />
 
-<h3><a name="TweenSoundVolume">TweenSoundVolume</a></h3>
+<h3><a id="TweenSoundVolume">TweenSoundVolume</a></h3>
 <pre>
 // AGS 2.x and 3.x
 TweenSoundVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
-<p>Tweens the sound effect volume from one value to another. Range: 0 - 255.</p>
+<p>Tweens the sound effect volume from one value to another. Range: 0 to 255.</p>
 <h4>Example:</h4>
 <pre>
 TweenSoundVolume(3.0, 100, 50);
@@ -913,12 +984,26 @@ TweenSoundVolume(3.0, 100, 50);
 
 <hr />
 
-<h3><a name="TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></h3>
+<h3><a id="TweenMusicMasterVolume">TweenMusicMasterVolume</a></h3>
+<pre>
+// AGS 2.x and 3.x
+TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the master music volume from one value to another. Range: 1 to 100.</p>
+<h4>Example:</h4>
+<pre>
+TweenMusicMasterVolume(3.0, 100, 50);
+</pre>
+<p>Will tween the music volume from 100 to 50.</p>
+
+<hr />
+
+<h3><a id="TweenDigitalMasterVolume">TweenDigitalMasterVolume</a></h3>
 <pre>
 // AGS 2.x and 3.x (without new-style audio scripting enforced)
 TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
-<p>Tweens the master digital volume from one value to another. Range: 1 - 100.</p>
+<p>Tweens the master digital volume from one value to another. Range: 1 to 100.</p>
 <h4>Example:</h4>
 <pre>
 TweenDigitalMasterVolume(3.0, 100, 50);
@@ -927,12 +1012,12 @@ TweenDigitalMasterVolume(3.0, 100, 50);
 <p>Will tween the digital volume from 100 to 50.</p>
 <hr />
 
-<h3><a name="TweenChannelVolume">TweenChannelVolume</a></h3>
+<h3><a id="TweenChannelVolume">TweenChannelVolume</a></h3>
 <pre>
 // AGS 2.x and 3.x (without new-style audio scripting enforced)
 TweenChannelVolume(float seconds, short channel, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
-<p>Tweens the volume for a given channel from one value to another. Range: 0 - 255.</p>
+<p>Tweens the volume for a given channel from one value to another. Range: 0 to 255.</p>
 <h4>Example:</h4>
 <pre>
 TweenChannelVolume(3.0, 1, 100, 50);
@@ -942,12 +1027,12 @@ TweenChannelVolume(3.0, 1, 100, 50);
 
 <hr />
 
-<h3><a name="TweenSpeechVolume">TweenSpeechVolume</a></h3>
+<h3><a id="TweenSpeechVolume">TweenSpeechVolume</a></h3>
 <pre>
-// AGS 2.x and 3.x (without new-style audio scripting enforced)
+// AGS 2.x and 3.x
 TweenSpeechVolume(float seconds, short fromVolume, short toVolume, optional TweenTiming, optional TweenStyle);
 </pre>
-<p>Tweens the volume for speech from one value to another. Range: 0 - 255.</p>
+<p>Tweens the volume for speech from one value to another. Range: 0 to 255.</p>
 <h4>Example:</h4>
 <pre>
 TweenSpeechVolume(3.0, 100, 50);
@@ -957,6 +1042,71 @@ TweenSpeechVolume(3.0, 100, 50);
 
 <hr />
 
+<h3><a id="TweenSystemVolume">TweenSystemVolume</a> (new)</h3>
+<pre>
+// AGS 3.2 (with new-style audio scripting enforced)
+TweenSystemVolume(float seconds, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the master volume (System.Volume) to a new value. Range: 0 to 100.</p>
+<h4>Example:</h4>
+<pre>
+System.Volume = 100;
+TweenSystemVolume(3.0, 50);
+</pre>
+
+<p>Will tween the system volume from 100 to 50.</p>
+
+<hr />
+
+<h3><a id="AudioChannel.TweenPanning">AudioChannel.TweenPanning</a> (new)</h3>
+<pre>
+// AGS 3.2 (with new-style audio scripting enforced)
+AudioChannel.TweenPanning(float seconds, short toPanning, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens an AudioChannel panning to to a new value. Range: -100 to 100.</p>
+<h4>Example:</h4>
+<pre>
+myAudioChannel.Panning = -100;
+myAudioChannel.TweenPanning(3.0, 100);
+</pre>
+
+<p>Will tween the AudioChannel panning from -100 to 100 in 3 seconds.</p>
+
+<hr />
+
+
+<h3><a id="AudioChannel.TweenVolume">AudioChannel.TweenVolume</a> (new)</h3>
+<pre>
+// AGS 3.2 (with new-style audio scripting enforced)
+AudioChannel.TweenVolume(float seconds, short toVolume, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens an AudioChannel volume to to a new value. Range: 0 to 100.</p>
+<h4>Example:</h4>
+<pre>
+myAudioChannel.Volume = 0;
+myAudioChannel.TweenPanning(3.0, 100);
+</pre>
+
+<p>Will tween the AudioChannel volume from 0 to 100 in 3 seconds.</p>
+
+<hr />
+
+<h3><a id="AudioChannel.TweenRoomLocation">AudioChannel.TweenRoomLocation</a> (new)</h3>
+<pre>
+// AGS 3.2 (with new-style audio scripting enforced)
+AudioChannel.TweenRoomLocation(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens an AudioChannel room location to a new x and y value.
+	Note that Tweening to 0, 0 will remove the directional effect immediately, possibly creatin a strange effect.</p>
+<h4>Example:</h4>
+<pre>
+myAudioChannel.SetRoomLocation(1, 1);
+myAudioChannel.TweenRoomLocation(3.0, 320, 240);
+</pre>
+
+<p>Will tween the AudioChannel room location to 320, 240.</p>
+
+<hr />
 </div>
 
 </div>
