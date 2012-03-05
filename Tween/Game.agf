@@ -2464,7 +2464,7 @@ return
       <Script>
         <FileName>Tween.asc</FileName>
         <Name>Tween</Name>
-        <Description>Module can be used to create programatic animations for AGS objects. These animations can be blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
+        <Description>Module can be used to create programatic in-betweens (tweens) for AGS objects. These animations can be blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
         <Author>Edmundo Ruiz, Tzach Shabtay</Author>
         <Version>1.5</Version>
         <Key>1249765699</Key>
