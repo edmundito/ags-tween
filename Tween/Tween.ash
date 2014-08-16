@@ -145,6 +145,7 @@ import int TweenAreaScaling(float seconds, int area, short fromMin, short toMin,
 
 import int TweenSpeechVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 #ifndef STRICT_AUDIO
+// These apply to AGS 3.2 and above when the Strict Audio setting is enabled
 import int TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
@@ -195,22 +196,25 @@ import int TweenImage(this Object*, Object* objectRef, float seconds, short toSp
 import int TweenAnimationSpeed(this Character*, float seconds, short toAnimationSpeed, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
 import int TweenLightLevel(this Region*, float seconds, short toLightLevel, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintR(this Region*, float seconds, short toR, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintG(this Region*, float seconds, short toG, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintB(this Region*, float seconds, short toB, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintAmount(this Region*, float seconds, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintBlackAndWhite(this Region*, float seconds, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintRed(this Region*, float seconds, short toRed, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintGreen(this Region*, float seconds, short toGreen, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintBlue(this Region*, float seconds, short toBlue, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintSaturation(this Region*, float seconds, short toSaturation, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTint(this Region*, float seconds, short toRed, short toGreen, short toBlue, short toSaturation, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintToGrayscale(this Region*, float seconds, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenColorR(this Label*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorG(this Label*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorB(this Label*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorR(this Button*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorG(this Button*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorB(this Button*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this Label*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this Label*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this Label*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this Label*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this Button*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this Button*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this Button*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this Button*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenValue(this Slider*, float seconds, short toValue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenSelectedItem(this ListBox*, float seconds, short toSelectedItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSelectedIndex(this ListBox*, float seconds, short toSelectedIndex, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenTopItem(this ListBox*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 import int TweenTopItem(this InvWindow*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
@@ -229,9 +233,10 @@ import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_Tw
 
 #ifver 3.1
 // These apply to AGS 3.1 and above
-import int TweenColorR(this TextBox*, float seconds, short toR, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorG(this TextBox*, float seconds, short toG, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenColorB(this TextBox*, float seconds, short toB, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this TextBox*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this TextBox*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this TextBox*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this TextBox*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
 #endif
@@ -275,21 +280,23 @@ enum _TweenType {
   _eTweenCharacterScaling,
   _eTweenCharacterTransparency,
   _eTweenCharacterAnimationSpeed,
-  _eTweenRegionLightLevel,
-  _eTweenRegionTintR,
-  _eTweenRegionTintG,
-  _eTweenRegionTintB,
-  _eTweenRegionTintAmount,
-  _eTweenLabelColorR,
-  _eTweenLabelColorG,
-  _eTweenLabelColorB,
+  _eTweenRegionLightLevel, 
+  _eTweenRegionTintRed,
+  _eTweenRegionTintGreen,
+  _eTweenRegionTintBlue,
+  _eTweenRegionTintSaturation,
+  _eTweenLabelTextColor,
+  _eTweenLabelTextColorRed,
+  _eTweenLabelTextColorGreen,
+  _eTweenLabelTextColorBlue,
   _eTweenGUIControlPosition, 
   _eTweenGUIControlSize,
-  _eTweenButtonColorR,
-  _eTweenButtonColorG,
-  _eTweenButtonColorB,
+  _eTweenButtonTextColor,
+  _eTweenButtonTextColorRed,
+  _eTweenButtonTextColorGreen,
+  _eTweenButtonTextColorBlue,
   _eTweenSliderValue,
-  _eTweenListBoxSelectedItem,
+  _eTweenListBoxSelectedIndex,
   _eTweenListBoxTopItem,
   _eTweenInvWindowTopItem,
   _eTweenViewportX,
@@ -300,9 +307,10 @@ enum _TweenType {
   _eTweenAreaScaling,
   _eTweenSpeechVolume,
 #ifver 3.1
-  _eTweenTextBoxColorR,
-  _eTweenTextBoxColorG,
-  _eTweenTextBoxColorB,
+  _eTweenTextBoxTextColor, 
+  _eTweenTextBoxTextColorRed,
+  _eTweenTextBoxTextColorGreen,
+  _eTweenTextBoxTextColorBlue,
   _eTweenSliderHandleOffset,
 #endif
 #ifndef STRICT_AUDIO
