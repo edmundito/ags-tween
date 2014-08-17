@@ -149,6 +149,15 @@ import int SecondsToLoops(float seconds);
 /// Waits a number of seconds. (Part of the Tween module)
 import function WaitSeconds(float seconds);
 
+/// Waits for the longest duration (based on game loops). Supports up to 6 durations. (Part of the Tween module)
+import function WaitForLongest(int duration1, int duration2, int duration3=0, int duration4=0, int duration5=0, int duration6=0);
+
+/// Sets a Timer using seconds instead of game loops.  (Part of the Tween module)
+import function SetTimerWithSeconds(int timerID, float seconds);
+
+/// Sets the timer for the longest timeout (based on game loops). Supports up to 6 timeouts. (Part of the Tween module)
+import function SetTimerForLongest(int timerID, int timeout1, int timeout2, int timeout3=0, int timeout4=0, int timeout5=0, int timeout6=0);
+
 /// Gets the distance between two points. (Part of the Tween module)
 import float GetDistance(int fromX, int fromY, int toX, int toY);
 
@@ -156,20 +165,22 @@ import float GetDistance(int fromX, int fromY, int toX, int toY);
 // TWEENS
 ///////////////////////////////////////////////////////////////////////////////
 
-/// Stops all Tweens that are currently running.
-import function TweenStopAll(TweenStopResult result=DEFAULT_TweenStopResult);
-
-/// Waits until all non-looping Tweens are finished playing.
-import function WaitForTweensToStop();
+struct Tween {
+  /// Stops all Tweens that are currently running.
+  import static function StopAll(TweenStopResult result=DEFAULT_TweenStopResult);
+  
+  /// Waits until all non-looping Tweens are finished playing.
+  import static function WaitForAllToFinish();
+};
 
 import int TweenViewportX(float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenViewportXBySpeed(float speed, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenViewportY(float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenViewportYBySpeed(float speed, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportPosition(float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportPositionByDistance(float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewport(float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportBySpeed(float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenGamma(float seconds, short toGamma, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenSystemGamma(float seconds, short toGamma, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 import int TweenAreaScaling(float seconds, int area, short fromMin, short toMin, short fromMax, short toMax, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
 
@@ -326,9 +337,14 @@ import function StopAllTweens(this AudioChannel*, TweenStopResult result=DEFAULT
 
 
 
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // INTENDED FOR INTERNAL USE BY THIS MODULE ONLY
 ///////////////////////////////////////////////////////////////////////////////
+
 enum _TweenReferenceType {
   _eTweenReferenceGUI,
   _eTweenReferenceObject,
@@ -371,10 +387,8 @@ enum _TweenType {
   _eTweenListBoxSelectedIndex,
   _eTweenListBoxTopItem,
   _eTweenInvWindowTopItem,
-  _eTweenViewportX,
-  _eTweenViewportY,
-  _eTweenViewportXY,
-  _eTweenGamma,
+  _eTweenViewport,
+  _eTweenSystemGamma,
   _eTweenShakeScreen,
   _eTweenAreaScaling,
   _eTweenSpeechVolume,
@@ -399,7 +413,7 @@ enum _TweenType {
 #endif
 };
 
-struct _Tween {
+struct _TweenObject {
   _TweenType type;
   _TweenReferenceType refType;
   int refID;
