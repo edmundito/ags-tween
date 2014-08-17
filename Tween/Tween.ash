@@ -93,7 +93,37 @@ enum TweenTiming {
   eLinearTween,
   eEaseInTween,
   eEaseOutTween,
-  eEaseInEaseOutTween
+  eEaseInEaseOutTween,
+  eEaseInSineTween,
+  eEaseOutSineTween, 
+  eEaseInOutSineTween, 
+  eEaseInQuadTween, 
+  eEaseOutQuadTween, 
+  eEaseInOutQuadTween, 
+  eEaseInCubicTween, 
+  eEaseOutCubicTween,
+  eEaseInOutCubicTween, 
+  eEaseInQuartTween, 
+  eEaseOutQuartTween, 
+  eEaseInOutQuartTween,
+  eEaseInQuintTween, 
+  eEaseOutQuintTween, 
+  eEaseInOutQuintTween, 
+  eEaseInCircTween, 
+  eEaseOutCircTween, 
+  eEaseInOutCircTween,
+  eEaseInExpoTween, 
+  eEaseOutExpoTween, 
+  eEaseInOutExpoTween,
+  eEaseInBackTween, 
+  eEaseOutBackTween, 
+  eEaseInOutBackTween, 
+  eEaseInElasticTween, 
+  eEaseOutElasticTween, 
+  eEaseInOutElasticTween, 
+  eEaseInBounceTween, 
+  eEaseOutBounceTween, 
+  eEaseInOutBounceTween
 };
 
 enum TweenStyle {
@@ -335,13 +365,12 @@ struct _Tween {
   TweenTiming timing;
   TweenStyle style;
 
-  int duration;
-  int frameCount;
-
-  short toX;
-  short toY;
-  short fromX;
-  short fromY;
+  float duration;
+  float frameCount;
+  float toX;
+  float toY;
+  float fromX;
+  float fromY;
   
   GUIControl* guiControlRef;
 
