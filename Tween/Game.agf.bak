@@ -2571,6 +2571,33 @@ return
   <Component Name="AudioNew" />
   <Component Name="GlobalVariables" />
   <Component Name="Scripts" />
+  <Component Name="SpeechCenter">
+    <SpeechCenter Version="2.0.3.0">
+      <Document Version="2.0.0.0">
+        <Settings>
+          <CustomFunctions />
+          <VoiceActorScripts NewParagraph="PER_FUNCTION">
+            <Format>
+              <Styles>
+                <CSSStyle CSSName="body" FontFamily="Cambria" Color="" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".currentCharacter" FontFamily="" Color="" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".otherCharacter" FontFamily="" Color="LightGray" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".lineNumber" FontFamily="" Color="Firebrick" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".duplicate" FontFamily="" Color="Thistle" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".speechCorrect" FontFamily="" Color="MediumBlue" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".speechIncorrect" FontFamily="" Color="Red" FontStyle="inherit" FontWeight="inherit" />
+                <CSSStyle CSSName=".filtered" FontFamily="" Color="LightSlateGray" FontStyle="italic" FontWeight="inherit" />
+              </Styles>
+            </Format>
+          </VoiceActorScripts>
+          <Translations EnableEditing="false" />
+          <Edit ShowWarning="true" ExitEditModeAfterSave="true" RefreshProjectAfterSave="Any" />
+        </Settings>
+        <SpeechLines />
+        <Translations />
+      </Document>
+    </SpeechCenter>
+  </Component>
   <Component Name="Plugins" />
   <Component Name="Rooms" />
   <Component Name="Translations" />
