@@ -3,4 +3,4 @@ can be used to script ["inbetweening"](https://en.wikipedia.org/wiki/Inbetweenin
 It allows these inbetweens to be blocking, non blocking, or to loop them, and it features
 acceleration/deceleration easing functions.
 
-This module is only compatible with 3.x. Version 1.x compatible with AGS 2.72 (and perhaps earlier versions) as well.
+This current module is compatible with AGS 3.0 and above. Version 1.x is also compatible with AGS 2.72 (and perhaps earlier versions) as well.
