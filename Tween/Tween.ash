@@ -61,7 +61,9 @@
 // AND/OR In the AGS Games page:
 // netmonkey Tween Module
 // tzachs Tween Module
-
+#ifndef __TWEEN_MODULE__
+#define __TWEEN_MODULE__
+#define __TWEEN2__
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETTINGS - Feel free to change this for your game!
@@ -73,9 +75,9 @@
 #define MAX_TWEENS 16
 
 // Default TweenTiming
-#define DEFAULT_TweenTiming eLinearTween // All Tweens Except GUI and GUI element Tweens
-#define DEFAULT_GUI_TweenTiming eLinearTween // For GUI and GUI element Tweens Only
-#define DEFAULT_Audio_TweenTiming eLinearTween // For Audio Tweens Only
+#define DEFAULT_TweenTiming eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
+#define DEFAULT_GUI_TweenTiming eEaseLinearTween // For GUI and GUI element Tweens Only
+#define DEFAULT_Audio_TweenTiming eEaseLinearTween // For Audio Tweens Only
 
 // Default TweenStyle
 #define DEFAULT_TweenStyle eBlockTween // All Tweens Except GUI and GUI element Tweens
@@ -90,10 +92,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 enum TweenTiming {
-  eLinearTween,
-  eEaseInTween,
-  eEaseOutTween,
-  eEaseInEaseOutTween,
+  eEaseLinearTween,
   eEaseInSineTween,
   eEaseOutSineTween, 
   eEaseInOutSineTween, 
@@ -432,3 +431,5 @@ struct _TweenObject {
 
   import function Step(float amount);
 };
+
+#endif
