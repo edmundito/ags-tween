@@ -74,10 +74,10 @@
 // So just increase or decrease it to however many you need.
 #define MAX_TWEENS 16
 
-// Default TweenTiming
-#define DEFAULT_TweenTiming eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
-#define DEFAULT_GUI_TweenTiming eEaseLinearTween // For GUI and GUI element Tweens Only
-#define DEFAULT_Audio_TweenTiming eEaseLinearTween // For Audio Tweens Only
+// Default TweenEasingType
+#define DEFAULT_TweenEasingType eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
+#define DEFAULT_GUI_TweenEasingType eEaseLinearTween // For GUI and GUI element Tweens Only
+#define DEFAULT_Audio_TweenEasingType eEaseLinearTween // For Audio Tweens Only
 
 // Default TweenStyle
 #define DEFAULT_TweenStyle eBlockTween // All Tweens Except GUI and GUI element Tweens
@@ -91,7 +91,7 @@
 // ENUMERATIONS
 ///////////////////////////////////////////////////////////////////////////////
 
-enum TweenTiming {
+enum TweenEasingType {
   eEaseLinearTween,
   eEaseInSineTween,
   eEaseOutSineTween, 
@@ -172,134 +172,134 @@ struct Tween {
   import static function WaitForAllToFinish();
 };
 
-import int TweenViewportX(float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportXBySpeed(float speed, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportY(float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportYBySpeed(float speed, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewport(float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenViewportBySpeed(float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportX(float seconds, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportXBySpeed(float speed, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportY(float seconds, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportYBySpeed(float speed, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewport(float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenViewportBySpeed(float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenSystemGamma(float seconds, short toGamma, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount, short toAmount, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenAreaScaling(float seconds, int area, short fromMin, short toMin, short fromMax, short toMax, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenSystemGamma(float seconds, short toGamma, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenShakeScreen(float seconds, short fromDelay, short toDelay, short fromAmount, short toAmount, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenAreaScaling(float seconds, int area, short fromMin, short toMin, short fromMax, short toMax, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenSpeechVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenSpeechVolume(float seconds, short fromVolume, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
 #ifndef STRICT_AUDIO
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
-import int TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
-import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
-import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
-import int TweenChannelVolume(float seconds, int channel, short fromVolume, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenMusicMasterVolume(float seconds, short fromVolume, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenDigitalMasterVolume(float seconds, short fromVolume, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenSoundVolume(float seconds, short fromVolume, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenChannelVolume(float seconds, int channel, short fromVolume, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
 #endif
 
-import int TweenX(this Character*, float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenY(this Character*, float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenX(this Object*, float seconds, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenY(this Object*, float seconds, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenX(this GUI*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this GUI*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this GUIControl*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this GUIControl*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this Label*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this Label*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this Button*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this Button*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this TextBox*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this TextBox*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this ListBox*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this ListBox*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this Slider*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this Slider*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenX(this InvWindow*, float seconds, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenY(this InvWindow*, float seconds, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this Character*, float seconds, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenY(this Character*, float seconds, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenX(this Object*, float seconds, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenY(this Object*, float seconds, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenX(this GUI*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this GUI*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this GUIControl*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this GUIControl*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this Label*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this Label*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this Button*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this Button*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this TextBox*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this TextBox*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this ListBox*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this ListBox*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this Slider*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this Slider*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenX(this InvWindow*, float seconds, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenY(this InvWindow*, float seconds, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenXBySpeed(this Character*, float speed, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenYBySpeed(this Character*, float speed, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenXBySpeed(this Object*, float speed, short toX, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenYBySpeed(this Object*, float speed, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenXBySpeed(this GUI*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this GUI*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this GUIControl*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this GUIControl*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this Label*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this Label*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this Button*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this Button*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this TextBox*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this TextBox*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this ListBox*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this ListBox*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this Slider*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this Slider*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenXBySpeed(this InvWindow*, float speed, short toX, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenYBySpeed(this InvWindow*, float speed, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this Character*, float speed, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenYBySpeed(this Character*, float speed, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenXBySpeed(this Object*, float speed, short toX, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenYBySpeed(this Object*, float speed, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenXBySpeed(this GUI*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this GUI*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this GUIControl*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this GUIControl*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this Label*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this Label*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this Button*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this Button*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this TextBox*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this TextBox*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this ListBox*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this ListBox*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this Slider*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this Slider*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenXBySpeed(this InvWindow*, float speed, short toX, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenYBySpeed(this InvWindow*, float speed, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenPosition(this Character*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this Object*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPosition(this GUI*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this GUIControl*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this Label*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this Button*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this TextBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this ListBox*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this Slider*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPosition(this InvWindow*, float seconds, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Character*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenPosition(this Object*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenPosition(this GUI*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this GUIControl*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Label*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Button*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this TextBox*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this ListBox*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this Slider*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPosition(this InvWindow*, float seconds, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenPositionBySpeed(this Character*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPositionBySpeed(this Object*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenPositionBySpeed(this GUI*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this GUIControl*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Label*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Button*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this TextBox*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this ListBox*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Slider*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenPositionBySpeed(this InvWindow*, float speed, short toX, short toY, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this Character*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenPositionBySpeed(this Object*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenPositionBySpeed(this GUI*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this GUIControl*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this Label*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this Button*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this TextBox*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this ListBox*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this Slider*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenPositionBySpeed(this InvWindow*, float speed, short toX, short toY, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenTransparency(this GUI*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTransparency(this Object*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTransparency(this Character*, float seconds, short toTransparency, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTransparency(this GUI*, float seconds, short toTransparency, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTransparency(this Object*, float seconds, short toTransparency, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTransparency(this Character*, float seconds, short toTransparency, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenZOrder(this GUI*, float seconds, short toZOrder, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenZOrder(this GUI*, float seconds, short toZOrder, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenSize(this GUI*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this GUIControl*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this Label*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this Button*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this TextBox*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this ListBox*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this Slider*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenSize(this InvWindow*, float seconds, short toWidth, short toHeight, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this GUI*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this GUIControl*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this Label*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this Button*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this TextBox*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this ListBox*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this Slider*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSize(this InvWindow*, float seconds, short toWidth, short toHeight, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenScaling(this Character*, float seconds, short toScaling, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenScaling(this Character*, float seconds, short toScaling, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenImage(this Object*, Object* objectRef, float seconds, short toSprite, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenImage(this Object*, Object* objectRef, float seconds, short toSprite, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenAnimationSpeed(this Character*, float seconds, short toAnimationSpeed, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenAnimationSpeed(this Character*, float seconds, short toAnimationSpeed, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenLightLevel(this Region*, float seconds, short toLightLevel, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintRed(this Region*, float seconds, short toRed, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintGreen(this Region*, float seconds, short toGreen, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintBlue(this Region*, float seconds, short toBlue, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintSaturation(this Region*, float seconds, short toSaturation, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTint(this Region*, float seconds, short toRed, short toGreen, short toBlue, short toSaturation, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
-import int TweenTintToGrayscale(this Region*, float seconds, TweenTiming timing=DEFAULT_TweenTiming, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenLightLevel(this Region*, float seconds, short toLightLevel, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintRed(this Region*, float seconds, short toRed, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintGreen(this Region*, float seconds, short toGreen, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintBlue(this Region*, float seconds, short toBlue, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintSaturation(this Region*, float seconds, short toSaturation, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTint(this Region*, float seconds, short toRed, short toGreen, short toBlue, short toSaturation, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
+import int TweenTintToGrayscale(this Region*, float seconds, TweenEasingType easingType=DEFAULT_TweenEasingType, TweenStyle style=DEFAULT_TweenStyle);
 
-import int TweenTextColor(this Label*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorRed(this Label*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorGreen(this Label*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorBlue(this Label*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColor(this Button*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorRed(this Button*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorGreen(this Button*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorBlue(this Button*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this Label*, float seconds, short toColor, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this Label*, float seconds, short toRed, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this Label*, float seconds, short toGreen, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this Label*, float seconds, short toBlue, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this Button*, float seconds, short toColor, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this Button*, float seconds, short toRed, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this Button*, float seconds, short toGreen, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this Button*, float seconds, short toBlue, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenValue(this Slider*, float seconds, short toValue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenValue(this Slider*, float seconds, short toValue, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenSelectedIndex(this ListBox*, float seconds, short toSelectedIndex, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenSelectedIndex(this ListBox*, float seconds, short toSelectedIndex, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenTopItem(this ListBox*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTopItem(this InvWindow*, float seconds, short toTopItem, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTopItem(this ListBox*, float seconds, short toTopItem, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTopItem(this InvWindow*, float seconds, short toTopItem, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
 import function StopAllTweens(this GUI*, TweenStopResult result=DEFAULT_TweenStopResult);
 import function StopAllTweens(this Object*, TweenStopResult result=DEFAULT_TweenStopResult);
@@ -315,23 +315,54 @@ import function StopAllTweens(this InvWindow*, TweenStopResult result=DEFAULT_Tw
 
 #ifver 3.1
 // These apply to AGS 3.1 and above
-import int TweenTextColor(this TextBox*, float seconds, short toColor, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorRed(this TextBox*, float seconds, short toRed, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorGreen(this TextBox*, float seconds, short toGreen, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
-import int TweenTextColorBlue(this TextBox*, float seconds, short toBlue, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColor(this TextBox*, float seconds, short toColor, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorRed(this TextBox*, float seconds, short toRed, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorGreen(this TextBox*, float seconds, short toGreen, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenTextColorBlue(this TextBox*, float seconds, short toBlue, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 
-import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenTiming timing=DEFAULT_GUI_TweenTiming, TweenStyle style=DEFAULT_GUI_TweenStyle);
+import int TweenHandleOffset(this Slider*, float seconds, short toOffset, TweenEasingType easingType=DEFAULT_GUI_TweenEasingType, TweenStyle style=DEFAULT_GUI_TweenStyle);
 #endif
 
 #ifdef STRICT_AUDIO
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
-import int TweenSystemVolume(float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenSystemVolume(float seconds, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
 
-import int TweenPanning(this AudioChannel*,  float seconds, short toPanning, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
-import int TweenVolume(this AudioChannel*,  float seconds, short toVolume, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
-import int TweenRoomLocation(this AudioChannel*,  float seconds, short toX, short toY, short fromX, short fromY, TweenTiming timing=DEFAULT_Audio_TweenTiming, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenPanning(this AudioChannel*,  float seconds, short toPanning, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenVolume(this AudioChannel*,  float seconds, short toVolume, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
+import int TweenRoomLocation(this AudioChannel*,  float seconds, short toX, short toY, short fromX, short fromY, TweenEasingType easingType=DEFAULT_Audio_TweenEasingType, TweenStyle style=DEFAULT_Audio_TweenStyle);
 import function StopAllTweens(this AudioChannel*, TweenStopResult result=DEFAULT_TweenStopResult);
 #endif
+
+struct TweenEasing {
+  import static float EaseLinear(float t, float d);
+  import static float EaseInSine(float t, float b, float c, float d);
+  import static float EaseOutSine(float t, float b, float c, float d);
+  import static float EaseInOutSine(float t, float b, float c, float d);
+  import static float EaseInQuad(float t, float b, float c, float d);
+  import static float EaseOutQuad(float t, float b, float c, float d);
+  import static float EaseInOutQuad(float t, float b, float c, float d);
+  import static float EaseInPower(float t, float b, float c, float d, float power);
+  import static float EaseOutPower(float t, float b, float c, float d, float power);
+  import static float EaseInOutPower(float t, float b, float c, float d, float power);
+  import static float EaseInExpo(float t, float b, float c, float d);
+  import static float EaseOutExpo(float t, float b, float c, float d);
+  import static float EaseInOutExpo(float t, float b, float c, float d);
+  import static float EaseInCirc(float t, float b, float c, float d);
+  import static float EaseOutCirc(float t, float b, float c, float d);
+  import static float EaseInOutCirc(float t, float b, float c, float d);
+  import static float EaseInBack(float t, float b, float c, float d);
+  import static float EaseOutBack(float t, float b, float c, float d);
+  import static float EaseInOutBack(float t, float b, float c, float d);
+  import static float EaseInElastic(float t, float b, float c, float d);
+  import static float EaseOutElastic(float t, float b, float c, float d);
+  import static float EaseInOutElastic(float t, float b, float c, float d);
+  import static float EaseInBounce(float t, float b, float c, float d);
+  import static float EaseOutBounce(float t, float b, float c, float d);
+  import static float EaseInOutBounce(float t, float b, float c, float d);
+  
+  /// For power users: This is where the easing amount of the Tween is computed.
+  import static float GetAmount(float elapsed, float duration, TweenEasingType easingType);
+};
 
 
 
@@ -415,19 +446,17 @@ enum _TweenType {
 struct _TweenObject {
   _TweenType type;
   _TweenReferenceType refType;
-  int refID;
-  
-  TweenTiming timing;
+  TweenEasingType easingType;
   TweenStyle style;
-
+  GUIControl* guiControlRef;
+  
+  int refID;
   float duration;
-  float frameCount;
+  float elapsed;
   float toX;
   float toY;
   float fromX;
   float fromY;
-  
-  GUIControl* guiControlRef;
 
   import function Step(float amount);
 };
