@@ -160,14 +160,17 @@ enum TweenStopResult {
 /// Converts number of seconds to number of game loops. (Part of the Tween module)
 import int SecondsToLoops(float seconds);
 
+/// Converts number of loops to number seconds. (Part of the Tween module)
+import float LoopsToSeconds(int loops);
+
 /// Waits a number of seconds. (Part of the Tween module)
-import function WaitSeconds(float seconds);
+import function WaitSeconds(float amount);
 
 /// Waits for the longest duration (based on game loops). Supports up to 6 durations. (Part of the Tween module)
 import function WaitForLongest(int duration1, int duration2, int duration3=0, int duration4=0, int duration5=0, int duration6=0);
 
 /// Sets a Timer using seconds instead of game loops.  (Part of the Tween module)
-import function SetTimerWithSeconds(int timerID, float seconds);
+import function SetTimerWithSeconds(int timerID, float amount);
 
 /// Sets the timer for the longest timeout (based on game loops). Supports up to 6 timeouts. (Part of the Tween module)
 import function SetTimerForLongest(int timerID, int timeout1, int timeout2, int timeout3=0, int timeout4=0, int timeout5=0, int timeout6=0);
@@ -179,7 +182,32 @@ import float GetDistance(int fromX, int fromY, int toX, int toY);
 // TWEENS
 ///////////////////////////////////////////////////////////////////////////////
 
-struct Tween {
+struct TweenBase {
+  TweenEasingType easingType;
+  TweenStyle style;
+  
+  float duration;
+  float elapsed;
+  writeprotected float toX;
+  writeprotected float toY;
+  writeprotected float fromX;
+  writeprotected float fromY;
+  writeprotected float startDelay;
+  
+  import function Reverse();
+  import function Restart();
+  import int Init(float amount, short fromX, short fromY, short toX, short toY, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
+};
+
+struct Tween extends TweenBase {
+  writeprotected int X;
+  writeprotected int Y;
+  
+  import bool Next();
+  import function Stop(TweenStopResult result=ePauseTween);
+  import bool IsFinished();
+  import float GetProgress();
+  
   /// Stops all Tweens that are currently running.
   import static function StopAll(TweenStopResult result=D_TweenStopResult);
   
@@ -307,9 +335,9 @@ import int TweenHandleOffset(this Slider*, float amount, short toOffset, TweenEa
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
 import int TweenSystemVolume(float amount, short toVolume, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
 
-import int TweenPanning(this AudioChannel*,  float amount, short toPanning, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
-import int TweenVolume(this AudioChannel*,  float amount, short toVolume, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
-import int TweenRoomLocation(this AudioChannel*,  float amount, short toX, short toY, short fromX, short fromY, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
+import int TweenPanning(this AudioChannel*, float amount, short toPanning, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
+import int TweenVolume(this AudioChannel*, float amount, short toVolume, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
+import int TweenRoomLocation(this AudioChannel*, float amount, short toX, short toY, short fromX, short fromY, TweenEasingType easingType=D_Audio_TweenEasingType, TweenStyle style=D_Audio_TweenStyle, float startDelay=D_Audio_startDelay, TweenTiming timing=D_Audio_TweenTiming);
 import function StopAllTweens(this AudioChannel*, TweenStopResult result=D_TweenStopResult);
 #endif
 
@@ -423,20 +451,11 @@ enum _TweenType {
 #endif
 };
 
-struct _TweenObject {
+struct _TweenObject extends TweenBase {
   _TweenType type;
   _TweenReferenceType refType;
-  TweenEasingType easingType;
-  TweenStyle style;
   GUIControl* guiControlRef;
-  
   int refID;
-  float duration;
-  float elapsed;
-  float toX;
-  float toY;
-  float fromX;
-  float fromY;
   
   import function Step(float amount);
 };
