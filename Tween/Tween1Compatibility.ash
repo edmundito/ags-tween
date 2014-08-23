@@ -10,7 +10,7 @@ enum Tween1Timing {
 /// (Tween 1 Compatibility) Deprecated: Use Tween.StopAll(result)
 import function TweenStopAll(TweenStopResult result=D_TweenStopResult);
 
-/// (Tween 1 Compatibility) Deprecated: Use Tween.WaitForAllToFinish()
+/// (Tween 1 Compatibility) Deprecated: Use Tween.WaitForAllToFinish
 import function WaitForTweensToStop();
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenSystemGamma
@@ -19,7 +19,8 @@ import int TweenGamma(float seconds, short toGamma, Tween1Timing timing=D_TweenE
 /// (Tween 1 Compatibility) Deprecated: Use TweenViewport
 import int TweenViewportPosition(float seconds, short toX, short toY, Tween1Timing timing=D_TweenEasingType, TweenStyle style=D_TweenStyle);
 
-import int TweenViewportPositionBySpeed(float speed, short toX, short toY, TweenEasingType easingType=D_TweenEasingType, TweenStyle style=D_TweenStyle);
+/// (Tween 1 Compatibility) Deprecated: Use TweenViewport(speed, ..., eTweenSpeed)
+import int TweenViewportPositionBySpeed(float speed, short toX, short toY, Tween1Timing timing=D_TweenEasingType, TweenStyle style=D_TweenStyle);
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenTintRed
 import int TweenTintR(this Region*, float seconds, short toR, Tween1Timing timing=D_TweenEasingType, TweenStyle style=D_TweenStyle);
@@ -57,16 +58,35 @@ import int TweenColorB(this Button*, float seconds, short toB, Tween1Timing timi
 /// (Tween 1 Compatibility) Deprecated: Use TweenSelectedIndex
 import int TweenSelectedItem(this ListBox*, float seconds, short toSelectedItem, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
 
-import int TweenPositionBySpeed(this Character*, float speed, short toX, short toY, TweenEasingType easingType=D_TweenEasingType, TweenStyle style=D_TweenStyle);
-import int TweenPositionBySpeed(this Object*, float speed, short toX, short toY, TweenEasingType easingType=D_TweenEasingType, TweenStyle style=D_TweenStyle);
-import int TweenPositionBySpeed(this GUI*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this GUIControl*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Label*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Button*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this TextBox*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this ListBox*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this Slider*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
-import int TweenPositionBySpeed(this InvWindow*, float speed, short toX, short toY, TweenEasingType easingType=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this Character*, float speed, short toX, short toY, Tween1Timing timing=D_TweenEasingType, TweenStyle style=D_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this Object*, float speed, short toX, short toY, Tween1Timing timing=D_TweenEasingType, TweenStyle style=D_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this GUI*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this GUIControl*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this Label*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this Button*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this TextBox*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this ListBox*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this Slider*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
+
+/// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
+import int TweenPositionBySpeed(this InvWindow*, float speed, short toX, short toY, Tween1Timing timing=D_GUI_TweenEasingType, TweenStyle style=D_GUI_TweenStyle);
 
 
 #ifver 3.1
