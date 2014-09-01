@@ -1,1 +1,1 @@
-This project was created for AGS 3.2.1.
+This project was updated for use with AGS 3.3x.
