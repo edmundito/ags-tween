@@ -208,6 +208,15 @@ struct Tween extends TweenBase {
   import bool IsFinished();
   import float GetProgress();
   
+  /// Decreases the game speed for better tweening.
+  import static function IncreaseGameSpeed();
+  
+  /// Restores the game speed.
+  import static function RestoreGameSpeed();
+  
+  /// Increases the game speed when a blocking tween is playing.
+  import static function AlwaysIncreaseGameSpeedOnBlockingTweens(bool value);
+  
   /// Stops all Tweens that are currently running.
   import static function StopAll(TweenStopResult result=D_TweenStopResult);
   
