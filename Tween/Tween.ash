@@ -1,11 +1,10 @@
-// Script header for module 'Tween'
-//
 // Authors: Edmundo Ruiz (edmundito [netmonkey]) and Tzach Shabtay (tzachs)
 //  Please use the messaging function in the AGS forums to contact
 //  us about problems or questions.
 //
 // Revision History:
 //  (See CHANGES.TXT for more detailed information)
+//  1.5.1 Sep 20 2014 Bug Fixes
 //  1.5   Mar 4 2012  Added support for 3.2+ strict audio
 //                    Added Position tweens by speed
 //                    Various GUI Control tweens have been merged
@@ -22,7 +21,7 @@
 //
 // License (MIT):
 //
-// Copyright (c) 2009-2011 Edmundo Ruiz (http://www.edmundito.com/)
+// Copyright (c) 2009-2014 Edmundo Ruiz (http://www.github.com/edmundito/)
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation

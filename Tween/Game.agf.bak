@@ -2501,9 +2501,9 @@ return
               <Script>
                 <FileName>Tween.asc</FileName>
                 <Name>Tween</Name>
-                <Description>Module can be used to create programatic in-betweens (tweens) for AGS objects. These animations can be blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
+                <Description>Inbetweeing functionality for AGS</Description>
                 <Author>Edmundo Ruiz, Tzach Shabtay</Author>
-                <Version>1.5</Version>
+                <Version>1.5.1</Version>
                 <Key>1249765699</Key>
                 <IsHeader>False</IsHeader>
               </Script>
@@ -2582,16 +2582,16 @@ return
         <BackwardsCompatibilityType>True</BackwardsCompatibilityType>
       </AudioClipType>
       <AudioClipType>
-        <Name>Music</Name>
         <TypeID>2</TypeID>
+        <Name>Music</Name>
         <MaxChannels>1</MaxChannels>
         <VolumeReductionWhileSpeechPlaying>30</VolumeReductionWhileSpeechPlaying>
         <CrossfadeClips>No</CrossfadeClips>
         <BackwardsCompatibilityType>True</BackwardsCompatibilityType>
       </AudioClipType>
       <AudioClipType>
-        <Name>Sound</Name>
         <TypeID>3</TypeID>
+        <Name>Sound</Name>
         <MaxChannels>0</MaxChannels>
         <VolumeReductionWhileSpeechPlaying>0</VolumeReductionWhileSpeechPlaying>
         <CrossfadeClips>No</CrossfadeClips>
