@@ -156,7 +156,7 @@ struct Tween extends TweenBase {
   /// Returns whether the tween is finished.
   import bool IsFinished();
   
-  /// Gets the progress from 0.0 to 1.0.
+  /// Returns the progress from 0.0 to 1.0.
   import float GetProgress();
   
   // STATIC FUNCTIONS:
@@ -334,6 +334,9 @@ struct TweenGame {
 };
 
 struct TweenMaths {
+  /// Returns the absolute value.
+  import static float Abs(float value);
+  
   /// Returns the distance (as a float) between two points.
   import static float GetDistance(int fromX, int fromY, int toX, int toY);
   
