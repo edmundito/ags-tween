@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AGS Tween Module 1.5 Help</title>
+<title>AGS Tween Module 1.5.1 Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 body, div, ul, li, pre { margin: 0; padding: 0; }
@@ -26,7 +26,7 @@ h4 { margin-bottom: 0.2em; }
 #content { margin-left: 24.5em; padding: 0 .5em; overflow: auto; height: 100%; }
 #content p { width: 42em; }
 #content h4 { font-weight: normal; margin-bottom: 0.2em; font-size: 0.9em; color: #f00; }
-</style>	
+</style>
 </head>
 
 <body>
@@ -62,7 +62,8 @@ h4 { margin-bottom: 0.2em; }
 	<li><a href="#TweenTransparency">TweenTransparency</a></li>
 	<li><a href="#TweenViewportX">TweenViewportX</a></li>
 	<li><a href="#TweenViewportY">TweenViewportY</a></li>
-	<li><a href="#TweenViewportXY">TweenViewportXY</a></li>
+	<li><a href="#TweenViewportPosition">TweenViewportPosition</a></li>
+	<li><a href="#TweenViewportPositionBySpeed">TweenViewportPositionBySpeed</a> (new)</li>
 	<li><a href="#TweenGamma">TweenGamma</a></li>
 	<li><a href="#TweenShakeScreen">TweenShakeScreen</a></li>
 	<li><a href="#TweenAreaScaling">TweenAreaScaling</a></li>
@@ -100,7 +101,7 @@ h4 { margin-bottom: 0.2em; }
 
 <h1><a id="about"></a>Tween Module</h1>
 <p>For <a href="http://www.adventuregamestudio.co.uk/">Adventure Game Studio</a></p>
-<p>Version 1.5 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for version details)</p>
+<p>Version 1.5.1 (See <a href="CHANGES.TXT">CHANGES.TXT</a> for version details)</p>
 <p>Created by Edmundo Ruiz (edmundo@edmundito.com)<br/>
 Additional scripting by Tzach Shabtay</p>
 
@@ -155,7 +156,7 @@ tzachs Tween Module
 
 #define AGS_2_COMPATIBLE_TWEENS_DISABLED
 
-#define TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED 
+#define TWEEN_1_2_LEGACY_FUNCTIONS_DISABLED
 
 #endif
 #endif
@@ -192,7 +193,7 @@ It's a lot nicer if audio-related tweens don't block the game, for example.
 enum TweenTiming {
   eLinearTween,
   eEaseInTween,
-  eEaseOutTween, 
+  eEaseOutTween,
   eEaseInEaseOutTween
 };
 </pre>
@@ -206,9 +207,9 @@ or both accelerates at start and decelerates at end.</p>
 <h3><a id="TweenStyle">TweenStyle</a></h3>
 <pre>
 enum TweenStyle {
-  eBlockTween, 
-  eNoBlockTween, 
-  eRepeatTween, 
+  eBlockTween,
+  eNoBlockTween,
+  eRepeatTween,
   eReverseRepeatTween,
 };
 </pre>
@@ -221,8 +222,8 @@ the direction of the tween).</p>
 <h3><a id="TweenStopResult">TweenStopResult</a></h3>
 <pre>
 enum TweenStopResult {
-  ePauseTween, 
-  eFinishTween, 
+  ePauseTween,
+  eFinishTween,
   eResetTween,
 };
 </pre>
@@ -354,6 +355,7 @@ InvWindow.TweenPosition(float seconds, short toX, short toY, optional TweenTimin
 // AGS 2.x
 TweenCharacterPosition(Character* character, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenGUIPosition(GUI* gui, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenGUIControlPosition(GUIControl* guiControl, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenObjectPosition(Object* object, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenLabelPosition(Label* label, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenButtonPosition(Button* button, float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle)
@@ -392,6 +394,7 @@ InvWindow.TweenPositionBySpeed(float speed, short toX, short toY, optional Tween
 // AGS 2.x
 TweenCharacterPositionBySpeed(Character* character, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenGUIPositionBySpeed(GUI* gui, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
+TweenGUIControlPositionBySpeed(GUIControl* guiControl, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenObjectPositionBySpeed(Object* object, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenLabelPositionBySpeed(Label* label, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenButtonPositionBySpeed(Button* button, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
@@ -400,7 +403,7 @@ TweenListBoxPositionBySpeed(ListBox* listBox, float speed, short toX, short toY,
 TweenSliderPositionBySpeed(Slider* slider, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 TweenInvWindowPositionBySpeed(InvWindow* invWindow, float speed, short toX, short toY, optional TweenTiming, optional TweenStyle)
 </pre>
-<p>Tweens the position of a character, GUI, object, etc. from its current position to another based on the givens speed. 
+<p>Tweens the position of a character, GUI, object, etc. from its current position to another based on the given speed.
 	The duration is calculated based on the distance between the start position and the end position of the object.</p>
 <p>Same as TweenPosition, it returns the tween duration (in loops) if the TweenStyle is non-blocking (eNoBlockTween). For a repeat TweenStyle (eRepeatTween or eRepeatReverseTween) it returns the duration of one tween cycle. For blocking tweens, it returns a 1.</p>
 <h4>Example:</h4>
@@ -539,17 +542,32 @@ TweenViewportY(3.0, 100);
 
 <hr />
 
-<h3><a id="TweenViewportXY">TweenViewportXY</a></h3>
+<h3><a id="TweenViewportPosition">TweenViewportPosition</a></h3>
 <pre>
 // AGS 2.x and 3.x
-TweenViewportX(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
+TweenViewportPosition(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens the location of the viewport on the x axis and on the y axis from its current location to another.</p>
 <h4>Example:</h4>
 <pre>
-TweenViewportX(3.0, 100, 20);
+TweenViewportPosition(3.0, 100, 20);
 </pre>
-<p>Will tween the location of the viewport on the x axis from its current location to 100, and on the y axis from the current locatio to 20.</p>
+<p>Will tween the location of the viewport on the x axis from its current location to 100, and on the y axis from the current location to 20 in 3 seconds.</p>
+
+<hr />
+
+<h3><a id="TweenViewportPositionBySpeed">TweenViewportPositionBySpeed</a></h3>
+<pre>
+// AGS 2.x and 3.x
+TweenViewportX(float speed, short toX, short toY, optional TweenTiming, optional TweenStyle);
+</pre>
+<p>Tweens the location of the viewport on the x axis and on the y axis from its current location to another based on the given speed.
+The duration is calculated based on the distance between the start position and the end position of the object.</p>
+<h4>Example:</h4>
+<pre>
+TweenViewportBySpeed(100.0, 100, 20);
+</pre>
+<p>Will tween the location of the viewport on the x axis from its current location to 100, and on the y axis from the current location to 20 in 100.0 pixels/second.</p>
 
 <hr />
 
@@ -632,7 +650,7 @@ TweenCharacterAnimationSpeed(Character* characterRef, float seconds, short toAni
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-cEgo.TweenAnimationSpeed(1.5, -100); 
+cEgo.TweenAnimationSpeed(1.5, -100);
 
 // AGS 2.x
 TweenCharacterAnimationSpeed(cEgo, 1.5, -100);
@@ -653,7 +671,7 @@ TweenGUIZOrder(GUI* guiRef, float seconds, short toZOrder, optional TweenTiming,
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-gStatusLine.TweenZOrder(1.5, 100); 
+gStatusLine.TweenZOrder(1.5, 100);
 
 // AGS 2.x
 TweenGUIZOrder(gStatusLine, 1.5, 100);
@@ -674,7 +692,7 @@ TweenRegionLightLevel(Region* regionRef, float seconds, short toLightLevel, opti
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenLightLevel(1.5, 0); 
+rGarden.TweenLightLevel(1.5, 0);
 
 // AGS 2.x
 TweenRegionLightLevel(rGarden, 1.5, 0);
@@ -696,7 +714,7 @@ TweenRegionTintR(Region* regionRef, float seconds, short toR, optional TweenTimi
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenTintR(1.5, 200); 
+rGarden.TweenTintR(1.5, 200);
 
 // AGS 2.x
 TweenRegionTintR(rGarden, 1.5, 200);
@@ -718,7 +736,7 @@ TweenRegionTintG(Region* regionRef, float seconds, short toG, optional TweenTimi
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenTintG(1.5, 200); 
+rGarden.TweenTintG(1.5, 200);
 
 // AGS 2.x
 TweenRegionTintG(rGarden, 1.5, 200);
@@ -740,7 +758,7 @@ TweenRegionTintB(Region* regionRef, float seconds, short toB, optional TweenTimi
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenTintB(1.5, 200); 
+rGarden.TweenTintB(1.5, 200);
 
 // AGS 2.x
 TweenRegionTintB(rGarden, 1.5, 200);
@@ -762,7 +780,7 @@ TweenRegionTintAmount(Region* regionRef, float seconds, short toAmount, optional
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenTintAmount(1.5, 100); 
+rGarden.TweenTintAmount(1.5, 100);
 
 // AGS 2.x
 TweenRegionTintAmount(rGarden, 1.5, 100);
@@ -784,7 +802,7 @@ TweenRegionTintBlackAndWhite(Region* regionRef, float seconds, optional TweenTim
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-rGarden.TweenTintBlackAndWhite(1.5); 
+rGarden.TweenTintBlackAndWhite(1.5);
 
 // AGS 2.x
 TweenRegionTintBlackAndWhite(rGarden, 1.5);
@@ -811,7 +829,7 @@ TweenButtonColorR(Button* button, float seconds, short toR, optional TweenTiming
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-myLabel.TweenColorR(1.5, 200); 
+myLabel.TweenColorR(1.5, 200);
 
 // AGS 2.x
 TweenLabelColorR(myLabel, 1.5, 200);
@@ -838,7 +856,7 @@ TweenButtonColorG(Button* button, float seconds, short toG, optional TweenTiming
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-myLabel.TweenColorG(1.5, 200);  
+myLabel.TweenColorG(1.5, 200);
 
 // AGS 2.x
 TweenLabelColorG(myLabel, 1.5, 200);
@@ -865,7 +883,7 @@ TweenButtonColorB(Button* button, float seconds, short toB, optional TweenTiming
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-myLabel.TweenColorB(1.5, 200); 
+myLabel.TweenColorB(1.5, 200);
 
 // AGS 2.x
 TweenLabelColorB(myLabel, 1.5, 200);
@@ -888,7 +906,7 @@ TweenSliderValue(float seconds, short toValue, optional TweenTiming, optional Tw
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-mySlider.TweenValue(1.5, 200); 
+mySlider.TweenValue(1.5, 200);
 
 // AGS 2.x
 TweenSliderValue(mySlider, 1.5, 200);
@@ -910,7 +928,7 @@ Slider.TweenHandleOffset(float seconds, short toOffset, optional TweenTiming, op
 <h4>Example:</h4>
 <pre>
 // AGS 3.1+
-mySlider.TweenHandleOffset(1.5, 20); 
+mySlider.TweenHandleOffset(1.5, 20);
 </pre>
 
 <p>Will tween the handle offset of the slider from the current value to 20.</p>
@@ -931,7 +949,7 @@ TweenListBoxSelectedItem(ListBox* listBox, float seconds, short toSelectedItem, 
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-myListBox.TweenSelectedItem(1.5, 20); 
+myListBox.TweenSelectedItem(1.5, 20);
 
 // AGS 2.x
 TweenListBoxSelectedItem(myListBox, 1.5, 20);
@@ -956,8 +974,8 @@ TweenInvWindowTopItem(ListBox* listBox, float seconds, short toTopItem, optional
 <h4>Example:</h4>
 <pre>
 // AGS 3.x
-myListBox.TweenTopItem(1.5, 20); 
-myInventory.TweenTopItem(1.5, 20); 
+myListBox.TweenTopItem(1.5, 20);
+myInventory.TweenTopItem(1.5, 20);
 
 // AGS 2.x
 TweenListBoxTopItem(myListBox, 1.5, 20);
@@ -1096,7 +1114,7 @@ myAudioChannel.TweenPanning(3.0, 100);
 AudioChannel.TweenRoomLocation(float seconds, short toX, short toY, optional TweenTiming, optional TweenStyle);
 </pre>
 <p>Tweens an AudioChannel room location to a new x and y value.
-	Note that Tweening to 0, 0 will remove the directional effect immediately, possibly creatin a strange effect.</p>
+	Note that Tweening to 0, 0 will remove the directional effect immediately, possibly creating a strange effect.</p>
 <h4>Example:</h4>
 <pre>
 myAudioChannel.SetRoomLocation(1, 1);
