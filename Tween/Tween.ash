@@ -161,10 +161,10 @@ struct Tween extends TweenBase {
   
   // STATIC FUNCTIONS:
   
-  /// Decreases the game speed for better tweening.
+  /// Increases the game speed to at least 60 for better tweening quality.
   import static function IncreaseGameSpeed();
   
-  /// Restores the game speed.
+  /// Restores the game speed back to its original.
   import static function RestoreGameSpeed();
   
   /// Increases the game speed when a blocking tween is playing.
