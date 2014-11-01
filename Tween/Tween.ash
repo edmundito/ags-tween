@@ -119,11 +119,11 @@ enum TweenStopResult {
 ///////////////////////////////////////////////////////////////////////////////
 
 struct TweenBase {
-  TweenEasingType easingType;
-  TweenStyle style;
+  writeprotected TweenEasingType easingType;
+  writeprotected TweenStyle style;
   
-  float duration;
-  float elapsed;
+  writeprotected float duration;
+  writeprotected float elapsed;
   writeprotected float toX;
   writeprotected float toY;
   writeprotected float fromX;
@@ -135,6 +135,9 @@ struct TweenBase {
   
   /// Restarts the twen.
   import function Restart();
+  
+  /// Returns whether the tween is finished.
+  import bool IsFinished();
   
   /// Initializes a tween.
   import int Init(float amount, short fromX, short fromY, short toX, short toY, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
@@ -152,9 +155,6 @@ struct Tween extends TweenBase {
   
   /// Stops the tween.
   import function Stop(TweenStopResult result=ePauseTween);
-  
-  /// Returns whether the tween is finished.
-  import bool IsFinished();
   
   /// Returns the progress from 0.0 to 1.0.
   import float GetProgress();
