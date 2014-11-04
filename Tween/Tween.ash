@@ -136,8 +136,8 @@ struct TweenBase {
   /// Restarts the twen.
   import function Restart();
   
-  /// Returns whether the tween is finished.
-  import bool IsFinished();
+  /// Returns true if the tween is playing.
+  import bool IsPlaying();
   
   /// Initializes a tween.
   import int Init(float amount, short fromX, short fromY, short toX, short toY, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
