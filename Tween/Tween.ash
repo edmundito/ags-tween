@@ -137,7 +137,7 @@ struct TweenBase {
   import bool IsPlaying();
   
   /// Initializes a tween.
-  import int Init(float amount, int fromValue, int toValue, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
+  import int Init(float amount, int fromValue, int toValue, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eNoBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
 };
 
 struct Tween extends TweenBase {
