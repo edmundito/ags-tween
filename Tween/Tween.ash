@@ -119,16 +119,13 @@ enum TweenStopResult {
 ///////////////////////////////////////////////////////////////////////////////
 
 struct TweenBase {
-  writeprotected TweenEasingType easingType;
-  writeprotected TweenStyle style;
-  
-  writeprotected float duration;
-  writeprotected float elapsed;
-  writeprotected float toX;
-  writeprotected float toY;
-  writeprotected float fromX;
-  writeprotected float fromY;
-  writeprotected float startDelay;
+  writeprotected TweenEasingType EasingType;
+  writeprotected TweenStyle Style;
+  writeprotected float Duration;
+  writeprotected float Elapsed;
+  writeprotected float FromValue;
+  writeprotected float ToValue;
+  writeprotected float StartDelay;
   
   /// Reverses the direction of the tween.
   import function Reverse();
@@ -140,15 +137,12 @@ struct TweenBase {
   import bool IsPlaying();
   
   /// Initializes a tween.
-  import int Init(float amount, int fromX, int fromY, int toX, int toY, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
+  import int Init(float amount, int fromValue, int toValue, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
 };
 
 struct Tween extends TweenBase {
-  /// Tweened x value (read only)
-  writeprotected int X;
-  
-  /// Tweened y value (read only)
-  writeprotected int Y;
+  /// Tweened Value (read only)
+  writeprotected int Value;
   
   /// Moves the tween forward in time.
   import bool Update();
@@ -201,6 +195,7 @@ import int TweenMusicFadeIn(float amount, TweenEasingType easingType=Tween_EASIN
 
 import int TweenX(this Character*, float amount, int toX, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTiming timing=Tween_TIMING);
 import int TweenY(this Character*, float amount, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTiming timing=Tween_TIMING);
+import int TweenZ(this Character*, float amount, int toZ, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTiming timing=Tween_TIMING);
 import int TweenX(this Object*, float amount, int toX, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTiming timing=Tween_TIMING);
 import int TweenY(this Object*, float amount, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTiming timing=Tween_TIMING);
 import int TweenX(this GUI*, float amount, int toX, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTiming timing=Tween_TIMING_GUI);
