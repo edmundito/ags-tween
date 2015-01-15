@@ -54,7 +54,14 @@ This will start the Tween 1 second after this line of code is run by the AGS eng
 The last parameter is the **Timing**. By default, all Character Tweens are
 set to be timed in seconds, but you can also set it to speed, which is roughly measured as pixels/second:
 
-    player.TweenY(100.0, player.y - 50, eEaseInElasticTween, eNoBlockTween, 1.0, eTweenSpeed);
+    player.TweenY(
+      100.0,
+      player.y - 50,
+      eEaseInElasticTween,
+      eNoBlockTween,
+      1.0,
+      eTweenSpeed
+    );
 
 This will start the same tween, but instead of lasting half a second, it is based on how long
 it takes the character from its position to 50 pixels above at a 100 pixels/second speed.
