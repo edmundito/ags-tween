@@ -2,7 +2,7 @@
 
 ## SecondsToLoops
 
-`int SecondsToLoops(float seconds)`
+    int SecondsToLoops(float seconds)
 
 Converts number of seconds to number of game loops.
 
@@ -10,7 +10,7 @@ Converts number of seconds to number of game loops.
 
 ## LoopsToSeconds
 
-`float LoopsToSeconds(int loops)`
+    float LoopsToSeconds(int loops)
 
 Converts number of loops to number seconds.
 
@@ -18,7 +18,7 @@ Converts number of loops to number seconds.
 
 ## WaitSeconds
 
-`WaitSeconds(float seconds)`
+    WaitSeconds(float seconds)
 
 Waits a number of seconds.
 
@@ -26,8 +26,8 @@ Waits a number of seconds.
 
 ## WaitForLongest
 
-`WaitForLongest(int timerID, int duration1, int duration2, optional int duration3,`
-`optional int duration4, optional int duration5, optional int duration6)`
+    WaitForLongest(int timerID, int duration1, int duration2, optional int duration3,
+                   optional int duration4, optional int duration5, optional int duration6)`
 
 Waits for the longest duration (based on game loops). Supports up to 6 durations.
 
@@ -39,7 +39,7 @@ Waits for the longest duration (based on game loops). Supports up to 6 durations
 
 ## SetTimerWithSeconds
 
-`SetTimerWithSeconds(int timerID, float seconds)`
+    SetTimerWithSeconds(int timerID, float seconds)
 
 Sets a Timer using seconds instead of game loops.
 
@@ -47,8 +47,8 @@ Sets a Timer using seconds instead of game loops.
 
 ## SetTimerForLongest
 
-`SetTimerForLongest(int timerID, int timeout1, int timeout2, optional int timeout3,`
-`optional int timeout4, optional int timeout5, optional int timeout6)`
+    SetTimerForLongest(int timerID, int timeout1, int timeout2, optional int timeout3,
+                       optional int timeout4, optional int timeout5, optional int timeout6)
 
 Sets the timer for the longest timeout (based on game loops). Supports up to 6 timeouts.
 
