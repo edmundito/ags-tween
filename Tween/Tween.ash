@@ -11,10 +11,10 @@
 // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
 // the Software, and to permit persons to whom the Software is furnished to do so,
 // subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -62,42 +62,37 @@
 // ENUMERATIONS
 ///////////////////////////////////////////////////////////////////////////////
 
-enum TweenTiming {
-  eTweenSeconds,
-  eTweenSpeed, 
-};
-
 enum TweenEasingType {
   eEaseLinearTween,
   eEaseInSineTween,
-  eEaseOutSineTween, 
-  eEaseInOutSineTween, 
-  eEaseInQuadTween, 
-  eEaseOutQuadTween, 
-  eEaseInOutQuadTween, 
-  eEaseInCubicTween, 
+  eEaseOutSineTween,
+  eEaseInOutSineTween,
+  eEaseInQuadTween,
+  eEaseOutQuadTween,
+  eEaseInOutQuadTween,
+  eEaseInCubicTween,
   eEaseOutCubicTween,
-  eEaseInOutCubicTween, 
-  eEaseInQuartTween, 
-  eEaseOutQuartTween, 
+  eEaseInOutCubicTween,
+  eEaseInQuartTween,
+  eEaseOutQuartTween,
   eEaseInOutQuartTween,
-  eEaseInQuintTween, 
-  eEaseOutQuintTween, 
-  eEaseInOutQuintTween, 
-  eEaseInCircTween, 
-  eEaseOutCircTween, 
+  eEaseInQuintTween,
+  eEaseOutQuintTween,
+  eEaseInOutQuintTween,
+  eEaseInCircTween,
+  eEaseOutCircTween,
   eEaseInOutCircTween,
-  eEaseInExpoTween, 
-  eEaseOutExpoTween, 
+  eEaseInExpoTween,
+  eEaseOutExpoTween,
   eEaseInOutExpoTween,
-  eEaseInBackTween, 
-  eEaseOutBackTween, 
-  eEaseInOutBackTween, 
-  eEaseInElasticTween, 
-  eEaseOutElasticTween, 
-  eEaseInOutElasticTween, 
-  eEaseInBounceTween, 
-  eEaseOutBounceTween, 
+  eEaseInBackTween,
+  eEaseOutBackTween,
+  eEaseInOutBackTween,
+  eEaseInElasticTween,
+  eEaseOutElasticTween,
+  eEaseInOutElasticTween,
+  eEaseInBounceTween,
+  eEaseOutBounceTween,
   eEaseInOutBounceTween
 };
 
@@ -106,6 +101,11 @@ enum TweenStyle {
   eNoBlockTween,
   eRepeatTween,
   eReverseRepeatTween
+};
+
+enum TweenTiming {
+  eTweenSeconds,
+  eTweenSpeed,
 };
 
 enum TweenStopResult {
@@ -126,16 +126,16 @@ struct TweenBase {
   writeprotected float FromValue;
   writeprotected float ToValue;
   writeprotected float StartDelay;
-  
+
   /// Reverses the direction of the tween.
   import function Reverse();
-  
-  /// Restarts the twen.
+
+  /// Restarts the tween.
   import function Restart();
-  
+
   /// Returns true if the tween is playing.
   import bool IsPlaying();
-  
+
   /// Initializes a tween.
   import int Init(float amount, int fromValue, int toValue, TweenEasingType easingType=eEaseLinearTween, TweenStyle style=eNoBlockTween, float startDelay=0, TweenTiming timing=eTweenSeconds);
 };
@@ -143,30 +143,30 @@ struct TweenBase {
 struct Tween extends TweenBase {
   /// Tweened Value (read only)
   writeprotected int Value;
-  
+
   /// Moves the tween forward in time.
   import bool Update();
-  
+
   /// Stops the tween.
   import function Stop(TweenStopResult result=ePauseTween);
-  
+
   /// Returns the progress from 0.0 to 1.0.
   import float GetProgress();
-  
+
   // STATIC FUNCTIONS:
-  
+
   /// Increases the game speed to at least 60 for better tweening quality.
   import static function IncreaseGameSpeed();
-  
+
   /// Restores the game speed back to its original.
   import static function RestoreGameSpeed();
-  
+
   /// Increases the game speed when a blocking tween is playing.
   import static function AlwaysIncreaseGameSpeedOnBlockingTweens(bool value);
-  
+
   /// Stops all Tweens that are currently running.
   import static function StopAll(TweenStopResult result=Tween_STOP_RESULT);
-  
+
   /// Waits until all non-looping Tweens are finished playing.
   import static function WaitForAllToFinish();
 };
@@ -320,10 +320,10 @@ import function StopAllTweens(this AudioChannel*, TweenStopResult result=Tween_S
 struct TweenGame {
   /// Returns the red value from a colour number.
   import static int GetRFromColor(int color);
-  
-  /// Returns the greb value from a colour number.
+
+  /// Returns the green value from a colour number.
   import static int GetGFromColor(int color);
-  
+
   /// Returns the blue value from a colour number.
   import static int GetBFromColor(int color);
 };
@@ -331,20 +331,20 @@ struct TweenGame {
 struct TweenMaths {
   /// Returns the absolute value.
   import static float Abs(float value);
-  
+
   /// Returns the distance (as a float) between two points.
   import static float GetDistance(int fromX, int fromY, int toX, int toY);
-  
+
   /// Interpolates from one float to another based on a decimal factor. Returns int.
   import static int Lerp(float from, float to, float amount);
-  
+
   /// Returns the smallest int value.
   import static int MinInt(int a, int b);
-  
+
   /// Returns the largest int value.
   import static int MaxInt(int a, int b);
-  
-  /// Returns an int between a min and max values
+
+  /// Returns an int between a min and max values.
   import static int ClampInt(int value, int min, int max);
 };
 
@@ -376,10 +376,10 @@ import function SetTimerForLongest(int timerID, int timeout1, int timeout2, int 
 //
 // Copyright (c) 2001 Robert Penner
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without modification,
 // are permitted provided that the following conditions are met:
-// 
+//
 //  * Redistributions of source code must retain the above copyright notice, this
 //    list of conditions and the following disclaimer.
 //  * Redistributions in binary form must reproduce the above copyright notice,
@@ -426,7 +426,7 @@ struct TweenEasing {
   import static float EaseInBounce(float t, float b, float c, float d);
   import static float EaseOutBounce(float t, float b, float c, float d);
   import static float EaseInOutBounce(float t, float b, float c, float d);
-  
+
   /// Returns the amouns for calculations based on the TweenEasingType
   import static float GetAmount(float elapsed, float duration, TweenEasingType easingType);
 };

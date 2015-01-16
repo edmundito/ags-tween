@@ -3,4 +3,8 @@ repo_url: https://github.com/edmundito/ags-tween
 pages:
   - ['index.md', 'Home']
   - ['getting-started.md', 'Getting Started']
-  - ['enumerated-types.md', 'API', 'Enumerated Types']
+  - ['scripting/enums.md', 'Scripting', 'Enumerated Types']
+  - ['scripting/globaltiming.md', 'Scripting', 'Global Timing Functions']
+  - ['scripting/tween.md', 'Scripting', 'Tween']
+  - ['scripting/tweengame.md', 'Scripting', 'TweenGame']
+  - ['scripting/tweenmaths.md', 'Scripting', 'TweenMaths']
