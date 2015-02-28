@@ -34,7 +34,8 @@ Waits for the longest duration (based on game loops). Supports up to 6 durations
     // Will start both Tweens at once, but wait until the longest one ends:
     WaitForLongest(
         gIconbar.TweenX(5.0, 100, eEaseLinearTween),
-        gIconbar.TweenY(10.0, 50, eEaseLinearTween)
+        gIconbar.TweenY(15.0, 50, eEaseLinearTween),  // Will wait 15 seconds!
+        gIconbar.TweenFadeOut(10.0)
     );
 
 ## SetTimerWithSeconds
@@ -56,5 +57,6 @@ Sets the timer for the longest timeout (based on game loops). Supports up to 6 t
     SetTimerForLongest(
         1,
         gIconbar.TweenX(5.0, 100, eEaseLinearTween),
-        gIconbar.TweenY(10.0, 50, eEaseLinearTween)
+        gIconbar.TweenY(15.0, 50, eEaseLinearTween), // Sets the timer to 15 seconds!
+        gIconbar.TweenFadeOut(10.0)
     );

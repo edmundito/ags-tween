@@ -1,7 +1,7 @@
 `Tween` is a custom Tween object. You can use custom Tweens for advance use, or to have more manual control.
 
     Tween customTween;
-    customTween.Init(5.0, 0, 100);
+    customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
     while (customTween.IsPlaying()) {
       customTween.Update();
       player.x = customTween.Value;
@@ -12,44 +12,64 @@ If you're advance scripter, `Tween` is actually extends the `TweenBase` struct. 
 shared between the internal tweens and the custom tweens. This documentation does not
 distinguish `TweenBase`, however.
 
-# Instance Properties
+# Properties
 
 ## Duration
 
     readonly float Tween.Duration;
 
+Returns the duration in loops. This can be set with the `Init` function.
+
 ## EasingType
 
     readonly TweenEasingType Tween.EasingType;
+
+Returns the `TweenEasingType`. This can be set with the `Init` function.
 
 ## Elapsed
 
     readonly float Tween.Elapsed;
 
+Returns the `Elapsed` loops.
+
 ## FromValue
 
     readonly float Tween.FromValue;
+
+Returns the start value. This can be set with the `Init` function.
 
 ## StartDelay
 
     readonly float Tween.StartDelay;
 
+Returns the start delay. This can be set with the `Init` function.
+
+## Style
+
+    readonly float Tween.Style;
+
+Returns the `TweenStyle`. This can be set with the `Init` function.
+
 ## ToValue
 
     readonly float Tween.ToValue;
+
+Returns the end value. This can be set with the `Init` function.
 
 ## Value
 
     readonly int Tween.Value;
 
+Returns the current value as an integer. This is set primarily by the `Update` function.
 
-# Instance Functions
+
+# Functions
 
 ## GetProgress
 
-    import float GetProgress()
+    import float Tween.GetProgress()
 
-Returns the progress from 0.0 to 1.0.
+Returns the progress in a float value between 0.0 to 1.0.
 
 ## Init
 
@@ -66,7 +86,7 @@ Initializes a tween. Returns the duration (in loops).
 Returns true if the tween is playing.
 
     Tween customTween;
-    customTween.Init(5.0, 0, 100);
+    customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
     while (customTween.IsPlaying()) {
       customTween.Update();
       player.x = customTween.Value;
@@ -81,8 +101,9 @@ Returns true if the tween is playing.
 Reverses the direction of the tween.
 
     Tween customTween;
-    customTween.Init(5.0, 0, 100);
+    customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
     int reverseCount = 0;
+    // Bounce the player back and forth 5 times.
     while (reverseCount < 5) {
       if (!customTween.IsPlaying()) {
         customTween.Reverse();
@@ -100,7 +121,7 @@ Reverses the direction of the tween.
 Restarts the tween.
 
     Tween customTween;
-    customTween.Init(5.0, 0, 100);
+    customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
     int repeatCount = 0;
     while (repeatCount < 5) {
       if (!customTween.IsPlaying()) {
@@ -116,7 +137,7 @@ Restarts the tween.
 
     function Tween.Stop(optional TweenStopResult result)
 
-Stops the tween. By default, the `TweenStopResult` is to pause.
+Stops the tween. By default, the `TweenStopResult` is to pause (`ePauseTween`).
 
 ## Update
 
@@ -125,7 +146,7 @@ Stops the tween. By default, the `TweenStopResult` is to pause.
 Moves the tween forward in time.
 
     Tween customTween;
-    customTween.Init(5.0, 0, 100);
+    customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
     while (customTween.IsPlaying()) {
 
       // Without this, the tween will not advance
@@ -135,37 +156,3 @@ Moves the tween forward in time.
       player.x = customTween.Value;
       Wait(1);
     }
-
-
-# Static Functions
-
-## Tween.IncreaseGameSpeedOnBlock
-
-    static function Tween.IncreaseGameSpeedOnBlock(bool value)
-
-Increases the game speed when a blocking tween is playing.
-
-## Tween.IncreaseGameSpeed
-    static function Tween.IncreaseGameSpeed()
-
-Increases the game speed to at least 60 for better tweening quality.
-
-
-## Tween.RestoreGameSpeed
-
-    static function Tween.RestoreGameSpeed()
-
-Restores the game speed back to its original.
-
-
-## Tween.StopAll
-
-    static function Tween.StopAll(optional TweenStopResult result)
-
-Stops all Tweens that are currently running.
-
-## Tween.WaitForAllToFinish
-
-  static function Tween.WaitForAllToFinish()
-
-Waits until all non-looping Tweens are finished playing.

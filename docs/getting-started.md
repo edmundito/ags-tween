@@ -66,16 +66,16 @@ set to be timed in seconds, but you can also set it to speed, which is roughly m
 This will start the same tween, but instead of lasting half a second regardless of where the GUI is located,
 it is based on how long it takes the GUI to move from its Y to off screen at a 100 pixels/second speed.
 
-Finally, you can immediately **Stop** all the Tweens affecting the `gIconbar`:
+Finally, you can immediately **Stop** the position Tweens affecting the `gIconbar`:
 
-    gIconbar.StopAllTweens();
+    gIconbar.StopTweenPosition();
 
-By default, it will stop the GUI wherever its at. You can also determine the
+By default, it will stop the GUI wherever its at. You can also direct the
 **Result** of how the Tweens are stopped:
 
-    gIconbar.StopAllTweens(eFinishTween);
+    gIconbar.StopTweenPosition(eFinishTween);
 
-This will set the GUI to the end of the Tween instead. You can also use `eResetTween`, which
+This will set the GUI Y to the end of the Tween immediately. You can also use `eResetTween`, which
 will reset the GUI Y back to the start of the Tween.
 
 ## Recap

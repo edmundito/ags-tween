@@ -3,24 +3,24 @@ These functions are also used internally by the Tween module.
 
 ## GetRFromColor
 
-    int TweenGame.GetRFromColor(int color)
+    static int TweenGame.GetRFromColor(int color)
 
-Returns the red value from a colour number.
+Returns the red value from a colour number. This is complementary to AGS's `Game.GetColorFromRGB`.
 
     int red = TweenGame.GetRFromColor(15);
 
 ## GetGFromColor
 
-    int TweenGame.GetGFromColor(int color)
+    static int TweenGame.GetGFromColor(int color)
 
-Returns the green value from a colour number.
+Returns the green value from a colour number. This is complementary to AGS's `Game.GetColorFromRGB`.
 
     int green = TweenGame.GetGFromColor(15);
 
 ## GetBFromColor
 
-    int TweenGame.GetRFromColor(int color)
+    static int TweenGame.GetRFromColor(int color)
 
-Returns the blue value from a colour number.
+Returns the blue value from a colour number. This is complementary to AGS's `Game.GetColorFromRGB`.
 
     int blue = TweenGame.GetGFromColor(15);
