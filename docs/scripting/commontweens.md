@@ -1,5 +1,26 @@
 # General
 
+## Stop All Tweens
+
+    Character.StopAllTweens(optional TweenStopResult)
+    GUI.StopAllTweens(optional TweenStopResult)
+    Object.StopAllTweens(optional TweenStopResult)
+    Region.StopAllTweens(optional TweenStopResult)
+    Label.StopAllTweens(optional TweenStopResult)
+    Button.StopAllTweens(optional TweenStopResult)
+    TextBox.StopAllTweens(optional TweenStopResult)
+    ListBox.StopAllTweens(optional TweenStopResult)
+    Slider.StopAllTweens(optional TweenStopResult)
+    InvWindow.StopAllTweens(optional TweenStopResult)
+
+Stops all the tweens currently playing on the a character, GUI, room object, etc.
+
+    // Will stop all the tweens for cEgo, cIconbar, and oBluecup.
+    cEgo.StopAllTweens();
+    gIconbar.StopAllTweens();
+    oBluecup.StopAllTweens();
+
+
 ## Position, X, or Y
 
     Character.TweenPosition(float timing, int toX, int toY, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -130,7 +151,7 @@ Note that this function currently requires the use of a second object for the tr
     // Will tween the image of the BlueCup object from its current sprite to sprite 167.
     oBlueCup.TweenImage(oPinkPoster, 1.5, 167);
 
-## Character AnimationSpeed
+## Character Animation Speed
 
     Character.TweenAnimationSpeed(float timing, int toAnimationSpeed, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
@@ -150,7 +171,18 @@ Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlo
 
     cEgo.TweenScaling(1.5, 200);
 
-## GUI ZOrder
+## Character Z
+
+    Character.TweenZ(float timing, int toZ, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+
+    Character.StopTweenZ(optional TweenStopResult)
+
+Stops the a character Z position. From the AGS documentation: "This allows the character to levitate off the ground, whilst still retaining its normal Y co-ordinate for baseline calculations and regions.
+Normally this is set to 0 (ground-level), but you can increase it to make the character float."
+
+    cEgo.TweenZ(1.0, 100);
+
+## GUI Z-Order
 
     GUI.TweenZOrder(float timing, int toZOrder, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
