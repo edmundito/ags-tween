@@ -498,7 +498,7 @@ struct TweenEasing {
   import static float EaseOutBounce(float t, float b, float c, float d);
   import static float EaseInOutBounce(float t, float b, float c, float d);
 
-  /// Returns the amouns for calculations based on the TweenEasingType
+  /// Returns the amounts for calculations based on the TweenEasingType
   import static float GetAmount(float elapsed, float duration, TweenEasingType easingType);
 };
 
