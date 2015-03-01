@@ -12,7 +12,7 @@ If you're advance scripter, `Tween` is actually extends the `TweenBase` struct. 
 shared between the internal tweens and the custom tweens. This documentation does not
 distinguish `TweenBase`, however.
 
-# Properties
+# 1. Properties
 
 ## Duration
 
@@ -63,7 +63,7 @@ Returns the end value. This can be set with the `Init` function.
 Returns the current value as an integer. This is set primarily by the `Update` function.
 
 
-# Functions
+# 2. Functions
 
 ## GetProgress
 

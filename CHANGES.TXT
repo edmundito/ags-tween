@@ -1,5 +1,30 @@
 Revision History
 ================
+
+2.0.0 (February 28 2014)
+- Added ability to stop individual Tweens.
+- Added ability to set optional startDelay for all tweens.
+- Added ability to optionally play all tweens by seconds or speed.
+- Added convenient FadeIn and FadeOut tween functions where it made sense.
+- Added support to create custom tweens.
+- Added new Tweens (X, Y, and Character Z).
+- Added ability to speed up game during blocking tween playback.
+- Exposed internal functions into TweenMaths and TweenGame.
+- Added more timing utility functions.
+- Added new common Easing equations.
+- Improved limit and error checking.
+- Changed all values away from short and towards int or float.
+- Broke compatibility with 1.x modules and created compatibility module.
+- Removed support for AGS 2.x.
+- Using more standard names and now more compliant with the module guidelines.
+
+1.5.1 (September 20 2014)
+
+- Fixed bad import statements for various *BySpeed tweens (viewport, GUI, GUI control, and character)
+- Fixed Y miscalculation in GetDistance function (use for speed tweens)
+- Fixed new strict audio check issue that would make module incompatible with AGS 3.1 and below.
+- Fixed incorrect documentation
+
 1.5 (2012)
 - Added WaitForTweensToStop which allows waiting for all non-looping tweens to be done.
 - Added ability to tween positions based on speed instead of time

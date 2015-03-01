@@ -1,0 +1,40 @@
+
+               Tween Scripting Module for Adventure Game Studio
+               ================================================
+
+Files
+=====
+
+- Tween.scm: The Tween module!
+- Tween1Compatiblity.scm: Module needed if you were already using Tween 1.x in your game.
+- LICENSE: Contains licensing information.
+      You may need to include the contents of this file in your commercial game.
+- CHANGES.TXT: The change log.
+- INSTALL.TXT: This file!
+
+How to Install
+==============
+
+1. Open the AGS Editor and your game.
+2. Remove the existing Tween module from the AGS Editor: Right-click on it and select "Delete".
+3. Import Tween.scm: Right-click in Scripts and select "Import..."
+4. Make sure that the Tween module is at the top or close to the top of the script list:
+      In AGS 3.3 or above you can drag the script.
+      In earlier versions, you can right-click and select "Move Up" until it's at the top.
+5. If you were using Tween 1.x, then you can also import Tween1Compatiblity.scm.
+      Make sure that it is placed right below the Tween script module.
+
+Documentation
+=============
+
+Available online at:
+http://ags-tween.readthedocs.org/
+
+Support
+=======
+
+Visit the AGS forums and post in the Tween 2.x thread:
+http://www.adventuregamestudio.co.uk/forums/index.php?board=10.0
+
+You can also post in the ags-tween Github at:
+https://github.com/edmundito/ags-tween/issues

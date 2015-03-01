@@ -1,7 +1,6 @@
 site_name: AGS Tween Module
 repo_url: https://github.com/edmundito/ags-tween
 pages:
-  - ['index.md', 'Home']
   - ['getting-started.md', 'Getting Started']
   - ['scripting/enums.md', 'Basic', 'Enumerated Types']
   - ['scripting/generaltweens.md', 'Basic', 'General Tweens']
