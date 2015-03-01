@@ -2489,10 +2489,10 @@ return
             <ScriptAndHeader_Header>
               <Script>
                 <FileName>Tween.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
+                <Name>Tween</Name>
+                <Description>In-betweening functions for AGS. </Description>
+                <Author>Edmundo Ruiz et al.</Author>
+                <Version>2.0.0</Version>
                 <Key>1249765699</Key>
                 <IsHeader>True</IsHeader>
               </Script>
@@ -2501,7 +2501,7 @@ return
               <Script>
                 <FileName>Tween.asc</FileName>
                 <Name>Tween</Name>
-                <Description>Used to create programatic in-betweens (tweens) for AGS objects. These animations can be blocking, non blocking, or loop them, and it has acceleration/deceleration timing functions.</Description>
+                <Description>In-betweening functions for AGS. </Description>
                 <Author>Edmundo Ruiz et al.</Author>
                 <Version>2.0.0</Version>
                 <Key>1249765699</Key>
@@ -2529,6 +2529,30 @@ return
                 <Author />
                 <Version />
                 <Key>1900456490</Key>
+                <IsHeader>False</IsHeader>
+              </Script>
+            </ScriptAndHeader_Script>
+          </ScriptAndHeader>
+          <ScriptAndHeader>
+            <ScriptAndHeader_Header>
+              <Script>
+                <FileName>Display2.ash</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>1169124952</Key>
+                <IsHeader>True</IsHeader>
+              </Script>
+            </ScriptAndHeader_Header>
+            <ScriptAndHeader_Script>
+              <Script>
+                <FileName>Display2.asc</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>1169124952</Key>
                 <IsHeader>False</IsHeader>
               </Script>
             </ScriptAndHeader_Script>
