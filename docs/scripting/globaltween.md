@@ -23,7 +23,7 @@ Restores the game speed back to the previous speed before `IncreaseGameSpeed` wa
 
 ## Tween.StopAll
 
-    static function Tween.StopAll(optional TweenStopResult result)
+    static function Tween.StopAll(optional TweenStopResult)
 
 Stops all Tweens that are currently running.
 

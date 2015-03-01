@@ -4,6 +4,8 @@ pages:
   - ['index.md', 'Home']
   - ['getting-started.md', 'Getting Started']
   - ['scripting/enums.md', 'Scripting', 'Enumerated Types']
+  - ['scripting/audiotweens.md', 'Scripting', 'Audio Tweens']
+  - ['scripting/commontweens.md', 'Scripting', 'Common Tweens']
   - ['scripting/globaltween.md', 'Scripting', 'Global Tween Functions']
   - ['scripting/tween.md', 'Scripting', 'Custom Tweens']
   - ['scripting/globaltiming.md', 'Scripting', 'Global Timing Functions']

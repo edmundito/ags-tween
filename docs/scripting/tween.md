@@ -73,9 +73,9 @@ Returns the progress in a float value between 0.0 to 1.0.
 
 ## Init
 
-    int Tween.Init(float amount, int fromValue, int toValue,
-      optional TweenEasingType easingType, optional TweenStyle style,
-      optional float startDelay, optional TweenTiming timing)
+    int Tween.Init(float timing, int fromValue, int toValue,
+      optional TweenEasingType, optional TweenStyle,
+      optional startDelay, optional TweenTimingType)
 
 Initializes a tween. Returns the duration (in loops).
 
@@ -135,7 +135,7 @@ Restarts the tween.
 
 ## Stop
 
-    function Tween.Stop(optional TweenStopResult result)
+    function Tween.Stop(optional TweenStopResult)
 
 Stops the tween. By default, the `TweenStopResult` is to pause (`ePauseTween`).
 

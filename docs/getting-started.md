@@ -50,6 +50,7 @@ instead of immediately:
     gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween, eBlockTween, 1.0);
 
 This will start the Tween 1 second after this line of code is run by the AGS engine.
+Because it is blocking, the script will then block 1.5 seconds (0.5 duration + 1.0 delay).
 
 The last parameter is the **Timing**. By default, all Tweens are
 set to be timed in seconds, but you can also set it to speed, which is roughly measured as pixels/second:
@@ -70,7 +71,7 @@ Finally, you can immediately **Stop** the position Tweens affecting the `gIconba
 
     gIconbar.StopTweenPosition();
 
-By default, it will stop the GUI wherever its at. You can also direct the
+By default, it will stop the GUI wherever it is located. You can also direct the
 **Result** of how the Tweens are stopped:
 
     gIconbar.StopTweenPosition(eFinishTween);
@@ -89,5 +90,5 @@ You can create Tweens that are simple or fairly complex. The arguments you can a
 5. Start Delay (optional, in seconds)
 6. Timing (optional: is the first Amount seconds or speed?)
 
-You can stop all the Tweens applied to an instance using the `StopAllTweens` function. You can stop it
+You can stop all the Tweens applied to an instance using a `StopTween*` function. You can stop it
 in its current form, set it to the end of the Tween, or reset it back to the start of the Tween.
