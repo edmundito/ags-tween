@@ -1,3 +1,5 @@
+# Tween Module for Adventure Game Studio
+
 [The Tween Module](https://github.com/edmundito/ags-tween/) is a script module for [Adventure Game Studio (AGS)](http://www.adventuregamestudio.co.uk) that can be
 used to script "inbetweening". The module allows you to control many properties in
 GUIs, GUI controls, Room Objects, Characters, Region, Audio, and more. It allows these
