@@ -1,5 +1,3 @@
-# General
-
 ## Stop All Tweens
 
     Character.StopAllTweens(optional TweenStopResult)
@@ -192,8 +190,6 @@ Tweens the Z Order of the gui.
 
     // Will tween the Z order of the statusLine Gui from its current Z order to 100 (which is in the behind 100 other guis).
     gStatusLine.TweenZOrder(1.5, 100);
-
-# Region Specific
 
 ## Region Light Level
 

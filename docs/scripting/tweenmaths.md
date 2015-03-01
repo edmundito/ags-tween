@@ -39,16 +39,16 @@ Returns the distance (as a float) between two points.
 
 ## Lerp
 
-    static int TweenMaths.Lerp(float from, float to, float amount)
+    static int TweenMaths.Lerp(float from, float to, float t)
 
 Interpolates from one float to another based on a decimal factor. Returns int.
 
     // Move the player from position 0 to 100 in 100 loops:
-    float amount = 0.0;
-    while (amount <= 1.0) {
-      player.x = TweenMaths.Lerp(0.0, 100.0, amount);
+    float t = 0.0;
+    while (t <= 1.0) {
+      player.x = TweenMaths.Lerp(0.0, 100.0, t);
       Wait(1);
-      amount = amount + 0.01;
+      t = t + 0.01;
     }
 
 ## MaxFloat

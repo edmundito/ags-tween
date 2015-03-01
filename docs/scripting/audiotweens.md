@@ -1,4 +1,4 @@
-# General
+# 1. General
 
 ## Speech Volume
 
@@ -12,13 +12,13 @@ Tweens the volume for speech from one value to another. Range: 0 to 255.
     TweenSpeechVolume(3.0, 100, 50);
 
 
-# New-Style Audio
+# 2. New-Style Audio
 
 New-Style audio tweens only work in AGS 3.2 or above if the **Enable new-style audio scripting** is set to **True** in the AGS Editor **General Settings** under **Backwards Compatibility**.
 
 ## System Volume
 
-    // AGS 3.2 (with new-style audio scripting enabled)
+    // AGS 3.2+ (with new-style audio scripting enabled)
     TweenSystemVolume(float timing, int toVolume, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
 
     StopTweenSystemVolume(optional TweenStopResult)
@@ -32,7 +32,7 @@ Tweens the master volume (`System.Volume`) to a new value. Range: 0 to 100.
 
 ## AudioChannel Panning
 
-    // AGS 3.2 (with new-style audio scripting enabled)
+    // AGS 3.2+ (with new-style audio scripting enabled)
     AudioChannel.TweenPanning(float timing, int toPanning, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
 
     AudioChannel.StopTweenPanning(optional TweenStopResult)
@@ -46,7 +46,7 @@ Tweens an `AudioChannel` panning to to a new value. Range: -100 to 100.
 
 ## AudioChannel Volume
 
-    // AGS 3.2 (with new-style audio scripting enabled)
+    // AGS 3.2+ (with new-style audio scripting enabled)
     AudioChannel.TweenVolume(float timing, int toVolume, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
     AudioChannel.TweenFadeIn(float timing, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
     AudioChannel.TweenFadeOut(float timing, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
@@ -60,9 +60,9 @@ Tweens an `AudioChannel` volume to to a new value. Range: 0 to 100.
     myAudioChannel.TweenPanning(3.0, 100);
 
 
-## AudioChannel RoomLocation
+## AudioChannel Room Location
 
-    // AGS 3.2 (with new-style audio scripting enabled)
+    // AGS 3.2+ (with new-style audio scripting enabled)
     AudioChannel.TweenRoomLocation(float timing, int toX, int toY, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
 
     AudioChannel.StopTweenRoomLocation(optional TweenStopResult)
@@ -80,7 +80,7 @@ Tweens an `AudioChannel` room location to a new x and y value. Note that tweenin
 Will stop all the tweens affecting the current `AudioChannel`.
 
 
-# Legacy Audio
+# 3. Legacy Audio
 
 Legacy audio tweens only work in AGS 3.1 or below or if the **Enable new-style audio scripting** is set to **False** in the AGS Editor **General Settings** under **Backwards Compatibility**.
 
@@ -125,7 +125,7 @@ Tweens the master digital volume from one value to another. Range: 1 to 100.
 
 ## Channel Volume
 
-    // AGS 2.x and 3.x (without new-style audio scripting enforced)
+    // AGS 3.0, 3.1 (and 3.2+ with new-style audio scripting disabled)
     TweenChannelVolume(float timing, int channel, int fromVolume, int toVolume, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
 
     StopTweenChannelVolume(optional TweenStopResult)

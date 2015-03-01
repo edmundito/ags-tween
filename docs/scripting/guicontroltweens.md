@@ -47,7 +47,7 @@ Note that the value should be between the min and max values for the slider.
     // Will tween the value of the slider from the current value to 200.
     mySlider.TweenValue(1.5, 200);
 
-## Slider HandleOffset
+## Slider Handle Offset
 
     // AGS 3.1+
     Slider.TweenHandleOffset(float timing, int toOffset, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -56,7 +56,6 @@ Note that the value should be between the min and max values for the slider.
 
 Tweens the offset of the slider handle.
 
-    // AGS 3.1+
     // Will tween the handle offset of the slider from the current value to 20.
     mySlider.TweenHandleOffset(1.5, 20);
 

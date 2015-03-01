@@ -398,7 +398,7 @@ struct TweenMaths {
   import static float GetDistance(int fromX, int fromY, int toX, int toY);
 
   /// Interpolates from one float to another based on a decimal factor. Returns int.
-  import static int Lerp(float from, float to, float amount);
+  import static int Lerp(float from, float to, float t);
 
   /// Returns the smallest int value.
   import static int MinInt(int a, int b);
@@ -498,8 +498,8 @@ struct TweenEasing {
   import static float EaseOutBounce(float t, float b, float c, float d);
   import static float EaseInOutBounce(float t, float b, float c, float d);
 
-  /// Returns the amounts for calculations based on the TweenEasingType
-  import static float GetAmount(float elapsed, float duration, TweenEasingType easingType);
+  /// Returns the value at elapsed over duration based on the TweenEasingType
+  import static float GetValue(float elapsed, float duration, TweenEasingType easingType);
 };
 
 // END BSD LICENSE
