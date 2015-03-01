@@ -21,14 +21,14 @@ To start, let's tween a GUI!
 
 We're going to use the `gIconbar` GUI that comes with the default game. You can tween its Y position by using the `TweenY` function.
 
-The first parameter is the **Amount**, in this case measure in seconds, and the second is the Y destination:
+The first parameter is the **Timing**, in this case measure in seconds, and the second is the Y destination:
 
     gIconbar.TweenY(0.5, -gIconbar.Width);
 
 In half a second, the Tween will move the GUI from its current Y to vertically off the screen.
 
 That is the most basic Tween you can create. This will create a very boring movement from start to end,
-but you can also make it a bit more dynamic by adding an **Easing**:
+but you can also make it a bit more dynamic by adding an **Easing Type**:
 
     gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween);
 
@@ -39,27 +39,27 @@ The back part happens in the beginning because it's an ease **in**.
 There are also options to ease out, or to both ease in and ease out. You can see more of these
 Easing types at [easings.net](http://easings.net).
 
-By default, GUI Tweens are *Not Blocking*. If you would like to do a blocking Tween,
+By default, GUI Tweens are *Blocking*. If you would like to do a non-blocking Tween,
 then you can control this with the next argument, the **Style**:
 
-    gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween, eBlockTween);
+    gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween, eNoBlockTween);
 
 The next parameter is the **Start Delay**. This allows you to start the Tween a few seconds later
 instead of immediately:
 
-    gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween, eBlockTween, 1.0);
+    gIconbar.TweenY(0.5, -gIconbar.Width, eEaseInBackTween, eNoBlockTween, 1.0);
 
 This will start the Tween 1 second after this line of code is run by the AGS engine.
 Because it is blocking, the script will then block 1.5 seconds (0.5 duration + 1.0 delay).
 
-The last parameter is the **Timing**. By default, all Tweens are
+The last parameter is the **Timing Type**. By default, all Tweens are
 set to be timed in seconds, but you can also set it to speed, which is roughly measured as pixels/second:
 
     gIconbar.TweenY(
       100.0,
       -gIconbar.Width,
       eEaseInBackTween,
-      eBlockTween,
+      eNoBlockTween,
       1.0,
       eTweenSpeed
     );
@@ -83,12 +83,12 @@ will reset the GUI Y back to the start of the Tween.
 
 You can create Tweens that are simple or fairly complex. The arguments you can add to the tween include:
 
-1. Amount (seconds or speed depending on what Timing is)
+1. Timing (seconds or speed depending on what Timing is)
 2. End Location (this could be more than one argument depending on the tween)
-3. Easing (optional)
+3. Easing Type (optional)
 4. Style (optional: Blocking, No Blocking, Repeat, and Reverse Repeat)
-5. Start Delay (optional, in seconds)
-6. Timing (optional: is the first Amount seconds or speed?)
+5. Start Delay (optional, in seconds only)
+6. Timing Type (optional: to determine if the timing is in seconds or speed)
 
 You can stop all the Tweens applied to an instance using a `StopTween*` function. You can stop it
 in its current form, set it to the end of the Tween, or reset it back to the start of the Tween.
