@@ -1,5 +1,3 @@
-# Global Tween Functions
-
 ## Tween.IncreaseGameSpeedOnBlock
 
     static function Tween.IncreaseGameSpeedOnBlock(bool value)

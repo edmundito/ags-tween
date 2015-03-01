@@ -1,5 +1,3 @@
-# Global Timing Functions
-
 ## SecondsToLoops
 
     int SecondsToLoops(float seconds)
