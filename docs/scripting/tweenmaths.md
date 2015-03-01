@@ -16,8 +16,8 @@ Returns the absolute value of a float.
 
 Returns a float value between a min and max values.
 
-    // Will return a value between 0 and the room's width:
-    int value = TweenMaths.ClampInt(player.x, 0, Room.Width);
+    // Will return a value between 1.0 and 100.0:
+    float value = TweenMaths.ClampFloat(someValue, 1.0, 100.0);
 
 ## ClampInt
 
@@ -34,7 +34,7 @@ Returns an int value between a min and max values.
 
 Returns the distance (as a float) between two points.
 
-    float distance = TweenMaths.GetDistance(0, 0, 5, 10);
+    float distance = TweenMaths.GetDistance(player.x, player.y, cFriend.x, cFriend.y);
     WaitSeconds(distance * 0.5);
 
 ## Lerp
@@ -57,7 +57,7 @@ Interpolates from one float to another based on a decimal factor. Returns int.
 
 Returns the largest float value.
 
-    static float value = TweenMaths.MaxInt(1.0, 100.0); // Returns 100.0
+    static float value = TweenMaths.MaxFloat(1.0, 100.0); // Returns 100.0
 
 ## MaxInt
 
@@ -74,7 +74,7 @@ Returns the largest int value.
 
 Returns the smallest float value.
 
-    float value = TweenMaths.MinInt(1.0, 100.0); // Returns 1.0
+    float value = TweenMaths.MinFloat(1.0, 100.0); // Returns 1.0
 
 ## MinInt
 

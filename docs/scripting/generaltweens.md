@@ -11,9 +11,9 @@
     Slider.StopAllTweens(optional TweenStopResult)
     InvWindow.StopAllTweens(optional TweenStopResult)
 
-Stops all the tweens currently playing on the a character, GUI, room object, etc.
+Stops all the tweens currently playing on a character, GUI, room object, etc.
 
-    // Will stop all the tweens for cEgo, cIconbar, and oBluecup.
+    // Will stop all the tweens for cEgo, gIconbar, and oBluecup.
     cEgo.StopAllTweens();
     gIconbar.StopAllTweens();
     oBluecup.StopAllTweens();
@@ -61,13 +61,20 @@ Stops all the tweens currently playing on the a character, GUI, room object, etc
     Slider.StopTweenPosition(optional TweenStopResult)
     InvWindow.StopTweenPosition(optional TweenStopResult)
 
-Tweens the position of a character, GUI, object, etc. from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.
+Tweens the position of a Character, GUI, Object, Label, Button, TextBox, ListBox, Slider, or InvWindow. from its current position to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.
 
 Returns the tween duration (in loops) if the `TweenStyle` is non-blocking (`eNoBlockTween`).
 For a repeat `TweenStyle` (`eRepeatTween` or `eRepeatReverseTween`) it returns the duration of one tween cycle. For blocking tweens, it returns `1`.
 
     // Will tween the position of the character from its current position to x 100, y 100 in 2.5 seconds.
     cEgo.TweenPosition(2.5, 100, 100);
+
+    // You can also change X and Y Independently:
+    cEgo.TweenX(2.5, 200, eEaseInSineTween);
+    cEgo.TweenY(2.5, 100, eEaseOutBounceTween);
+
+    // To Stop:
+    cEgo.StopTweenPosition();
 
 ## Size
 
@@ -79,9 +86,7 @@ For a repeat `TweenStyle` (`eRepeatTween` or `eRepeatReverseTween`) it returns t
     Slider.TweenSize(float timing, int toWidth, int toHeight, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     InvWindow.TweenSize(float timing, int toWidth, int toHeight, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
-    Character.StopTweenSize(optional TweenStopResult)
     GUI.StopTweenSize(optional TweenStopResult)
-    Object.StopTweenSize(optional TweenStopResult)
     Label.StopTweenSize(optional TweenStopResult)
     Button.StopTweenSize(optional TweenStopResult)
     TextBox.StopTweenSize(optional TweenStopResult)
@@ -89,12 +94,15 @@ For a repeat `TweenStyle` (`eRepeatTween` or `eRepeatReverseTween`) it returns t
     Slider.StopTweenSize(optional TweenStopResult)
     InvWindow.StopTweenSize(optional TweenStopResult)
 
-Tweens the size of a GUI, Label, Button etc.
+Tweens the size of a GUI, Label, Button, TextBox, ListBox, Slider, or InvWindow.
 
 Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlockTween`). For a repeat TweenStyle (`eRepeatTween` or `eRepeatReverseTween`) it returns the duration of one tween cycle. For blocking tweens, it returns `1`.
 
     // Will tween the size the statusline GUI from its current size to 50x50 pixels in 1 second.
     gStatusline.TweenSize(1.0, 50, 50);
+
+    // To Stop:
+    gStatusline.StopTweenSize();
 
 ## Transparency, Fade In, Fade Out
 
@@ -114,7 +122,7 @@ Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlo
     GUI.StopTweenTransparency(optional TweenStopResult)
     Object.StopTweenTransparency(optional TweenStopResult)
 
-Tweens the transparency of a character, GUI, or object from its current transparecy to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.
+Tweens the transparency of a Character, GUI, or Object from its current transparecy to another. Note that by default, GUI tweens are non-blocking unlike the character and object tweens.
 
 Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlockTween`). For a repeat TweenStyle (`eRepeatTween` or `eRepeatReverseTween`) it returns the duration of one tween cycle. For blocking tweens, it returns `1`.
 
@@ -123,6 +131,9 @@ Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlo
 
     // Or you can also do the following:
     oBluecup.TweenFadeOut(3.0);
+
+    // To Stop:
+    oBluecup.StopTweenTransparency();
 
 ## Room Area Scaling
 
@@ -134,6 +145,9 @@ Tweens the area scaling for a specific area from one min and max value to anothe
 
     // Will tween the scaling for area 1 from 50-100 to 100-200.
     TweenAreaScaling(3.0, 1, 50, 100, 100, 200);
+
+    // To Stop:
+    StopTweenAreaScaling();
 
 
 ## Object Image
@@ -149,6 +163,9 @@ Note that this function currently requires the use of a second object for the tr
     // Will tween the image of the BlueCup object from its current sprite to sprite 167.
     oBlueCup.TweenImage(oPinkPoster, 1.5, 167);
 
+    // To Stop:
+    oBlueCup.StopTweenImage();
+
 ## Character Animation Speed
 
     Character.TweenAnimationSpeed(float timing, int toAnimationSpeed, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -159,6 +176,9 @@ Tweens the animation speed of the character.
 
     cEgo.TweenAnimationSpeed(1.5, -100);
 
+    // To STop:
+    cEgo.StopTweenAnimationSpeed();
+
 ## Character Scaling
 
     Character.TweenScaling(float timing, int toScale, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -168,6 +188,9 @@ Tweens the animation speed of the character.
 Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlockTween`). For a repeat TweenStyle (`eRepeatTween` or `eRepeatReverseTween`) it returns the duration of one tween cycle. For blocking tweens, it returns a `1`.
 
     cEgo.TweenScaling(1.5, 200);
+
+    // To Stop:
+    cEgo.StopTweenScaling();
 
 ## Character Z
 
@@ -180,6 +203,9 @@ Normally this is set to 0 (ground-level), but you can increase it to make the ch
 
     cEgo.TweenZ(1.0, 100);
 
+    // To Stop:
+    cEgo.StopTweenZ();
+
 ## GUI Z-Order
 
     GUI.TweenZOrder(float timing, int toZOrder, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -189,7 +215,10 @@ Normally this is set to 0 (ground-level), but you can increase it to make the ch
 Tweens the Z Order of the gui.
 
     // Will tween the Z order of the statusLine Gui from its current Z order to 100 (which is in the behind 100 other guis).
-    gStatusLine.TweenZOrder(1.5, 100);
+    gStatusline.TweenZOrder(1.5, 100);
+
+    // To Stop:
+    gStatusline.StopTweenZOrder();
 
 ## Region Light Level
 
@@ -201,6 +230,9 @@ Tweens the light level for the region. Range: -100 (very dark) to 100 (very brig
 
     // Will tween the light level of the garden region from its current light level to 0 (which is very dark).
     rGarden.TweenLightLevel(1.5, 0);
+
+    // To Stop:
+    rGarden.StopTweenLightLevel();
 
 ## Region Tint Color, Saturation, and Grayscale
 
@@ -221,4 +253,7 @@ Tweens the Red, Green, Blue, or Saturation portion for the region. Color Range: 
 
 Note that to diminish the effect of the tint you need to set the LightLevel property for the region.
 
-    rGarden.TweenTintB(1.5, 200);
+    rGarden.TweenTintBlue(1.5, 200);
+
+    // To Stop:
+    rGarden.StopTweenTintBlue();

@@ -1,4 +1,4 @@
-You can adjust some global settings at the top of the Tween.asc file:
+You can adjust default settings at the top of the **Tween.ash** file:
 
     // Max number of simultaneous tweens that this module can play
     // Feel free to change this number, but the higher it is, the slower it might be
@@ -32,6 +32,6 @@ You can adjust some global settings at the top of the Tween.asc file:
 These allow you to change the defaults in some of the tween.
 
 For example, by default all GUI tweens are blocking (`eBlockTween`). If you would like to start with
-all non-blocking tweens instead, you can change the definition `Tween_EASING_TYPE_GUI`:
+all non-blocking tweens instead, you can change the definition of `Tween_EASING_TYPE_GUI` to:
 
     #define Tween_STYLE_GUI eNoBlockTween

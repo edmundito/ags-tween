@@ -11,6 +11,9 @@ Tweens the volume for speech from one value to another. Range: 0 to 255.
     // Will tween the volume for speech from 100 to 50.
     TweenSpeechVolume(3.0, 100, 50);
 
+    // To Stop:
+    StopTweenSpeechVolume();
+
 
 # 2. New-Style Audio
 
@@ -29,6 +32,9 @@ Tweens the master volume (`System.Volume`) to a new value. Range: 0 to 100.
     System.Volume = 100;
     TweenSystemVolume(3.0, 50);
 
+    // To Stop:
+    StopTweenSystemVolume();
+
 
 ## AudioChannel Panning
 
@@ -42,6 +48,9 @@ Tweens an `AudioChannel` panning to to a new value. Range: -100 to 100.
     // Will tween the AudioChannel panning from -100 to 100 in 3 seconds.
     myAudioChannel.Panning = -100;
     myAudioChannel.TweenPanning(3.0, 100);
+
+    // To Stop:
+    myAudioChannel.StopTweenPanning();
 
 
 ## AudioChannel Volume
@@ -57,7 +66,13 @@ Tweens an `AudioChannel` volume to to a new value. Range: 0 to 100.
 
     // Will tween the AudioChannel volume from 0 to 100 in 3 seconds.
     myAudioChannel.Volume = 0;
-    myAudioChannel.TweenPanning(3.0, 100);
+    myAudioChannel.TweenVolume(1.0, 100);
+
+    // Alternatively, you can also call:
+    myAudioChannel.TweenFadeIn(1.0);
+
+    // To Stop:
+    myAudioChannel.StopTweenVolume();
 
 
 ## AudioChannel Room Location
@@ -72,6 +87,9 @@ Tweens an `AudioChannel` room location to a new x and y value. Note that tweenin
     // Will tween the AudioChannel room location to 320, 240.
     myAudioChannel.SetRoomLocation(1, 1);
     myAudioChannel.TweenRoomLocation(3.0, 320, 240);
+
+    // To Stop:
+    myAudioChannel.StopTweenRoomLocation();
 
 ## AudioChannel Stop All Tweens
 
@@ -96,6 +114,9 @@ Tweens the sound effect volume from one value to another. Range: 0 to 255.
     // Will tween the sound effect volume from 100 to 50.
     TweenSoundVolume(3.0, 100, 50);
 
+    // To Stop:
+    StopTweenSoundVolume();
+
 
 ## Music Master Volume
 
@@ -108,6 +129,9 @@ Tweens the master music volume from one value to another. Range: 1 to 100.
 
     // Will tween the music volume from 100 to 50.
     TweenMusicMasterVolume(3.0, 100, 50);
+
+    // To Stop:
+    StopTweenMusicMasterVolume();
 
 
 ## Digital Master Volume
@@ -122,6 +146,9 @@ Tweens the master digital volume from one value to another. Range: 1 to 100.
     // Will tween the digital volume from 100 to 50.
     TweenDigitalMasterVolume(3.0, 100, 50);
 
+    // To Stop:
+    StopTweenDigitalMasterVolume();
+
 
 ## Channel Volume
 
@@ -134,3 +161,6 @@ Tweens the volume for a given channel from one value to another. Range: 0 to 255
 
     // Will tween the volume for channel 1 from 100 to 50.
     TweenChannelVolume(3.0, 1, 100, 50);
+
+    // To Stop:
+    StopTweenChannelVolume();

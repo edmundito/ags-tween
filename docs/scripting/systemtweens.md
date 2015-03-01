@@ -6,12 +6,15 @@
 
     StopTweenViewport(optional TweenStopResult)
 
-Tweens the location of the viewport on the X and/or Y coordinates from its current location to another.
+Tweens the location of the Viewport on the X and/or Y coordinates from its current location to another.
 
     // Will tween the location of the viewport on the x axis from its current location to 100, and on the y axis from the current location to 20.
     TweenViewportY(3.0, 100);
     TweenViewportX(3.0, 100, 20);
     TweenViewport(3.0, 100, 20);
+
+    // To Stop:
+    StopTweenViewport();
 
 ## System Gamma
 
@@ -19,12 +22,15 @@ Tweens the location of the viewport on the X and/or Y coordinates from its curre
 
     StopTweenSystemGamma(optional TweenStopResult)
 
-Tweens the screen gamma level from its current value to another. Note that `System.SupportGammaControl` must return true in order for this method to have any effect. Range: 0 (black) - 200 (bright)
+Tweens the screen's gamma level from its current value to another. Note that `System.SupportGammaControl` must return true in order for this method to have any effect. Range: 0 (black) - 200 (bright)
 
     // Will tween the screen gamma from its current value to 150 (which is 50% brighter than default).
     if (System.SupportsGammaControl) {
       TweenSystemGamma(3.0, 150);
     }
+
+    // To Stop:
+    StopTweenSystemGamma();
 
 ## Shake Screen
 
@@ -32,7 +38,13 @@ Tweens the screen gamma level from its current value to another. Note that `Syst
 
     StopTweenShakeScreen(optional TweenStopResult)
 
-Tweens the shake screen amount and delay from one value to another. Range: Delay: from -2 to ... Amount: from 1 to 30.
+Tweens the shake screen amount and delay from one value to another.
+
+Ranges are Delay: from -2 to ... - Amount: from 1 to 30.
+
 
     // Will tween the shake screen amount from 1 to 15 with a constant delay of 2.
     TweenShakeScreen(3.0, 2, 2, 1, 15);
+
+    // To Stop:
+    StopTweenShakeScreen();

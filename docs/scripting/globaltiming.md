@@ -20,12 +20,12 @@ Converts number of loops to number seconds.
 
 Waits a number of seconds.
 
-    WaitSeconds(5.5); // Same as: Wait(FloatToInt(IntToFloat(GetGameSpeed()) * 5.5));
+    WaitSeconds(5.5); // Same as: Wait(FloatToInt(IntToFloat(GetGameSpeed()) * 5.5, eRoundNearest));
 
 ## WaitForLongest
 
     WaitForLongest(int timerID, int duration1, int duration2, optional int duration3,
-                   optional int duration4, optional int duration5, optional int duration6)`
+                   optional int duration4, optional int duration5, optional int duration6)
 
 Waits for the longest duration (based on game loops). Supports up to 6 durations.
 

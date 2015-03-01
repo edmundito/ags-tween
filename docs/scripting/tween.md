@@ -8,9 +8,9 @@
       Wait(1);
     }
 
-If you're advance scripter, `Tween` is actually extends the `TweenBase` struct. This is
-shared between the internal tweens and the custom tweens. This documentation does not
-distinguish `TweenBase`, however.
+If you're a very advanced scripter, `Tween` actually extends a `TweenBase` struct. This is
+shared between the internal tweens and the custom tweens. However, this documentation does not
+distinguish between `Tween` and `TweenBase`.
 
 # 1. Properties
 
@@ -83,7 +83,7 @@ Initializes a tween. Returns the duration (in loops).
 
     bool Tween.IsPlaying()
 
-Returns true if the tween is playing.
+Returns `true` if the tween is playing and needs more `Update` calls to finish.
 
     Tween customTween;
     customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
@@ -98,7 +98,7 @@ Returns true if the tween is playing.
 
     function Tween.Reverse()
 
-Reverses the direction of the tween.
+Reverses the start and end of the tween.
 
     Tween customTween;
     customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.
@@ -143,7 +143,7 @@ Stops the tween. By default, the `TweenStopResult` is to pause (`ePauseTween`).
 
     bool Tween.Update()
 
-Moves the tween forward in time.
+Moves the tween forward in time by one loop.
 
     Tween customTween;
     customTween.Init(5.0, 0, 100); // In 5 seconds, value goes from 0 to 100.

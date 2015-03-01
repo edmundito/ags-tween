@@ -30,9 +30,9 @@
     Button.StopTweenTextColorGreen(optonal TweenStopResult)
     Button.StopTweenTextColorBlue(optonal TweenStopResult)
 
-Tweens the red portion for the label, textbox or button. Range: 0 - 255
+Tweens the red portion for the Label, TextBox, or Button. Range: 0 - 255
 
-Note that to get a better result start with a color that is bigger than 30 (since 0 - 30 are reserved colors).
+Note that to get a better result start with a color that is larger than 30 (since 0 - 30 are reserved colors).
 
 ## Slider Value
 
@@ -40,12 +40,13 @@ Note that to get a better result start with a color that is bigger than 30 (sinc
 
     Slider.StopTweenValue(optonal TweenStopResult)
 
-Tweens the value of the slider.
-
-Note that the value should be between the min and max values for the slider.
+Tweens the value of the Slider. Note that the value should be between the min and max values for the slider.
 
     // Will tween the value of the slider from the current value to 200.
     mySlider.TweenValue(1.5, 200);
+
+    // To Stop:
+    mySlider.StopTweenValue();
 
 ## Slider Handle Offset
 
@@ -54,10 +55,13 @@ Note that the value should be between the min and max values for the slider.
 
     Slider.StopTweenHandleOffset(optonal TweenStopResult)
 
-Tweens the offset of the slider handle.
+Tweens the offset of the Slider's handle.
 
     // Will tween the handle offset of the slider from the current value to 20.
     mySlider.TweenHandleOffset(1.5, 20);
+
+    // To Stop:
+    mySlider.StopTweenHandleOffset();
 
 ## ListBox Selected Index
 
@@ -65,10 +69,13 @@ Tweens the offset of the slider handle.
 
     ListBox.StopTweenSelectedIndex(optonal TweenStopResult)
 
-Tweens the selected index for the list box.
+Tweens the selected index for the ListBox.
 
     // Will tween the selected index of the listbox from the current value to 20.
     myListBox.TweenSelectedIndex(1.5, 20);
+
+    // To Stop:
+    myListBox.StopTweenSelectedIndex();
 
 ## Top Item
 
@@ -78,8 +85,12 @@ Tweens the selected index for the list box.
     ListBox.StopTweenTopItem(optonal TweenStopResult)
     InvWindow.StopTweenTopItem(optonal TweenStopResult)
 
-Tweens the top item for the list box or inventory window.
+Tweens the top item for the ListBox or inventory window (InvWindow).
 
     // Will tween the top item of the listbox and inventory window from the current value to 20.
     myListBox.TweenTopItem(1.5, 20);
     myInventory.TweenTopItem(1.5, 20);
+
+    // To Stop:
+    myListBox.StopTweenTopItem();
+    myInventory.StopTweenTopItem();
