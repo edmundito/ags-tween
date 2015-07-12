@@ -267,12 +267,12 @@ import function StopTweenZ(this Character*, TweenStopResult result=Tween_STOP_RE
 import int TweenTransparency(this GUI*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import int TweenTransparency(this Object*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTransparency(this Character*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenFadeOut(this GUI*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
-import int TweenFadeIn(this GUI*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
-import int TweenFadeOut(this Object*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenFadeIn(this Object*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenFadeOut(this Character*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenFadeIn(this Character*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenFadeOut(this GUI*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenFadeIn(this GUI*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenFadeOut(this Object*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenFadeIn(this Object*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenFadeOut(this Character*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenFadeIn(this Character*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenTransparency(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTransparency(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTransparency(this GUI*, TweenStopResult result=Tween_STOP_RESULT);

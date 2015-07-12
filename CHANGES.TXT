@@ -1,6 +1,9 @@
 Revision History
 ================
 
+2.0.1 (Jul 12 2015)
+- Fix: Remove toTransparency parameters from some TweenFadeOut functions.
+
 2.0.0 (February 28 2014)
 - Added ability to stop individual Tweens.
 - Added ability to set optional startDelay for all tweens.
