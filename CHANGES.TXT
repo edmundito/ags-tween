@@ -1,8 +1,11 @@
 Revision History
 ================
 
-2.0.1 (Jul 12 2015)
-- Fix: Remove toTransparency parameters from some TweenFadeOut functions.
+2.0.2 (February 22 2016)
+- Fix: Make eBlockTween and eNoBlockTween compatible with eBlock and eNoBlock. This was always intended to work!
+
+2.0.1 (July 12 2015)
+- Fix: Remove unused toTransparency parameters from Character, GUI, and Object TweenFadeIn/Out functions.
 
 2.0.0 (February 28 2014)
 - Added ability to stop individual Tweens.

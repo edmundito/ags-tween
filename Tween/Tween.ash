@@ -97,10 +97,10 @@ enum TweenEasingType {
 };
 
 enum TweenStyle {
-  eBlockTween,
-  eNoBlockTween,
-  eRepeatTween,
-  eReverseRepeatTween
+  eBlockTween = eBlock,
+  eNoBlockTween = eNoBlock,
+  eRepeatTween = 7001,
+  eReverseRepeatTween = 7002
 };
 
 enum TweenTimingType {
