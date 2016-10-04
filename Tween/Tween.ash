@@ -205,15 +205,23 @@ import function StopTweenChannelVolume(int channel, TweenStopResult result=Tween
 import function StopTweenMusicVolume(TweenStopResult result=Tween_STOP_RESULT);
 #endif
 #ifdef STRICT_AUDIO
+#ifver 3.4
+// These Apply to AGS 3.4 and above when the Strict Audio setting is enabled
+import int TweenSpeed(this AudioChannel*, float timing, int toSpeed, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenSpeed(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
+
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
 import int TweenSystemVolume(float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import function StopTweenSystemVolume(TweenStopResult result=Tween_STOP_RESULT);
 
+import int TweenPosition(this AudioChannel*, float timing, int toPosition, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenPanning(this AudioChannel*, float timing, int toPanning, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenVolume(this AudioChannel*, float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenFadeOut(this AudioChannel*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenFadeIn(this AudioChannel*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenRoomLocation(this AudioChannel*, float timing, int toX, int toY, int fromX, int fromY, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenPosition(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenPanning(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenVolume(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenRoomLocation(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
