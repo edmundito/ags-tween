@@ -209,6 +209,9 @@ import function StopTweenMusicVolume(TweenStopResult result=Tween_STOP_RESULT);
 // These Apply to AGS 3.4 and above when the Strict Audio setting is enabled
 import int TweenSpeed(this AudioChannel*, float timing, int toSpeed, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import function StopTweenSpeed(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenVolume(static System, float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenVolume(static System, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
@@ -380,6 +383,11 @@ import function StopTweenTextColorBlue(this TextBox*, TweenStopResult result=Twe
 
 import int TweenHandleOffset(this Slider*, float timing, int toOffset, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
+
+#ifver 3.4
+import int TweenGamma(static System, float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenGamma(static System, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 
