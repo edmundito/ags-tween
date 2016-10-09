@@ -44,6 +44,9 @@
 #define Tween_STYLE eBlockTween // All Tweens Except GUI and GUI element Tweens
 #define Tween_STYLE_GUI eBlockTween // For GUI and GUI element Tweens Only
 #define Tween_STYLE_AUDIO eNoBlockTween // For Audio Tweens only
+#ifver 3.4
+#define Tween_STYLE_PROPERTY eNoBlockTween // For Property Tweening only
+#endif
 
 // Default TweenStopResult
 #define Tween_STOP_RESULT ePauseTween // The expected behavior for stopping all tweens
@@ -388,6 +391,17 @@ import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween
 #ifver 3.4
 import int TweenGamma(static System, float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenGamma(static System, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenProperty(this Character*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this Hotspot*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this InventoryItem*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this Object*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(static Room, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenProperty(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Hotspot*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this InventoryItem*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(static Room, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 
