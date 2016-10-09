@@ -35,6 +35,10 @@
 // So just increase or decrease it to however many you need.
 #define Tween_MAX_INSTANCES 64
 
+// If true, it stops all tweens upon leaving the room
+// If false, it stops most tweens except Audio, GUI, and some screen-related tweens.
+#define Tween_STOP_ALL_ON_LEAVE_ROOM false
+
 // Default TweenEasingType
 #define Tween_EASING_TYPE eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
 #define Tween_EASING_TYPE_GUI eEaseLinearTween // For GUI and GUI element Tweens Only
