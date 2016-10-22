@@ -393,6 +393,9 @@ import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween
 #endif
 
 #ifver 3.4
+import int TweenAmbientLightLevel(float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenAmbientLightLevel(TweenStopResult result=Tween_STOP_RESULT);
+
 import int TweenGamma(static System, float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenGamma(static System, TweenStopResult result=Tween_STOP_RESULT);
 
