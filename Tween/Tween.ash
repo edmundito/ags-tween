@@ -48,7 +48,7 @@
 #define Tween_STYLE eBlockTween // All Tweens Except GUI and GUI element Tweens
 #define Tween_STYLE_GUI eBlockTween // For GUI and GUI element Tweens Only
 #define Tween_STYLE_AUDIO eNoBlockTween // For Audio Tweens only
-#ifver 3.4
+#ifver 3.4.0
 #define Tween_STYLE_PROPERTY eNoBlockTween // For Property Tweening only
 #endif
 
@@ -212,7 +212,7 @@ import function StopTweenChannelVolume(int channel, TweenStopResult result=Tween
 import function StopTweenMusicVolume(TweenStopResult result=Tween_STOP_RESULT);
 #endif
 #ifdef STRICT_AUDIO
-#ifver 3.4
+#ifver 3.4.0
 // These Apply to AGS 3.4 and above when the Strict Audio setting is enabled
 import int TweenSpeed(this AudioChannel*, float timing, int toSpeed, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import function StopTweenSpeed(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
@@ -392,7 +392,7 @@ import int TweenHandleOffset(this Slider*, float timing, int toOffset, TweenEasi
 import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
-#ifver 3.4
+#ifver 3.4.0
 import int TweenTintLuminance(this Region*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintEx(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenTintLuminance(this Region*, TweenStopResult result=Tween_STOP_RESULT);
