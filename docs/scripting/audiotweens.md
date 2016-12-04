@@ -25,15 +25,20 @@ New-Style audio tweens only work in AGS 3.2 or above if the **Enable new-style a
     TweenSystemVolume(float timing, int toVolume, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
 
     StopTweenSystemVolume(optional TweenStopResult)
+    
+    // In AGS 3.4.0 or above you can also use:
+    System.TweenVolume(float timing, int toVolume, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
+
+    System.StopTweenVolume(optional TweenStopResult)
 
 Tweens the master volume (`System.Volume`) to a new value. Range: 0 to 100.
 
-    // Will tween the system volume from 100 to 50.
+    // Will tween the system volume from 100 to 50 in 3 seconds.
     System.Volume = 100;
-    TweenSystemVolume(3.0, 50);
+    System.TweenVolume(3.0, 50);
 
     // To Stop:
-    StopTweenSystemVolume();
+    System.StopTweenVolume();
 
 
 ## AudioChannel Panning
@@ -53,6 +58,37 @@ Tweens an `AudioChannel` panning to to a new value. Range: -100 to 100.
     myAudioChannel.StopTweenPanning();
 
 
+## AudioChannel Position
+
+    // AGS 3.2+ (with new-style audio scripting enabled)
+    AudioChannel.TweenPosition(float timing, int toPosition, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
+
+    AudioChannel.StopTweenPosition(optional TweenStopResult)
+
+Tweens an `AudioChannel` position to to a new value. Range: 0 to length of clip.
+Please note that tweening the position might not very smooth due to engine limitations and may result in a "glitchy" effect.
+
+    // Will tween the AudioChannel position to 1000 ms.
+    myAudioChannel.TweenPosition(1.0, 1000);
+    
+    // To Stop:
+    myAudioChannel.StopTweenPosition();
+    
+## AudioChannel Speed (3.4.0+)
+
+    // AGS 3.4.0 or above (with new-style audio scripting enabled)
+    AudioChannel.TweenSpeed(float timing, int toSpeed, optional TweenTiming, optional TweenStyle, optional startDelay, optional TweenTimingType)
+
+    AudioChannel.StopTweenSpeed(optional TweenStopResult)
+
+Tweens an `AudioChannel` playback speed to a new value.
+
+    // Will tween the AudioChannel speed from 1000 to 100 in 1 second.
+    myAudioChannel.TweenSpeed(1.0, 100);
+    
+    // To Stop:
+    myAudioChannel.StopTweenSpeed();
+        
 ## AudioChannel Volume
 
     // AGS 3.2+ (with new-style audio scripting enabled)
@@ -66,14 +102,13 @@ Tweens an `AudioChannel` volume to to a new value. Range: 0 to 100.
 
     // Will tween the AudioChannel volume from 0 to 100 in 3 seconds.
     myAudioChannel.Volume = 0;
-    myAudioChannel.TweenVolume(1.0, 100);
+    myAudioChannel.TweenVolume(3.0, 100);
 
     // Alternatively, you can also call:
-    myAudioChannel.TweenFadeIn(1.0);
+    myAudioChannel.TweenFadeIn(3.0);
 
     // To Stop:
     myAudioChannel.StopTweenVolume();
-
 
 ## AudioChannel Room Location
 
