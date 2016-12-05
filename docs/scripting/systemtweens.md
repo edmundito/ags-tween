@@ -21,16 +21,21 @@ Tweens the location of the Viewport on the X and/or Y coordinates from its curre
     TweenSystemGamma(float timing, int toGamma, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
     StopTweenSystemGamma(optional TweenStopResult)
+    
+    // In AGS 3.4.0 or above you can also use:
+    System.TweenGamma(float timing, int toGamma, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    
+    System.StopTweenGamma(optional TweenStopResult)
 
 Tweens the screen's gamma level from its current value to another. Note that `System.SupportGammaControl` must return true in order for this method to have any effect. Range: 0 (black) - 200 (bright)
 
     // Will tween the screen gamma from its current value to 150 (which is 50% brighter than default).
     if (System.SupportsGammaControl) {
-      TweenSystemGamma(3.0, 150);
+      System.TweenGamma(3.0, 150);
     }
 
     // To Stop:
-    StopTweenSystemGamma();
+    System.StopTweenGamma();
 
 ## Shake Screen
 

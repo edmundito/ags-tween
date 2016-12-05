@@ -5,6 +5,10 @@ You can adjust default settings at the top of the **Tween.ash** file:
     // So just increase or decrease it to however many you need.
     #define Tween_MAX_INSTANCES 64
 
+    // If true, it stops all tweens upon leaving the room
+    // If false, it stops most tweens except Audio, GUI, and some screen-related tweens.
+    #define Tween_STOP_ALL_ON_LEAVE_ROOM false
+
     // Default TweenEasingType
     #define Tween_EASING_TYPE eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
     #define Tween_EASING_TYPE_GUI eEaseLinearTween // For GUI and GUI element Tweens Only
@@ -14,6 +18,9 @@ You can adjust default settings at the top of the **Tween.ash** file:
     #define Tween_STYLE eBlockTween // All Tweens Except GUI and GUI element Tweens
     #define Tween_STYLE_GUI eBlockTween // For GUI and GUI element Tweens Only
     #define Tween_STYLE_AUDIO eNoBlockTween // For Audio Tweens only
+    #ifver 3.4.0
+    #define Tween_STYLE_PROPERTY eNoBlockTween // For Property Tweening only
+    #endif
 
     // Default TweenStopResult
     #define Tween_STOP_RESULT ePauseTween // The expected behavior for stopping all tweens

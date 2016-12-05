@@ -35,6 +35,10 @@
 // So just increase or decrease it to however many you need.
 #define Tween_MAX_INSTANCES 64
 
+// If true, it stops all tweens upon leaving the room
+// If false, it stops most tweens except Audio, GUI, and some screen-related tweens.
+#define Tween_STOP_ALL_ON_LEAVE_ROOM false
+
 // Default TweenEasingType
 #define Tween_EASING_TYPE eEaseLinearTween // All Tweens Except GUI and GUI element Tweens
 #define Tween_EASING_TYPE_GUI eEaseLinearTween // For GUI and GUI element Tweens Only
@@ -44,6 +48,9 @@
 #define Tween_STYLE eBlockTween // All Tweens Except GUI and GUI element Tweens
 #define Tween_STYLE_GUI eBlockTween // For GUI and GUI element Tweens Only
 #define Tween_STYLE_AUDIO eNoBlockTween // For Audio Tweens only
+#ifver 3.4.0
+#define Tween_STYLE_PROPERTY eNoBlockTween // For Property Tweening only
+#endif
 
 // Default TweenStopResult
 #define Tween_STOP_RESULT ePauseTween // The expected behavior for stopping all tweens
@@ -99,7 +106,7 @@ enum TweenEasingType {
 enum TweenStyle {
   eBlockTween = eBlock,
   eNoBlockTween = eNoBlock,
-  eRepeatTween = 7001,
+  eRepeatTween = eRepeat,
   eReverseRepeatTween = 7002
 };
 
@@ -205,15 +212,26 @@ import function StopTweenChannelVolume(int channel, TweenStopResult result=Tween
 import function StopTweenMusicVolume(TweenStopResult result=Tween_STOP_RESULT);
 #endif
 #ifdef STRICT_AUDIO
+#ifver 3.4.0
+// These Apply to AGS 3.4 and above when the Strict Audio setting is enabled
+import int TweenSpeed(this AudioChannel*, float timing, int toSpeed, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenSpeed(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenVolume(static System, float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenVolume(static System, TweenStopResult result=Tween_STOP_RESULT);
+#endif
+
 // These apply to AGS 3.2 and above when the Strict Audio setting is enabled
 import int TweenSystemVolume(float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import function StopTweenSystemVolume(TweenStopResult result=Tween_STOP_RESULT);
 
+import int TweenPosition(this AudioChannel*, float timing, int toPosition, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenPanning(this AudioChannel*, float timing, int toPanning, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenVolume(this AudioChannel*, float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenFadeOut(this AudioChannel*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenFadeIn(this AudioChannel*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
 import int TweenRoomLocation(this AudioChannel*, float timing, int toX, int toY, int fromX, int fromY, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+import function StopTweenPosition(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenPanning(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenVolume(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenRoomLocation(this AudioChannel*, TweenStopResult result=Tween_STOP_RESULT);
@@ -372,6 +390,34 @@ import function StopTweenTextColorBlue(this TextBox*, TweenStopResult result=Twe
 
 import int TweenHandleOffset(this Slider*, float timing, int toOffset, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
+
+#ifver 3.4.0
+import int TweenTintLuminance(this Region*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintEx(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenTintLuminance(this Region*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenLightLevel(this Character*, float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenLightLevel(this Object*, float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenLightLevel(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenLightLevel(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenAmbientLightLevel(float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenAmbientLightLevel(TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenGamma(static System, float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenGamma(static System, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenProperty(this Character*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this Hotspot*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this InventoryItem*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(this Object*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenProperty(static Room, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenProperty(this Character*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Hotspot*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this InventoryItem*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Object*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(static Room, String property, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 

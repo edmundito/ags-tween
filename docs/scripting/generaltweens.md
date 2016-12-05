@@ -135,6 +135,52 @@ Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlo
     // To Stop:
     oBluecup.StopTweenTransparency();
 
+## Light Level
+
+    Region.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+
+    Region.StopTweenLightLevel(optional TweenStopResult)
+    
+    // AGS 3.4.0 or above supports Character, Object, and Ambient:
+    Character.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    Object.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    TweenAmbientLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    
+    Character.StopTweenLightLevel(optional TweenStopResult)
+    Object.StopTweenLightLevel(optional TweenStopResult)
+    StopTweenAmbientLightLevel(optional TweenStopResult)
+
+Tweens the light level. Range: -100 (very dark) to 100 (very bright)
+
+    // Will tween thelight level of the garden region from its current light level to 0 (which is very dark).
+    rGarden.TweenLightLevel(1.5, 0);
+
+    // To Stop:
+    rGarden.StopTweenLightLevel();
+    
+## Property (3.4.0+)
+
+    // AGS 3.4.0 and above
+    Character.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    Hotspot.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    InventoryItem.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    Object.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    Room.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    
+    Character.StopTweenProperty(String property, optional TweenStopResult)
+    Hotspot.StopTweenProperty(String property, optional TweenStopResult)
+    InventoryItem.StopTweenProperty(String property, optional TweenStopResult)
+    Object.StopTweenProperty(String property, optional TweenStopResult)
+    Room.StopTweenProperty(String property, optional TweenStopResult)
+    
+Tweens an custom Number property to a new value. The property must be first set via the AGS Editor in order for this to work. Otherwise, the game may crash.
+
+    // Set the custom property "happiness" to 110 in 3 seconds.
+    cEgo.StopTweenProperty(3.0, "happiness", 110);
+    
+    // Wait, never mind. Stop setting the properties:
+    cEgo.StopTweenProperty();
+
 ## Room Area Scaling
 
     TweenAreaScaling(float timing, int area, int fromMin, int toMin, int fromMax, int toMax, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -220,21 +266,7 @@ Tweens the Z Order of the gui.
     // To Stop:
     gStatusline.StopTweenZOrder();
 
-## Region Light Level
-
-    Region.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-
-    Region.StopTweenLightLevel(optional TweenStopResult)
-
-Tweens the light level for the region. Range: -100 (very dark) to 100 (very bright)
-
-    // Will tween the light level of the garden region from its current light level to 0 (which is very dark).
-    rGarden.TweenLightLevel(1.5, 0);
-
-    // To Stop:
-    rGarden.StopTweenLightLevel();
-
-## Region Tint Color, Saturation, and Grayscale
+## Region Tint Color, Saturation, Luminance, and Grayscale
 
     Region.TweenTintRed(float timing, int toR, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Region.TweenTintGreen(float timing, int toG, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
@@ -242,14 +274,22 @@ Tweens the light level for the region. Range: -100 (very dark) to 100 (very brig
 
     Region.TweenTintSaturation(float timing, int toAmount, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Region.TweenTintToGrayscale(float timing, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    
+    Region.TweenTint(float timing, int toRed, int toGreen, int toBlue, int toSaturation, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
     Region.StopTweenTint(optional TweenStopResult)
     Region.StopTweenTintRed(optional TweenStopResult)
     Region.StopTweenTintGreen(optional TweenStopResult)
     Region.StopTweenTintBlue(optional TweenStopResult)
     Region.StopTweenTintSaturation(optional TweenStopResult)
+    
+    // AGS 3.4.0 or above
+    Region.TweenTintLuminance(float timing, int toLuminance, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    Region.TweenTintEx(float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
+    
+    Region.StopTweenTintLuminance(optional TweenStopResult)
 
-Tweens the Red, Green, Blue, or Saturation portion for the region. Color Range: 0 to 255. Saturation Range: 0 to 100.
+Tweens the Red, Green, Blue, Saturation, or Luminance portion for the region. Color Range: 0 to 255. Saturation Range: 0 to 100.
 
 Note that to diminish the effect of the tint you need to set the LightLevel property for the region.
 

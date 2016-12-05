@@ -1,0 +1,10 @@
+*.scm
+*.zip
+
+Assets/*
+dist/*
+site/*
+Tween/_OpenInEditor.lock
+Tween/_Debug/*
+Tween/Compiled/*
+

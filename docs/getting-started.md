@@ -82,6 +82,12 @@ By default, it will stop the GUI wherever it is located. You can optionally dete
 This will set the GUI's Y coordinate to the end of the Tween immediately. You can also use `eResetTween`, which
 will reset the GUI's Y coordinate back to the start of the Tween.
 
+## Note about leaving a Room
+
+When the player leaves a room in the game, most tweens will be automatically stopped. This is because references such as room objects, hotspots, or characters may be lost. However, the module will try to keep other tweens playing such as GUI or Audio.
+
+This can also be changed via the (Settings)[scripting/settings.md] so that all tweens are stopped upon leaving the rooms.
+
 ## Recap
 
 You can create Tweens that are very simple or fairly complex. The parameters you can add to any tween function include:

@@ -1,6 +1,30 @@
 Revision History
 ================
 
+Next Version (TBD)
+- Fix `TweenViewport` setting the incorrect X and Y value
+- Update tween stop sequence when leaving the room
+Originally, all tweens stop. Now some tween such as GUI and Audio will continue to play
+- Update `eRepeatTween` value to be compatible with `eRepeat` so that they can be used interchangeably
+- 3.3.0: Update min legacy `SetMusicMasterVolume` volume to `-210`
+- Add more validation to tween min and max values so that games don't crash
+- Add `Tween_STOP_ALL_ON_LEAVE_ROOM` global define to determine whether to stop all tweens when leaving room. Default is `false`
+- Add `AudioChannel::TweenPosition`, `AudioChannel::StopTweenPosition`. However, the quality is not what you expect due to engine limitations.
+- 3.4.0: Add `AudioChannel::TweenSpeed`, `AudioChannel::StopTweenSpeed` to make your audio sound funny!
+- 3.4.0: Add `System.TweenVolume`, `System.StopTweenVolume`. `TweenSystemVolume,` `StopSystemTweenVolume` will still work!
+- 3.4.0: Add `Region::TweenTintLuminance`, `Region::StopTweenTintLuminance`
+- 3.4.0: Add `Region::TweenTintEx` to tween region tint with luminance included
+- 3.4.0: Add `Character::TweenLightLevel`, `Character::StopTweenLightLevel`
+- 3.4.0: Add `Object::TweenLightLevel`, `Object::StopTweenLightLevel`
+- 3.4.0: Add `TweenAmbientLightLevel`, `StopTweenAmbientLightLevel`
+- 3.4.0: Add `System.TweenGamma`, `System.StopTweenGamma`. `TweenSystemGamma` and `StopTweenSystemGamma` will still work!
+- 3.4.0: Add `Character::TweenProperty`, `Character::StopTweenProperty`
+- 3.4.0: Add `Hotspot::TweenProperty`, `Hotspot::StopTweenProperty`
+- 3.4.0: Add `InventoryItem::TweenProperty`, `InventoryItem::StopTweenProperty`
+- 3.4.0: Add `Object::TweenProperty`, `Object::StopTweenProperty`
+- 3.4.0: Add `Room.TweenProperty`, `Room.StopTweenProperty`
+- 3.4.0: Add `Tween_STYLE_PROPERTY` global define to determine the default style for tween properties. Default is `eNoBlockTween`
+
 2.0.2 (February 22 2016)
 - Fix: Make eBlockTween and eNoBlockTween compatible with eBlock and eNoBlock. This was always intended to work!
 
