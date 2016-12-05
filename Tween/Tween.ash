@@ -413,11 +413,11 @@ import int TweenProperty(this Hotspot*, float timing, String property, int toVal
 import int TweenProperty(this InventoryItem*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenProperty(this Object*, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenProperty(static Room, float timing, String property, int toValue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_PROPERTY, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import function StopTweenProperty(this Character*, TweenStopResult result=Tween_STOP_RESULT);
-import function StopTweenProperty(this Hotspot*, TweenStopResult result=Tween_STOP_RESULT);
-import function StopTweenProperty(this InventoryItem*, TweenStopResult result=Tween_STOP_RESULT);
-import function StopTweenProperty(this Object*, TweenStopResult result=Tween_STOP_RESULT);
-import function StopTweenProperty(static Room, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Character*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Hotspot*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this InventoryItem*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(this Object*, String property, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenProperty(static Room, String property, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 

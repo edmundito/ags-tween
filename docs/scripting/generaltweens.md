@@ -167,11 +167,11 @@ Tweens the light level. Range: -100 (very dark) to 100 (very bright)
     Object.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Room.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     
-    Character.StopTweenProperty(optional TweenStopResult)
-    Hotspot.StopTweenProperty(optional TweenStopResult)
-    InventoryItem.StopTweenProperty(optional TweenStopResult)
-    Object.StopTweenProperty(optional TweenStopResult)
-    Room.StopTweenProperty(optional TweenStopResult)
+    Character.StopTweenProperty(String property, optional TweenStopResult)
+    Hotspot.StopTweenProperty(String property, optional TweenStopResult)
+    InventoryItem.StopTweenProperty(String property, optional TweenStopResult)
+    Object.StopTweenProperty(String property, optional TweenStopResult)
+    Room.StopTweenProperty(String property, optional TweenStopResult)
     
 Tweens an custom Number property to a new value. The property must be first set via the AGS Editor in order for this to work. Otherwise, the game may crash.
 
