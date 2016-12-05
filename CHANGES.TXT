@@ -1,7 +1,7 @@
 Revision History
 ================
 
-Next Version (TBD)
+2.1.0 (December 4, 2016)
 - Fix `TweenViewport` setting the incorrect X and Y value
 - Update tween stop sequence when leaving the room
 Originally, all tweens stop. Now some tween such as GUI and Audio will continue to play
