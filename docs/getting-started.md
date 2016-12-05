@@ -86,7 +86,7 @@ will reset the GUI's Y coordinate back to the start of the Tween.
 
 When the player leaves a room in the game, most tweens will be automatically stopped. This is because references such as room objects, hotspots, or characters may be lost. However, the module will try to keep other tweens playing such as GUI or Audio.
 
-This can also be changed via the (Settings)[scripting/settings.md] so that all tweens are stopped upon leaving the rooms.
+This can also be changed via the [Settings](scripting/settings.md) so that all tweens are stopped upon leaving the rooms.
 
 ## Recap
 
