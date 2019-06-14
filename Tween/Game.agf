@@ -20,8 +20,8 @@
       <AutoMoveInWalkMode>True</AutoMoveInWalkMode>
       <PixelPerfect>True</PixelPerfect>
       <WhenInterfaceDisabled>GreyOut</WhenInterfaceDisabled>
-      <GUIAlphaStyle>AdditiveOpacity</GUIAlphaStyle>
-      <SpriteAlphaStyle>Classic</SpriteAlphaStyle>
+      <GUIAlphaStyle>MultiplyTranslucenceSrcBlend</GUIAlphaStyle>
+      <SpriteAlphaStyle>Improved</SpriteAlphaStyle>
       <RunGameLoopsWhileDialogOptionsDisplayed>False</RunGameLoopsWhileDialogOptionsDisplayed>
       <InventoryHotspotMarkerStyle>None</InventoryHotspotMarkerStyle>
       <InventoryHotspotMarkerSprite>0</InventoryHotspotMarkerSprite>
