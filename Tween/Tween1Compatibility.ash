@@ -8,10 +8,10 @@
 // use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
 // the Software, and to permit persons to whom the Software is furnished to do so,
 // subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 // FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -22,7 +22,7 @@
 #ifdef __TWEEN_MODULE__
 
 enum Tween1Timing {
-  eLinearTween = eEaseLinearTween, 
+  eLinearTween = eEaseLinearTween,
   eEaseInTween = eEaseInSineTween,
   eEaseOutTween = eEaseOutSineTween,
   eEaseInEaseOutTween = eEaseInOutSineTween
@@ -112,8 +112,6 @@ import int TweenPositionBySpeed(this Slider*, float speed, short toX, short toY,
 /// (Tween 1 Compatibility) Deprecated: Use TweenPosition(speed, ..., eTweenSpeed)
 import int TweenPositionBySpeed(this InvWindow*, float speed, short toX, short toY, Tween1Timing timing=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI);
 
-
-#ifver 3.1
 /// (Tween 1 Compatibility) Deprecated: Use TweenTextColorRed
 import int TweenColorR(this TextBox*, float seconds, short toR, Tween1Timing timing=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI);
 
@@ -122,6 +120,5 @@ import int TweenColorG(this TextBox*, float seconds, short toG, Tween1Timing tim
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenTextColorBlue
 import int TweenColorB(this TextBox*, float seconds, short toB, Tween1Timing timing=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI);
-#endif
 
 #endif
