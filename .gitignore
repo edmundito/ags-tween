@@ -6,5 +6,5 @@ dist/*
 site/*
 Tween/_OpenInEditor.lock
 Tween/_Debug/*
+Tween/AudioCache/*
 Tween/Compiled/*
-
