@@ -8,3 +8,4 @@
 
 - [ ] If new engine features are used, they are wrapped around `#ifver`
 - [ ] I updated `CHANGES.TXT`
+- [ ] I updated the documentation
