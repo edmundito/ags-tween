@@ -4,7 +4,7 @@
 ## How did you test it?
 
 
-## Checklist
+## Did you complete the checklist?
 
 - [ ] If new engine features are used, they are wrapped around `#ifver`
 - [ ] I updated `CHANGES.TXT`
