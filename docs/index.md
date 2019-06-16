@@ -37,10 +37,6 @@ See [Getting Started](getting-started.md) for the basics.
 
 ## Support
 
-Visit the AGS forums and post in the Tween 2.x thread:
+You can [reply to the Tween thread](https://www.adventuregamestudio.co.uk/forums/index.php?board=10.0) in the Modules & Plugins AGS forum.
 
-[http://www.adventuregamestudio.co.uk/forums/index.php?board=10.0]()
-
-You can also post in the ags-tween Github at:
-
-[https://github.com/edmundito/ags-tween/issues]()
+You can also [ask in #tween_module_support](https://discord.gg/vmuCyWX) in the AGS Discord server.
