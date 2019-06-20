@@ -2,8 +2,8 @@
 
 ## Requirements
 
-* AGS Editor 3.4.1
-* Module should be compatible with AGS 3.4.1 or above. New features should be wrapped around `#ifver`
+* AGS Editor 3.5.0
+* Module should be compatible with AGS 3.4.0 or above. New features should be wrapped around `#ifver`
 
 ## Submission process
 
