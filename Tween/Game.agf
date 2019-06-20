@@ -687,6 +687,18 @@
             <Number>99</Number>
             <Description>Hub</Description>
           </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>101</Number>
+            <Description xml:space="preserve">GUI Tests</Description>
+          </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>102</Number>
+            <Description xml:space="preserve">GUI Control Tests</Description>
+          </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>301</Number>
+            <Description xml:space="preserve">Room, Character, Object tests</Description>
+          </UnloadedRoom>
         </UnloadedRooms>
       </UnloadedRoomFolder>
     </Rooms>
@@ -2152,6 +2164,15 @@ stop
 @3
   player.ChangeRoom(5);
 stop
+@4
+  player.ChangeRoom(101);
+stop
+@5
+  player.ChangeRoom(102);
+stop
+@6
+  player.ChangeRoom(301);
+return
 ]]></Script>
             <DialogOptions>
               <DialogOption>
@@ -2169,6 +2190,24 @@ stop
               <DialogOption>
                 <ID>3</ID>
                 <Text xml:space="preserve">Easing Demo</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>4</ID>
+                <Text xml:space="preserve">GUI Tests</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>5</ID>
+                <Text xml:space="preserve">GUI Control Tests</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>6</ID>
+                <Text xml:space="preserve">Room, Character, Object Tests</Text>
                 <Show>True</Show>
                 <Say>False</Say>
               </DialogOption>
