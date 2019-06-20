@@ -24,7 +24,7 @@
 
 #ifndef __TWEEN_MODULE__
 #define __TWEEN_MODULE__
-#define Tween_020100
+#define Tween_020200
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETTINGS - Feel free to change this for your game!

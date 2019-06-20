@@ -4,7 +4,7 @@
   <Game>
     <Settings>
       <GameFileName>Tween</GameFileName>
-      <GameName xml:space="preserve">Tween 2.1.0</GameName>
+      <GameName xml:space="preserve">Tween 2.2.0</GameName>
       <UniqueID>5292578</UniqueID>
       <GUIDAsString>{55f183fa-23ea-4173-8402-2762f8778aff}</GUIDAsString>
       <ColorDepth>TrueColor</ColorDepth>
@@ -69,13 +69,13 @@
       <Description />
       <ReleaseDate>2007-08-19</ReleaseDate>
       <Genre>Adventure</Genre>
-      <Version>2.1.0.0</Version>
+      <Version>2.2.0.0</Version>
       <WindowsExperienceIndex>1</WindowsExperienceIndex>
       <DeveloperName />
       <DeveloperURL />
       <EnhancedSaveGames>False</EnhancedSaveGames>
       <SaveGameFileExtension />
-      <SaveGameFolderName xml:space="preserve">Tween 2.1.0</SaveGameFolderName>
+      <SaveGameFolderName xml:space="preserve">Tween 2.2.0</SaveGameFolderName>
       <BinaryFilesInSourceControl>False</BinaryFilesInSourceControl>
       <AudioIndexer>2</AudioIndexer>
       <BuildTargets>Windows</BuildTargets>
@@ -3873,7 +3873,7 @@ return
                 <Name>Tween</Name>
                 <Description>In-betweening functions for AGS.</Description>
                 <Author>Edmundo Ruiz et al.</Author>
-                <Version>2.1.0</Version>
+                <Version>2.2.0</Version>
                 <Key>1249765699</Key>
                 <IsHeader>False</IsHeader>
               </Script>
