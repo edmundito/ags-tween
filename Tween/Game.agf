@@ -36,7 +36,7 @@
       <HandleInvClicksInScript>False</HandleInvClicksInScript>
       <DisplayMultipleInventory>False</DisplayMultipleInventory>
       <ScriptAPIVersion>Highest</ScriptAPIVersion>
-      <ScriptCompatLevel>v340</ScriptCompatLevel>
+      <ScriptCompatLevel>v341</ScriptCompatLevel>
       <EnforceObjectBasedScript>True</EnforceObjectBasedScript>
       <EnforceNewStrings>True</EnforceNewStrings>
       <EnforceNewAudio>True</EnforceNewAudio>
@@ -682,6 +682,10 @@
           <UnloadedRoom>
             <Number>5</Number>
             <Description xml:space="preserve">Easing Demo</Description>
+          </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>99</Number>
+            <Description>Hub</Description>
           </UnloadedRoom>
         </UnloadedRooms>
       </UnloadedRoomFolder>
@@ -2053,7 +2057,7 @@
             <IdleView>0</IdleView>
             <ThinkingView>0</ThinkingView>
             <BlinkingView>0</BlinkingView>
-            <StartingRoom>1</StartingRoom>
+            <StartingRoom>99</StartingRoom>
             <StartX>160</StartX>
             <StartY>160</StartY>
             <UniformMovementSpeed>True</UniformMovementSpeed>
@@ -2134,13 +2138,41 @@
         <Dialogs>
           <Dialog>
             <ID>0</ID>
-            <Name>dDialog0</Name>
+            <Name>dHub</Name>
             <ShowTextParser>False</ShowTextParser>
             <Script><![CDATA[// Dialog script file
 @S  // Dialog startup entry point
 return
+@1
+  player.ChangeRoom(1);
+stop
+@2
+  player.ChangeRoom(4);
+stop
+@3
+  player.ChangeRoom(5);
+stop
 ]]></Script>
-            <DialogOptions />
+            <DialogOptions>
+              <DialogOption>
+                <ID>1</ID>
+                <Text xml:space="preserve">Tween Demo</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>2</ID>
+                <Text xml:space="preserve">Tween 2 Teaser</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>3</ID>
+                <Text xml:space="preserve">Easing Demo</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+            </DialogOptions>
           </Dialog>
         </Dialogs>
       </DialogFolder>
