@@ -409,7 +409,6 @@ import function StopTweenProperty(this Hotspot*, String property, TweenStopResul
 import function StopTweenProperty(this InventoryItem*, String property, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenProperty(this Object*, String property, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenProperty(static Room, String property, TweenStopResult result=Tween_STOP_RESULT);
-#endif
 
 
 ///////////////////////////////////////////////////////////////////////////////
