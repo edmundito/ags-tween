@@ -329,6 +329,17 @@ import function StopTweenTintGreen(this Character*, TweenStopResult result=Tween
 import function StopTweenTintBlue(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintSaturation(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTint(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenTintRed(this Object*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintGreen(this Object*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintBlue(this Object*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintSaturation(this Object*, float timing, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTint(this Object*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenTintRed(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintGreen(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintBlue(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintSaturation(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTint(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 import int TweenLightLevel(this Region*, float timing, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
