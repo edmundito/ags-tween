@@ -323,11 +323,13 @@ import int TweenTintRed(this Character*, float timing, int toRed, TweenEasingTyp
 import int TweenTintGreen(this Character*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintBlue(this Character*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintSaturation(this Character*, float timing, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenTint(this Character*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintLuminance(this Character*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTint(this Character*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenTintRed(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintGreen(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintBlue(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintSaturation(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintLuminance(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTint(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 
 import int TweenTintRed(this Object*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
