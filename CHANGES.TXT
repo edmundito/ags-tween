@@ -1,7 +1,11 @@
 Revision History
 ================
 
-Next Version (TBD)
+2.2.0 (TBD)
+- Remove compatibility with any version below 3.4.0
+- Fix `Region` `StopTweenTint` result parameter (was not used)
+- 3.4.1: Add `Character` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
+- 3.4.1: Add `Object` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
 
 2.1.0 (December 4, 2016)
 - Fix `TweenViewport` setting the incorrect X and Y value
