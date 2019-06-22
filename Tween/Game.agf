@@ -36,7 +36,7 @@
       <HandleInvClicksInScript>False</HandleInvClicksInScript>
       <DisplayMultipleInventory>False</DisplayMultipleInventory>
       <ScriptAPIVersion>Highest</ScriptAPIVersion>
-      <ScriptCompatLevel>v341</ScriptCompatLevel>
+      <ScriptCompatLevel>Highest</ScriptCompatLevel>
       <EnforceObjectBasedScript>True</EnforceObjectBasedScript>
       <EnforceNewStrings>True</EnforceNewStrings>
       <EnforceNewAudio>True</EnforceNewAudio>
@@ -1845,6 +1845,27 @@
                 <Visible>True</Visible>
               </GUISlider>
             </Controls>
+          </GUIMain>
+          <GUIMain>
+            <NormalGUI>
+              <OnClick />
+              <Height>200</Height>
+              <Width>320</Width>
+              <Left>0</Left>
+              <Top>0</Top>
+              <Clickable>False</Clickable>
+              <Visible>False</Visible>
+              <PopupStyle>Normal</PopupStyle>
+              <PopupYPos>0</PopupYPos>
+              <ZOrder>0</ZOrder>
+              <BorderColor>11</BorderColor>
+              <Transparency>0</Transparency>
+              <BackgroundColor>1</BackgroundColor>
+              <BackgroundImage>0</BackgroundImage>
+              <ID>10</ID>
+              <Name>gTest</Name>
+            </NormalGUI>
+            <Controls />
           </GUIMain>
         </GUIs>
       </GUIFolder>
