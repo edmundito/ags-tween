@@ -336,11 +336,13 @@ import int TweenTintRed(this Object*, float timing, int toRed, TweenEasingType e
 import int TweenTintGreen(this Object*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintBlue(this Object*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintSaturation(this Object*, float timing, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenTint(this Object*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintLuminance(this Object*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTint(this Object*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenTintRed(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintGreen(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintBlue(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintSaturation(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintLuminance(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTint(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
