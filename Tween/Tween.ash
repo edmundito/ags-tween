@@ -176,7 +176,7 @@ struct Tween extends TweenBase {
   import static function WaitForAllToFinish();
 };
 
-#ifnver 3.5.0
+#ifndef SCRIPT_API_v350
 import int TweenViewportX(float timing, int toX, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenViewportY(float timing, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenViewport(float timing, int toX, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
@@ -320,7 +320,7 @@ import int TweenImage(this Object*, Object* objectRef, float timing, int toSprit
 import int TweenAnimationSpeed(this Character*, float timing, int toAnimationSpeed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenAnimationSpeed(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 
-#ifver 3.4.1
+#ifdef SCRIPT_API_v341
 import int TweenTintRed(this Character*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintGreen(this Character*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintBlue(this Character*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);

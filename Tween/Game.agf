@@ -36,7 +36,7 @@
       <HandleInvClicksInScript>False</HandleInvClicksInScript>
       <DisplayMultipleInventory>False</DisplayMultipleInventory>
       <ScriptAPIVersion>Highest</ScriptAPIVersion>
-      <ScriptCompatLevel>Highest</ScriptCompatLevel>
+      <ScriptCompatLevel>v340</ScriptCompatLevel>
       <EnforceObjectBasedScript>True</EnforceObjectBasedScript>
       <EnforceNewStrings>True</EnforceNewStrings>
       <EnforceNewAudio>True</EnforceNewAudio>
@@ -4066,6 +4066,30 @@ return
                 <Author />
                 <Version />
                 <Key>1900456490</Key>
+                <IsHeader>False</IsHeader>
+              </Script>
+            </ScriptAndHeader_Script>
+          </ScriptAndHeader>
+          <ScriptAndHeader>
+            <ScriptAndHeader_Header>
+              <Script>
+                <FileName>Helpers.ash</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>1747788404</Key>
+                <IsHeader>True</IsHeader>
+              </Script>
+            </ScriptAndHeader_Header>
+            <ScriptAndHeader_Script>
+              <Script>
+                <FileName>Helpers.asc</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>1747788404</Key>
                 <IsHeader>False</IsHeader>
               </Script>
             </ScriptAndHeader_Script>
