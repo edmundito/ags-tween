@@ -699,6 +699,10 @@
             <Number>301</Number>
             <Description xml:space="preserve">Room, Character, Object tests</Description>
           </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>302</Number>
+            <Description xml:space="preserve">Viewport and Camera tests</Description>
+          </UnloadedRoom>
         </UnloadedRooms>
       </UnloadedRoomFolder>
     </Rooms>
@@ -2193,7 +2197,10 @@ stop
 stop
 @6
   player.ChangeRoom(301);
-return
+stop
+@7
+  player.ChangeRoom(302);
+stop
 ]]></Script>
             <DialogOptions>
               <DialogOption>
@@ -2229,6 +2236,12 @@ return
               <DialogOption>
                 <ID>6</ID>
                 <Text xml:space="preserve">Room, Character, Object Tests</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>7</ID>
+                <Text xml:space="preserve">Viewport and Camera</Text>
                 <Show>True</Show>
                 <Say>False</Say>
               </DialogOption>
