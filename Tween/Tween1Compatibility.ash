@@ -40,13 +40,11 @@ import function WaitForTweensToStop();
 /// (Tween 1 Compatibility) Deprecated: Use TweenSystemGamma
 import int TweenGamma(float seconds, short toGamma, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
 
-#ifndef SCRIPT_API_v350
-/// (Tween 1 Compatibility) Deprecated: Use TweenViewport
+/// (Tween 1 Compatibility) Deprecated: Use TweenViewport (or Game.Camera.TweenPosition if API >= 3.5.0)
 import int TweenViewportPosition(float seconds, short toX, short toY, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
 
-/// (Tween 1 Compatibility) Deprecated: Use TweenViewport(speed, ..., eTweenSpeed)
+/// (Tween 1 Compatibility) Deprecated: Use TweenViewport(speed, ..., eTweenSpeed) (or Game.Camera.TweenPosition(speed, ..., eTweenSpeed) if API >= 3.5.0)
 import int TweenViewportPositionBySpeed(float speed, short toX, short toY, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
-#endif
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenTintRed
 import int TweenTintR(this Region*, float seconds, short toR, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
