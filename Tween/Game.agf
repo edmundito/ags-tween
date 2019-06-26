@@ -4086,6 +4086,30 @@ stop
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>
+                <FileName>Tween2Compatibility.ash</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>286492375</Key>
+                <IsHeader>True</IsHeader>
+              </Script>
+            </ScriptAndHeader_Header>
+            <ScriptAndHeader_Script>
+              <Script>
+                <FileName>Tween2Compatibility.asc</FileName>
+                <Name />
+                <Description />
+                <Author />
+                <Version />
+                <Key>286492375</Key>
+                <IsHeader>False</IsHeader>
+              </Script>
+            </ScriptAndHeader_Script>
+          </ScriptAndHeader>
+          <ScriptAndHeader>
+            <ScriptAndHeader_Header>
+              <Script>
                 <FileName>Helpers.ash</FileName>
                 <Name />
                 <Description />

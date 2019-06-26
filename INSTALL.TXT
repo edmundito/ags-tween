@@ -23,6 +23,8 @@ How to Install
       In earlier versions, you can right-click and select "Move Up" until it's at the top.
 5. If you were using Tween 1.x, then you can also import Tween1Compatiblity.scm.
       Make sure that it is placed right below the Tween script module.
+6. If you were using some AGS features that have been deprecated, then you can also import Tween2Compatiblity.scm.
+      Make sure that it is placed right below the Tween script module.
 
 Documentation
 =============
