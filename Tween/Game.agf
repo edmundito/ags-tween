@@ -82,7 +82,7 @@
       <RenderAtScreenResolution>UserDefined</RenderAtScreenResolution>
     </Settings>
     <RuntimeSetup>
-      <GraphicsDriver>D3D9</GraphicsDriver>
+      <GraphicsDriver>OpenGL</GraphicsDriver>
       <Windowed>False</Windowed>
       <FullscreenGameScaling>ProportionalStretch</FullscreenGameScaling>
       <GameScaling>MaxInteger</GameScaling>
@@ -103,7 +103,7 @@
       <CustomSavePath />
       <UseCustomAppDataPath>False</UseCustomAppDataPath>
       <CustomAppDataPath IsNull="True" />
-      <TitleText xml:space="preserve">Tween 2.1.0 Setup</TitleText>
+      <TitleText xml:space="preserve">Tween Setup</TitleText>
     </RuntimeSetup>
     <LipSync>
       <Type>None</Type>
