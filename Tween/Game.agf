@@ -4182,7 +4182,7 @@ stop
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>
-                <FileName>Expect.ash</FileName>
+                <FileName>TestHelpers.ash</FileName>
                 <Name />
                 <Description />
                 <Author />
@@ -4193,7 +4193,7 @@ stop
             </ScriptAndHeader_Header>
             <ScriptAndHeader_Script>
               <Script>
-                <FileName>Expect.asc</FileName>
+                <FileName>TestHelpers.asc</FileName>
                 <Name />
                 <Description />
                 <Author />
