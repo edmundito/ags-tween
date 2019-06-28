@@ -330,6 +330,12 @@ import function StopTweenSize(this TextBox*, TweenStopResult result=Tween_STOP_R
 import function StopTweenSize(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenSize(this Slider*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenSize(this InvWindow*, TweenStopResult result=Tween_STOP_RESULT);
+#ifdef SCRIPT_API_v350
+import int TweenBackgroundColor(this GUI*, float timing, int toBackgroundColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenBorderColor(this GUI*, float timing, int toBorderColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int StopTweenBackgroundColor(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
+import int StopTweenBorderColor(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
 
 import int TweenScaling(this Character*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenScaling(this Character*, TweenStopResult result=Tween_STOP_RESULT);

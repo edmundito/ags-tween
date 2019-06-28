@@ -1862,9 +1862,9 @@
               <PopupStyle>Normal</PopupStyle>
               <PopupYPos>0</PopupYPos>
               <ZOrder>0</ZOrder>
-              <BorderColor>11</BorderColor>
+              <BorderColor>51199</BorderColor>
               <Transparency>0</Transparency>
-              <BackgroundColor>1</BackgroundColor>
+              <BackgroundColor>1040</BackgroundColor>
               <BackgroundImage>0</BackgroundImage>
               <ID>10</ID>
               <Name>gTest</Name>
