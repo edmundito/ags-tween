@@ -352,6 +352,17 @@ import function StopTweenBorderColorGreen(this GUI*, TweenStopResult result=Twee
 import function StopTweenBorderColorBlue(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenBorderColorRGB(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenBorderColor(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenSelectedBackColorRed(this ListBox*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedBackColorGreen(this ListBox*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedBackColorBlue(this ListBox*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedBackColorRGB(this ListBox*, float timing, int toRed, int toGreen, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedBackColor(this ListBox*, float timing, int toSelectedBackColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import function StopTweenSelectedBackColorRed(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedBackColorGreen(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedBackColorBlue(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedBackColorRGB(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedBackColor(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 import int TweenScaling(this Character*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);

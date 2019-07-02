@@ -1871,6 +1871,50 @@
             </NormalGUI>
             <Controls />
           </GUIMain>
+          <GUIMain>
+            <NormalGUI>
+              <OnClick />
+              <Height>200</Height>
+              <Width>320</Width>
+              <Left>0</Left>
+              <Top>0</Top>
+              <Clickable>True</Clickable>
+              <Visible>False</Visible>
+              <PopupStyle>Normal</PopupStyle>
+              <PopupYPos>0</PopupYPos>
+              <ZOrder>0</ZOrder>
+              <BorderColor>33808</BorderColor>
+              <Transparency>0</Transparency>
+              <BackgroundColor>59164</BackgroundColor>
+              <BackgroundImage>0</BackgroundImage>
+              <ID>11</ID>
+              <Name>gControlsTest</Name>
+            </NormalGUI>
+            <Controls>
+              <GUIListBox>
+                <OnSelectionChanged />
+                <ShowScrollArrows>True</ShowScrollArrows>
+                <ShowBorder>True</ShowBorder>
+                <TextAlignment>Left</TextAlignment>
+                <TextColor>0</TextColor>
+                <SelectedTextColor>7</SelectedTextColor>
+                <SelectedBackgroundColor>16</SelectedBackgroundColor>
+                <Font>0</Font>
+                <Translated>True</Translated>
+                <Height>107</Height>
+                <Locked>False</Locked>
+                <Width>119</Width>
+                <Left>94</Left>
+                <Top>50</Top>
+                <ZOrder>0</ZOrder>
+                <ID>0</ID>
+                <Name>lstTest</Name>
+                <Clickable>True</Clickable>
+                <Enabled>True</Enabled>
+                <Visible>True</Visible>
+              </GUIListBox>
+            </Controls>
+          </GUIMain>
         </GUIs>
       </GUIFolder>
     </GUIs>
@@ -2200,8 +2244,7 @@ stop
 stop
 @7
   player.ChangeRoom(302);
-stop
-]]></Script>
+stop]]></Script>
             <DialogOptions>
               <DialogOption>
                 <ID>1</ID>
