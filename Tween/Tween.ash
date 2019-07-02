@@ -363,6 +363,28 @@ import function StopTweenSelectedBackColorGreen(this ListBox*, TweenStopResult r
 import function StopTweenSelectedBackColorBlue(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenSelectedBackColorRGB(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenSelectedBackColor(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenSelectedTextColorRed(this ListBox*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedTextColorGreen(this ListBox*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedTextColorBlue(this ListBox*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedTextColorRGB(this ListBox*, float timing, int toRed, int toGreen, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenSelectedTextColor(this ListBox*, float timing, int toSelectedTextColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import function StopTweenSelectedTextColorRed(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedTextColorGreen(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedTextColorBlue(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedTextColorRGB(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenSelectedTextColor(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+
+import int TweenTextColorRed(this ListBox*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenTextColorGreen(this ListBox*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenTextColorBlue(this ListBox*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenTextColorRGB(this ListBox*, float timing, int toRed, int toGreen, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenTextColor(this ListBox*, float timing, int toTextColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import function StopTweenTextColorRed(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTextColorGreen(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTextColorBlue(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTextColorRGB(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTextColor(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
 import int TweenScaling(this Character*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
