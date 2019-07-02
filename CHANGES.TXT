@@ -8,8 +8,9 @@ Revision History
 - Remove compatibility with any version below 3.4.0
 - Replace `#ifver` checks to check based on `SCRIPT_API_v*` instead
 - Fix `Region` `StopTweenTint` result parameter (was not used)
-- 3.4.1: Add `Character` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
+- 3.4.1: Add `Character` `TweenTint` (+ Red/Green/Blue), `TweenTintSaturation`, `TweenTintLuminance`
 - 3.4.1: Add `Object` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
+- 3.5.0: Remove limitations of GUI tweens to screen width and height
 - 3.5.0: Replace old `Viewport` tweens with `Camera` `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`, `TweenSize`
 - 3.5.0: Add new `Viewport` object tweens `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`
 - 3.5.0: Update `Tween1Compatiblity` module to support legacy `Viewport` tweens (via `Camera`)
