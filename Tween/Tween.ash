@@ -429,7 +429,6 @@ import int TweenTintGreen(this Region*, float timing, int toGreen, TweenEasingTy
 import int TweenTintBlue(this Region*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintSaturation(this Region*, float timing, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTint(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenTintToGrayscale(this Region*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenLightLevel(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintRed(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintGreen(this Region*, TweenStopResult result=Tween_STOP_RESULT);

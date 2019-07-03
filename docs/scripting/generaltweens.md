@@ -140,12 +140,12 @@ Returns the tween duration (in loops) if the TweenStyle is non-blocking (`eNoBlo
     Region.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
     Region.StopTweenLightLevel(optional TweenStopResult)
-    
+
     // AGS 3.4.0 or above supports Character, Object, and Ambient:
     Character.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Object.TweenLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     TweenAmbientLightLevel(float timing, int toLightLevel, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-    
+
     Character.StopTweenLightLevel(optional TweenStopResult)
     Object.StopTweenLightLevel(optional TweenStopResult)
     StopTweenAmbientLightLevel(optional TweenStopResult)
@@ -157,7 +157,7 @@ Tweens the light level. Range: -100 (very dark) to 100 (very bright)
 
     // To Stop:
     rGarden.StopTweenLightLevel();
-    
+
 ## Property (3.4.0+)
 
     // AGS 3.4.0 and above
@@ -166,18 +166,18 @@ Tweens the light level. Range: -100 (very dark) to 100 (very bright)
     InventoryItem.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Object.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Room.TweenProperty(float timing, String, property, int toValue, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-    
+
     Character.StopTweenProperty(String property, optional TweenStopResult)
     Hotspot.StopTweenProperty(String property, optional TweenStopResult)
     InventoryItem.StopTweenProperty(String property, optional TweenStopResult)
     Object.StopTweenProperty(String property, optional TweenStopResult)
     Room.StopTweenProperty(String property, optional TweenStopResult)
-    
+
 Tweens an custom Number property to a new value. The property must be first set via the AGS Editor in order for this to work. Otherwise, the game may crash.
 
     // Set the custom property "happiness" to 110 in 3 seconds.
     cEgo.StopTweenProperty(3.0, "happiness", 110);
-    
+
     // Wait, never mind. Stop setting the properties:
     cEgo.StopTweenProperty();
 
@@ -273,8 +273,7 @@ Tweens the Z Order of the gui.
     Region.TweenTintBlue(float timing, int toB, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
     Region.TweenTintSaturation(float timing, int toAmount, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-    Region.TweenTintToGrayscale(float timing, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-    
+
     Region.TweenTint(float timing, int toRed, int toGreen, int toBlue, int toSaturation, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
 
     Region.StopTweenTint(optional TweenStopResult)
@@ -282,11 +281,11 @@ Tweens the Z Order of the gui.
     Region.StopTweenTintGreen(optional TweenStopResult)
     Region.StopTweenTintBlue(optional TweenStopResult)
     Region.StopTweenTintSaturation(optional TweenStopResult)
-    
+
     // AGS 3.4.0 or above
     Region.TweenTintLuminance(float timing, int toLuminance, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
     Region.TweenTintEx(float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, optional TweenEasingType, optional TweenStyle, optional startDelay, optional timingType)
-    
+
     Region.StopTweenTintLuminance(optional TweenStopResult)
 
 Tweens the Red, Green, Blue, Saturation, or Luminance portion for the region. Color Range: 0 to 255. Saturation Range: 0 to 100.

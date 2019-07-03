@@ -58,7 +58,7 @@ import int TweenTintB(this Region*, float seconds, short toB, Tween1Timing timin
 /// (Tween 1 Compatibility) Deprecated: Use TweenTintSaturation
 import int TweenTintAmount(this Region*, float seconds, short toAmount, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
 
-/// (Tween 1 Compatibility) Deprecated: Use TweenTintToGrayscale
+/// (Tween 1 Compatibility) Deprecated: Use TweenTint(timing, 255, 255, 255, 100)
 import int TweenTintBlackAndWhite(this Region*, float seconds, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenTextColorRed
