@@ -428,12 +428,14 @@ import int TweenTintRed(this Region*, float timing, int toRed, TweenEasingType e
 import int TweenTintGreen(this Region*, float timing, int toGreen, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintBlue(this Region*, float timing, int toBlue, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTintSaturation(this Region*, float timing, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenTint(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTintLuminance(this Region*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenTint(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenLightLevel(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintRed(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintGreen(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintBlue(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTintSaturation(this Region*, TweenStopResult result=Tween_STOP_RESULT);
+import function StopTweenTintLuminance(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTint(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 
 import int TweenTextColor(this Label*, float timing, int toColor, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
@@ -487,10 +489,6 @@ import function StopTweenTextColorBlue(this TextBox*, TweenStopResult result=Twe
 
 import int TweenHandleOffset(this Slider*, float timing, int toOffset, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import function StopTweenHandleOffset(this Slider*, TweenStopResult result=Tween_STOP_RESULT);
-
-import int TweenTintLuminance(this Region*, float timing, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import int TweenTintEx(this Region*, float timing, int toRed, int toGreen, int toBlue, int toSaturation, int toLuminance, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import function StopTweenTintLuminance(this Region*, TweenStopResult result=Tween_STOP_RESULT);
 
 import int TweenLightLevel(this Character*, float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenLightLevel(this Object*, float timing, int fromLightLevel, int toLightLevel, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
