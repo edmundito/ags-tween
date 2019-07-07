@@ -21,7 +21,7 @@
       <LetterboxMode>False</LetterboxMode>
       <AutoMoveInWalkMode>True</AutoMoveInWalkMode>
       <PixelPerfect>True</PixelPerfect>
-      <WhenInterfaceDisabled>GreyOut</WhenInterfaceDisabled>
+      <WhenInterfaceDisabled>Unchanged</WhenInterfaceDisabled>
       <GUIAlphaStyle>MultiplyTranslucenceSrcBlend</GUIAlphaStyle>
       <SpriteAlphaStyle>Improved</SpriteAlphaStyle>
       <RunGameLoopsWhileDialogOptionsDisplayed>False</RunGameLoopsWhileDialogOptionsDisplayed>
@@ -1908,8 +1908,8 @@
                 <Height>107</Height>
                 <Locked>False</Locked>
                 <Width>119</Width>
-                <Left>94</Left>
-                <Top>50</Top>
+                <Left>11</Left>
+                <Top>72</Top>
                 <ZOrder>0</ZOrder>
                 <ID>0</ID>
                 <Name>lstTest</Name>
@@ -1917,6 +1917,65 @@
                 <Enabled>True</Enabled>
                 <Visible>True</Visible>
               </GUIListBox>
+              <GUITextBox>
+                <OnActivate />
+                <TextColor>0</TextColor>
+                <Font>0</Font>
+                <ShowBorder>True</ShowBorder>
+                <Text />
+                <Height>18</Height>
+                <Locked>False</Locked>
+                <Width>119</Width>
+                <Left>11</Left>
+                <Top>49</Top>
+                <ZOrder>1</ZOrder>
+                <ID>1</ID>
+                <Name>txtTest</Name>
+                <Clickable>True</Clickable>
+                <Enabled>True</Enabled>
+                <Visible>True</Visible>
+              </GUITextBox>
+              <GUILabel>
+                <TextAlignment>Left</TextAlignment>
+                <TextColor>0</TextColor>
+                <Font>0</Font>
+                <Text>Hello</Text>
+                <Height>15</Height>
+                <Locked>False</Locked>
+                <Width>119</Width>
+                <Left>11</Left>
+                <Top>30</Top>
+                <ZOrder>2</ZOrder>
+                <ID>2</ID>
+                <Name>lblTest</Name>
+                <Clickable>True</Clickable>
+                <Enabled>True</Enabled>
+                <Visible>True</Visible>
+              </GUILabel>
+              <GUIButton>
+                <OnClick />
+                <ClickAction>RunScript</ClickAction>
+                <NewModeNumber>0</NewModeNumber>
+                <ClipImage>False</ClipImage>
+                <TextAlignment>TopCenter</TextAlignment>
+                <TextColor>0</TextColor>
+                <Font>0</Font>
+                <PushedImage>0</PushedImage>
+                <MouseoverImage>0</MouseoverImage>
+                <Image>0</Image>
+                <Text xml:space="preserve">New Button</Text>
+                <Height>17</Height>
+                <Locked>False</Locked>
+                <Width>66</Width>
+                <Left>142</Left>
+                <Top>49</Top>
+                <ZOrder>3</ZOrder>
+                <ID>3</ID>
+                <Name>btnTest</Name>
+                <Clickable>True</Clickable>
+                <Enabled>True</Enabled>
+                <Visible>True</Visible>
+              </GUIButton>
             </Controls>
           </GUIMain>
           <GUIMain>
