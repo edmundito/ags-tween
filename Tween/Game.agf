@@ -703,6 +703,10 @@
             <Number>302</Number>
             <Description xml:space="preserve">Viewport and Camera tests</Description>
           </UnloadedRoom>
+          <UnloadedRoom>
+            <Number>303</Number>
+            <Description xml:space="preserve">Region tests</Description>
+          </UnloadedRoom>
         </UnloadedRooms>
       </UnloadedRoomFolder>
     </Rooms>
@@ -1670,7 +1674,7 @@
                 <Top>2</Top>
                 <ZOrder>2</ZOrder>
                 <ID>2</ID>
-                <Name>Label2</Name>
+                <Name>lblEasingX</Name>
                 <Clickable>True</Clickable>
                 <Enabled>True</Enabled>
                 <Visible>True</Visible>
@@ -1914,6 +1918,27 @@
                 <Visible>True</Visible>
               </GUIListBox>
             </Controls>
+          </GUIMain>
+          <GUIMain>
+            <NormalGUI>
+              <OnClick />
+              <Height>200</Height>
+              <Width>320</Width>
+              <Left>0</Left>
+              <Top>0</Top>
+              <Clickable>False</Clickable>
+              <Visible>False</Visible>
+              <PopupStyle>Normal</PopupStyle>
+              <PopupYPos>0</PopupYPos>
+              <ZOrder>0</ZOrder>
+              <BorderColor>0</BorderColor>
+              <Transparency>0</Transparency>
+              <BackgroundColor>0</BackgroundColor>
+              <BackgroundImage>0</BackgroundImage>
+              <ID>12</ID>
+              <Name>gTweenDebug</Name>
+            </NormalGUI>
+            <Controls />
           </GUIMain>
         </GUIs>
       </GUIFolder>
@@ -2244,7 +2269,11 @@ stop
 stop
 @7
   player.ChangeRoom(302);
-stop]]></Script>
+stop
+@8
+  player.ChangeRoom(303);
+return
+]]></Script>
             <DialogOptions>
               <DialogOption>
                 <ID>1</ID>
@@ -2285,6 +2314,12 @@ stop]]></Script>
               <DialogOption>
                 <ID>7</ID>
                 <Text xml:space="preserve">Viewport and Camera</Text>
+                <Show>True</Show>
+                <Say>False</Say>
+              </DialogOption>
+              <DialogOption>
+                <ID>8</ID>
+                <Text>Region</Text>
                 <Show>True</Show>
                 <Say>False</Say>
               </DialogOption>
