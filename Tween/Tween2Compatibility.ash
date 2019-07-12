@@ -40,7 +40,13 @@ import function StopTweenViewport(TweenStopResult result=Tween_STOP_RESULT);
 /// (Tween 2 Compatibility) Deprecated: Use System.TweenGamma
 import int TweenSystemGamma(float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 
-/// (Tween 2 Compatibility) Deprecated: Use System.StopTweenGamam
+/// (Tween 2 Compatibility) Deprecated: Use System.StopTweenGamma
 import function StopTweenSystemGamma(TweenStopResult result=Tween_STOP_RESULT);
+
+/// (Tween 2 Compatibility) Deprecated: Use System.TweenVolume
+import int TweenSystemVolume(float timing, int toVolume, TweenEasingType easingType=Tween_EASING_TYPE_AUDIO, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY_AUDIO, TweenTimingType timingType=Tween_TIMING_AUDIO);
+
+/// (Tween 2 Compatibility) Deprecated: Use System.StopTweenVolume
+import function StopTweenSystemVolume(TweenStopResult result=Tween_STOP_RESULT);
 
 #endif
