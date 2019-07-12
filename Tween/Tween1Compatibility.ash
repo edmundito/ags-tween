@@ -37,7 +37,7 @@ import function TweenStopAll(TweenStopResult result=Tween_STOP_RESULT);
 /// (Tween 1 Compatibility) Deprecated: Use Tween.WaitForAllToFinish
 import function WaitForTweensToStop();
 
-/// (Tween 1 Compatibility) Deprecated: Use TweenSystemGamma
+/// (Tween 1 Compatibility) Deprecated: Use System.TweenGamma
 import int TweenGamma(float seconds, short toGamma, Tween1Timing timing=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE);
 
 /// (Tween 1 Compatibility) Deprecated: Use TweenViewport (or Game.Camera.TweenPosition if API >= 3.5.0)

@@ -8,6 +8,7 @@ Revision History
 - Removed compatibility with any version below 3.4.0
 - Replaced internal `#ifver` checks to check based on `SCRIPT_API_v*` to improve compatibility
 - Replaced `Region.TweenTintEx` with additional `luminance` parameter in `Region.TweenTint`
+- Removed `TweenSystemGamma` and `StopTweenSystemGamma` in favor of using `System.TweenGamma` and `System.StopTweenGamma`
 - Added `TweenTextColorRGB` for `Button`, `Label`, and `TextBox`
 - 3.4.1: Added `Character` `TweenTint` (+ Red/Green/Blue), `TweenTintSaturation`, `TweenTintLuminance`
 - 3.4.1: Added `Object` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`

@@ -32,9 +32,15 @@ import int TweenViewportY(float timing, int toY, TweenEasingType easingType=Twee
 /// (Tween 2 Compatibility) Deprecated: Use Game.Camera.TweenPosition
 import int TweenViewport(float timing, int toX, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 
-/// (Tween 2 Compatibility) Deprecated: Use GameCamera.StopTweenPosition
+/// (Tween 2 Compatibility) Deprecated: Use Game.Camera.StopTweenPosition
 import function StopTweenViewport(TweenStopResult result=Tween_STOP_RESULT);
 
 #endif
+
+/// (Tween 2 Compatibility) Deprecated: Use System.TweenGamma
+import int TweenSystemGamma(float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+
+/// (Tween 2 Compatibility) Deprecated: Use System.StopTweenGamam
+import function StopTweenSystemGamma(TweenStopResult result=Tween_STOP_RESULT);
 
 #endif

@@ -202,9 +202,6 @@ import int TweenViewport(float timing, int toX, int toY, TweenEasingType easingT
 import function StopTweenViewport(TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
-import int TweenSystemGamma(float timing, int toGamma, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
-import function StopTweenSystemGamma(TweenStopResult result=Tween_STOP_RESULT);
-
 import int TweenShakeScreen(float timing, int fromDelay, int toDelay, int fromAmount, int toAmount, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenShakeScreen(TweenStopResult result=Tween_STOP_RESULT);
 
