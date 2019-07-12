@@ -2,25 +2,22 @@ Revision History
 ================
 
 2.2.0 (TBD)
-
-2.2.0 is compatible with AGS API 3.4.0 and above.
-
-- Remove compatibility with any version below 3.4.0
-- Replace `#ifver` checks to check based on `SCRIPT_API_v*` instead
-- Fix `Region` `StopTweenTint` result parameter (was not used)
-- Fix `Region` tween tint saturation to 1-100 and luminance clamping to 0-100
-- Fix exception when using `Button.TweenTextColorRed`
-- Replace `Region.TweenTintEx` with additional `luminance` parameter in `Region.TweenTint`
-- Add `TweenTextColorRGB` for `Button`, `Label`, and `TextBox`
-- 3.4.1: Add `Character` `TweenTint` (+ Red/Green/Blue), `TweenTintSaturation`, `TweenTintLuminance`
-- 3.4.1: Add `Object` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
-- 3.5.0: Remove limitations of GUI tweens to screen width and height
-- 3.5.0: Replace old `Viewport` tweens with `Camera` `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`, `TweenSize`
-- 3.5.0: Add new `Viewport` object tweens `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`
-- 3.5.0: Update `Tween1Compatiblity` module to support legacy `Viewport` tweens (via `Camera`)
-- 3.5.0: Add `Tween2Compatiblity` module to support legacy `Viewport` tweens (via `Camera`)
-- 3.5.0: Add `GUI` `TweenBackgroundColor` (+ Red/Green/Blue/RGB) and `TweenBorderColor` (+ Red/Green/Blue/RGB)
-- 3.5.0: Add `ListBox` `TweenSelectedBackColor` (+ Red/Green/Blue/RGB), `TweenSelectedTextColor` (+ Red/Green/Blue/RGB), `TweenTextColor` (+ Red/Green/Blue/RGB)
+- Fixed `Region` `StopTweenTint` result parameter (was not used)
+- Fixed `Region` tween tint saturation to 1-100 and luminance clamping to 0-100
+- Fixed exception when using `Button.TweenTextColorRed`
+- Removed compatibility with any version below 3.4.0
+- Replaced internal `#ifver` checks to check based on `SCRIPT_API_v*` to improve compatibility
+- Replaced `Region.TweenTintEx` with additional `luminance` parameter in `Region.TweenTint`
+- Added `TweenTextColorRGB` for `Button`, `Label`, and `TextBox`
+- 3.4.1: Added `Character` `TweenTint` (+ Red/Green/Blue), `TweenTintSaturation`, `TweenTintLuminance`
+- 3.4.1: Added `Object` `TweenTint`, `TweenTintRed`, `TweenTintGreen`, `TweenTintBlue`, `TweenTintSaturation`, `TweenTintLuminance`
+- 3.5.0: Removed limitations of GUI tweens to screen width and height
+- 3.5.0: Replaced old `Viewport` tweens with `Camera` `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`, `TweenSize`
+- 3.5.0: Added new `Viewport` object tweens `TweenX`, `TweenY`, `TweenWidth`, `TweenHeight`, `TweenPosition`
+- 3.5.0: Updated `Tween1Compatiblity` module to support legacy `Viewport` tweens (via `Camera`)
+- 3.5.0: Added `Tween2Compatiblity` module to support legacy `Viewport` tweens (via `Camera`)
+- 3.5.0: Added `GUI` `TweenBackgroundColor` (+ Red/Green/Blue/RGB) and `TweenBorderColor` (+ Red/Green/Blue/RGB)
+- 3.5.0: Added `ListBox` `TweenSelectedBackColor` (+ Red/Green/Blue/RGB), `TweenSelectedTextColor` (+ Red/Green/Blue/RGB), `TweenTextColor` (+ Red/Green/Blue/RGB)
 
 2.1.0 (December 4, 2016)
 - Fix `TweenViewport` setting the incorrect X and Y value
