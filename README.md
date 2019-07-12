@@ -1,6 +1,6 @@
 # Tween Module for Adventure Game Studio (AGS)
 
-[![Join the chat at https://discord.gg/vmuCyWX](https://img.shields.io/badge/chat-%23tween__module__support%20on%20Discord-7289da.svg)](https://discord.gg/vmuCyWX)
+[![Join the chat at https://discord.gg/vmuCyWX](https://img.shields.io/badge/chat-%23tween__module%20on%20Discord-7289da.svg)](https://discord.gg/vmuCyWX)
 
 [Docs](https://edmundito.gitbook.io/ags-tween/)
 

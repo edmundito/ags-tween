@@ -38,7 +38,7 @@ Support
 Visit the AGS forums and post in the Tween 2.x thread:
 http://www.adventuregamestudio.co.uk/forums/index.php?board=10.0
 
-You can also chat in #tween_module_support in the AGS Discord server:
+You can also chat in #tween_module in the AGS Discord server:
 https://discord.gg/vmuCyWX
 
 You can also post in the ags-tween Github at:
