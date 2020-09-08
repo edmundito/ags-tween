@@ -1,7 +1,7 @@
 Revision History
 ================
 
-2.2.0 (TBD)
+2.2.0 (September 8, 2020)
 - Fixed `Region` `StopTweenTint` result parameter (was not used)
 - Fixed `Region` tween tint saturation to 1-100 and luminance clamping to 0-100
 - Fixed exception when using `Button.TweenTextColorRed`

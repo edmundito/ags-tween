@@ -7,6 +7,7 @@ Files
 
 - Tween.scm: The Tween module!
 - Tween1Compatiblity.scm: Module needed if you were already using Tween 1.x in your game.
+- Tween2Compatiblity.scm: Module may be needed if you were already using Tween 2.x viewport or system tweens prior to upgrading to AGS 3.5.0.
 - LICENSE: Contains licensing information.
       You may need to include the contents of this file in your commercial game.
 - CHANGES.TXT: The change log.
