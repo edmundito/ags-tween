@@ -1,6 +1,11 @@
 Revision History
 ================
 
+2.2.1 (September 13, 2021)
+- Fixed `Character`.`TweenZ` not applying the correct value
+- 3.5.0: Fixed `Viewport`.`TweenX/Y` incorrectly clamping values
+- Changed the float `Elapsed++` which is not allowed on new compiler
+
 2.2.0 (September 8, 2020)
 - Fixed `Region` `StopTweenTint` result parameter (was not used)
 - Fixed `Region` tween tint saturation to 1-100 and luminance clamping to 0-100
