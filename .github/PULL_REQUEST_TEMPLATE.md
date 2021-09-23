@@ -1,11 +1,9 @@
-## What changes did you make and why?
+<!-- What changes did you make and why?. Write above or below this line. -->
 
 
-## How did you test it?
+## How did you test your changes?
 
 
-## Did you complete the checklist?
-
-- [ ] If new engine features are used, they are wrapped around `#ifver`
-- [ ] I updated `CHANGES.TXT`
-- [ ] I updated the documentation
+## Checklist
+- [ ] I wrapped new engine features around `#ifdef SCRIPT_API_v{version}`
+- [ ] I logged my changes in `CHANGES.TXT`
