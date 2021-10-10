@@ -2,10 +2,10 @@ Revision History
 ================
 
 2.2.1 / 2.2.2 (October 10, 2021)
-- Fixed `Character`.`TweenZ` not applying the correct value
-- 3.5.0: Fixed script API version check for new Camera and Viewport
-- 3.5.0: Fixed `Viewport`.`TweenX/Y` incorrectly clamping values
-- Changed the float `Elapsed++` which is not allowed on new compiler
+- Fixed `Character`.`TweenZ` not applying the correct value (@edmundito)
+- 3.5.0: Fixed script API version check for new Camera and Viewport (@AlanDrake)
+- 3.5.0: Fixed `Viewport`.`TweenX/Y` incorrectly clamping values (@AlanDrake)
+- Changed the float `Elapsed++` which is not allowed on new compiler (@AlanDrake)
 
 2.2.0 (September 8, 2020)
 - Fixed `Region` `StopTweenTint` result parameter (was not used)
