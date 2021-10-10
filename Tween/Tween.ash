@@ -3,7 +3,7 @@
 //
 // TERMS OF USE - AGS TWEEN MODULE (ags-tween)
 //
-// Copyright (c) 2009-present Edmundo Ruiz
+// Copyright (c) 2009-present Edmundo Ruiz Ghanem
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of
 // this software and associated documentation files (the "Software"), to deal in
@@ -24,7 +24,7 @@
 
 #ifndef __TWEEN_MODULE__
 #define __TWEEN_MODULE__
-#define Tween_020200
+#define Tween_020201
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETTINGS - Feel free to change this for your game!
