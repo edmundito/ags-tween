@@ -4458,8 +4458,8 @@ return
               <Script>
                 <FileName>Tween.asc</FileName>
                 <Name>Tween</Name>
-                <Description>In-betweening functions for AGS.</Description>
-                <Author>Edmundo Ruiz et al.</Author>
+                <Description>In-between ing functions for AGS.</Description>
+                <Author>Edmundo Ruiz Ghanem et al.</Author>
                 <Version>2.2.2</Version>
                 <Key>1249765699</Key>
                 <IsHeader>False</IsHeader>
