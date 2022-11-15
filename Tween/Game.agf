@@ -670,55 +670,70 @@
     <Plugins />
     <Rooms>
       <UnloadedRoomFolder Name="Main">
-        <SubFolders />
+        <SubFolders>
+          <UnloadedRoomFolder Name="Demos">
+            <SubFolders />
+            <UnloadedRooms>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Demo 1: Tween Basics and Room Objects</Description>
+                <Number>1</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Demo 2: Character Tweens and some intermediate techniques</Description>
+                <Number>2</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Demo 3: GUI Tweens</Description>
+                <Number>3</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Tween 2 Teaser</Description>
+                <Number>4</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Easing Demo</Description>
+                <Number>5</Number>
+              </UnloadedRoom>
+            </UnloadedRooms>
+          </UnloadedRoomFolder>
+          <UnloadedRoomFolder Name="Tests">
+            <SubFolders />
+            <UnloadedRooms>
+              <UnloadedRoom>
+                <Description xml:space="preserve">GUI Tests</Description>
+                <Number>101</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">GUI Control Tests</Description>
+                <Number>102</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Audio tests</Description>
+                <Number>103</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Point tests</Description>
+                <Number>104</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Room, Character, Object tests</Description>
+                <Number>301</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Viewport and Camera tests</Description>
+                <Number>302</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Region tests</Description>
+                <Number>303</Number>
+              </UnloadedRoom>
+            </UnloadedRooms>
+          </UnloadedRoomFolder>
+        </SubFolders>
         <UnloadedRooms>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Demo 1: Tween Basics and Room Objects</Description>
-            <Number>1</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Demo 2: Character Tweens and some intermediate techniques</Description>
-            <Number>2</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Demo 3: GUI Tweens</Description>
-            <Number>3</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Tween 2 Teaser</Description>
-            <Number>4</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Easing Demo</Description>
-            <Number>5</Number>
-          </UnloadedRoom>
           <UnloadedRoom>
             <Description>Hub</Description>
             <Number>99</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">GUI Tests</Description>
-            <Number>101</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">GUI Control Tests</Description>
-            <Number>102</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Room, Character, Object tests</Description>
-            <Number>301</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Viewport and Camera tests</Description>
-            <Number>302</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Region tests</Description>
-            <Number>303</Number>
-          </UnloadedRoom>
-          <UnloadedRoom>
-            <Description xml:space="preserve">Audio tests</Description>
-            <Number>103</Number>
           </UnloadedRoom>
         </UnloadedRooms>
       </UnloadedRoomFolder>
@@ -2348,10 +2363,13 @@ stop
 stop
 @8
   player.ChangeRoom(303);
-return
+stop
 @9
   player.ChangeRoom(103);
-return
+stop
+@10
+  player.ChangeRoom(104);
+stop
 ]]></Script>
             <DialogOptions>
               <DialogOption>
@@ -2407,6 +2425,12 @@ return
                 <Say>False</Say>
                 <Show>True</Show>
                 <Text>Audio</Text>
+              </DialogOption>
+              <DialogOption>
+                <ID>10</ID>
+                <Say>False</Say>
+                <Show>True</Show>
+                <Text>Point</Text>
               </DialogOption>
             </DialogOptions>
           </Dialog>
@@ -4440,200 +4464,216 @@ return
     <DeletedViews />
     <Scripts>
       <ScriptFolder Name="Main">
-        <SubFolders />
+        <SubFolders>
+          <ScriptFolder Name="Tween">
+            <SubFolders />
+            <ScriptAndHeaders>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Tween.ash</FileName>
+                    <Name>Tween</Name>
+                    <Description>In-betweening functions for AGS.</Description>
+                    <Author>Edmundo Ruiz et al.</Author>
+                    <Version>2.1.0</Version>
+                    <Key>1249765699</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Tween.asc</FileName>
+                    <Name>Tween</Name>
+                    <Description>In-between ing functions for AGS.</Description>
+                    <Author>Edmundo Ruiz Ghanem et al.</Author>
+                    <Version>2.2.2</Version>
+                    <Key>1249765699</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Tween1Compatibility.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1900456490</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Tween1Compatibility.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1900456490</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Tween2Compatibility.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>286492375</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Tween2Compatibility.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>286492375</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Tween3.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1719793932</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Tween3.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1719793932</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+            </ScriptAndHeaders>
+          </ScriptFolder>
+          <ScriptFolder Name="Helpers">
+            <SubFolders />
+            <ScriptAndHeaders>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Helpers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1747788404</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Helpers.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1747788404</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>TestHelpers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>993321950</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>TestHelpers.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>993321950</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+            </ScriptAndHeaders>
+          </ScriptFolder>
+          <ScriptFolder Name="Demos">
+            <SubFolders />
+            <ScriptAndHeaders>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Display2.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1169124952</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Display2.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1169124952</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>EasingDemo.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>2025019836</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>EasingDemo.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>2025019836</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+            </ScriptAndHeaders>
+          </ScriptFolder>
+        </SubFolders>
         <ScriptAndHeaders>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Tween.ash</FileName>
-                <Name>Tween</Name>
-                <Description>In-betweening functions for AGS.</Description>
-                <Author>Edmundo Ruiz et al.</Author>
-                <Version>2.1.0</Version>
-                <Key>1249765699</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Tween.asc</FileName>
-                <Name>Tween</Name>
-                <Description>In-between ing functions for AGS.</Description>
-                <Author>Edmundo Ruiz Ghanem et al.</Author>
-                <Version>2.2.2</Version>
-                <Key>1249765699</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Tween1Compatibility.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1900456490</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Tween1Compatibility.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1900456490</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Tween2Compatibility.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>286492375</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Tween2Compatibility.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>286492375</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Tween3.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1719793932</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Tween3.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1719793932</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Helpers.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1747788404</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Helpers.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1747788404</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>Display2.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1169124952</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>Display2.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1169124952</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>EasingDemo.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>2025019836</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>EasingDemo.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>2025019836</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>TestHelpers.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>993321950</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>TestHelpers.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>993321950</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>

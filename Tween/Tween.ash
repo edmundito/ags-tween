@@ -195,7 +195,7 @@ import function StopTweenPosition(this Camera*, TweenStopResult result=Tween_STO
 import function StopTweenSize(this Camera*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopAllTweens(this Camera*, TweenStopResult result=Tween_STOP_RESULT);
 
-import int TweenPosition(this Point*, float timing, int toX, int toY, int toWidth, int toHeight, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import int TweenPosition(this Point*, float timing, int toX, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenX(this Point*, float timing, int toX, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenY(this Point*, float timing, int toY, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenPosition(this Point*, TweenStopResult result=Tween_STOP_RESULT);
