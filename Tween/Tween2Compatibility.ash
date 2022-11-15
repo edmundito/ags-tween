@@ -21,7 +21,7 @@
 
 #ifdef __TWEEN_MODULE__
 
-#ifdef SCRIPT_API_v350
+#ifdef SCRIPT_API_v3507
 
 /// (Tween 2 Compatibility) Deprecated: Use Game.Camera.TweenX
 import int TweenViewportX(float timing, int toX, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
