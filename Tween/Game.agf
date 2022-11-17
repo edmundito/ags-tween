@@ -716,7 +716,7 @@
                 <Number>104</Number>
               </UnloadedRoom>
               <UnloadedRoom>
-                <Description xml:space="preserve">Room, Character, Object tests</Description>
+                <Description xml:space="preserve">Tint tests</Description>
                 <Number>301</Number>
               </UnloadedRoom>
               <UnloadedRoom>
@@ -726,6 +726,10 @@
               <UnloadedRoom>
                 <Description xml:space="preserve">Region tests</Description>
                 <Number>303</Number>
+              </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Character tests</Description>
+                <Number>304</Number>
               </UnloadedRoom>
             </UnloadedRooms>
           </UnloadedRoomFolder>
@@ -2370,6 +2374,9 @@ stop
 @10
   player.ChangeRoom(104);
 stop
+@11
+  player.ChangeRoom(304);
+stop
 ]]></Script>
             <DialogOptions>
               <DialogOption>
@@ -2406,31 +2413,37 @@ stop
                 <ID>6</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Room, Character, Object Tests</Text>
+                <Text xml:space="preserve">Tint Tests</Text>
               </DialogOption>
               <DialogOption>
                 <ID>7</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Viewport and Camera</Text>
+                <Text xml:space="preserve">Viewport and Camera Tests</Text>
               </DialogOption>
               <DialogOption>
                 <ID>8</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text>Region</Text>
+                <Text xml:space="preserve">Region Tests</Text>
               </DialogOption>
               <DialogOption>
                 <ID>9</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text>Audio</Text>
+                <Text xml:space="preserve">Audio Tests</Text>
               </DialogOption>
               <DialogOption>
                 <ID>10</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text>Point</Text>
+                <Text xml:space="preserve">Point Tests</Text>
+              </DialogOption>
+              <DialogOption>
+                <ID>11</ID>
+                <Say>False</Say>
+                <Show>True</Show>
+                <Text xml:space="preserve">Character Tests</Text>
               </DialogOption>
             </DialogOptions>
           </Dialog>
