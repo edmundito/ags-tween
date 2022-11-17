@@ -2,7 +2,8 @@ Revision History
 ================
 
 2.3.0 (Release Date TBD)
-- Add support for `Point` (3.5.0) tweens
+- 3.5.0: Add support for `Point` tweens
+- 3.6.0: `Character.Scaling` tween is no longer limited by a range of 5-200 (now supports 1-32767)
 
 2.2.1 / 2.2.2 (October 10, 2021)
 - Fixed `Character`.`TweenZ` not applying the correct value (@edmundito)
