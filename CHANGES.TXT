@@ -1,6 +1,9 @@
 Revision History
 ================
 
+2.3.0 (Release Date TBD)
+- Add support for `Point` (3.5.0) tweens
+
 2.2.1 / 2.2.2 (October 10, 2021)
 - Fixed `Character`.`TweenZ` not applying the correct value (@edmundito)
 - 3.5.0: Fixed script API version check for new Camera and Viewport (@AlanDrake)
