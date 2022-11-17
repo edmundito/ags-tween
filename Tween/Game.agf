@@ -41,7 +41,7 @@
       <GUIAlphaStyle>MultiplyTranslucenceSrcBlend</GUIAlphaStyle>
       <GUIDAsString>{55f183fa-23ea-4173-8402-2762f8778aff}</GUIDAsString>
       <GameFileName>Tween</GameFileName>
-      <GameName xml:space="preserve">Tween 2.2.0 (3.6.0 RC1)</GameName>
+      <GameName xml:space="preserve">Tween 2.3.0-alpha (3.6.0 RC1)</GameName>
       <GameTextEncoding>ANSI</GameTextEncoding>
       <Genre>Adventure</Genre>
       <GlobalSpeechAnimationDelay>5</GlobalSpeechAnimationDelay>
@@ -65,7 +65,7 @@
       <RoomTransition>FadeOutAndIn</RoomTransition>
       <RunGameLoopsWhileDialogOptionsDisplayed>False</RunGameLoopsWhileDialogOptionsDisplayed>
       <SaveGameFileExtension />
-      <SaveGameFolderName xml:space="preserve">Tween 2.2.0 (3.6.0 RC1)</SaveGameFolderName>
+      <SaveGameFolderName xml:space="preserve">Tween 2.3.0-alpha (3.6.0 RC1)</SaveGameFolderName>
       <SaveScreenshots>False</SaveScreenshots>
       <ScaleMovementSpeedWithMaskResolution>True</ScaleMovementSpeedWithMaskResolution>
       <ScriptAPIVersion>Highest</ScriptAPIVersion>
@@ -86,7 +86,7 @@
       <UseLowResCoordinatesInScript>False</UseLowResCoordinatesInScript>
       <UseOldCustomDialogOptionsAPI>False</UseOldCustomDialogOptionsAPI>
       <UseOldKeyboardHandling>True</UseOldKeyboardHandling>
-      <Version>2.2.0.0</Version>
+      <Version>2.3.0.0</Version>
       <WalkInLookMode>False</WalkInLookMode>
       <WhenInterfaceDisabled>Unchanged</WhenInterfaceDisabled>
     </Settings>
@@ -4486,7 +4486,7 @@ stop
                     <Name>Tween</Name>
                     <Description>In-between ing functions for AGS.</Description>
                     <Author>Edmundo Ruiz Ghanem et al.</Author>
-                    <Version>2.2.2</Version>
+                    <Version>2.3.0-alpha</Version>
                     <Key>1249765699</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
