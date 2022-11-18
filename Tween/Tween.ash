@@ -394,6 +394,10 @@ import int TweenImage(this Object*, Object* objectRef, float timing, int toSprit
 
 import int TweenAnimationSpeed(this Character*, float timing, int toAnimationSpeed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenAnimationSpeed(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+#ifdef SCRIPT_API_v360
+import int TweenAnimationVolume(this Character*, float timing, int toAnimationVolume, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE_AUDIO, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenAnimationVolume(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
 
 #ifdef SCRIPT_API_v341
 import int TweenTintRed(this Character*, float timing, int toRed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
