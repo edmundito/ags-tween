@@ -310,6 +310,12 @@ import int TweenFadeIn(this Character*, float timing, TweenEasingType easingType
 import function StopTweenTransparency(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTransparency(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTransparency(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
+#ifdef SCRIPT_API_v360
+import int TweenTransparency(this GUIControl*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenFadeOut(this GUIControl*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import int TweenFadeIn(this GUIControl*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+import function StopTweenTransparency(this GUIControl*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
 
 import int TweenZOrder(this GUI*, float timing, int toZOrder, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import function StopTweenZOrder(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
