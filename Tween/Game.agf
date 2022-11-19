@@ -731,6 +731,10 @@
                 <Description xml:space="preserve">Character tests</Description>
                 <Number>304</Number>
               </UnloadedRoom>
+              <UnloadedRoom>
+                <Description xml:space="preserve">Object tests</Description>
+                <Number>305</Number>
+              </UnloadedRoom>
             </UnloadedRooms>
           </UnloadedRoomFolder>
         </SubFolders>
@@ -2377,6 +2381,9 @@ stop
 @11
   player.ChangeRoom(304);
 stop
+@12
+  player.ChangeRoom(305);
+stop
 ]]></Script>
             <DialogOptions>
               <DialogOption>
@@ -2444,6 +2451,12 @@ stop
                 <Say>False</Say>
                 <Show>True</Show>
                 <Text xml:space="preserve">Character Tests</Text>
+              </DialogOption>
+              <DialogOption>
+                <ID>12</ID>
+                <Say>False</Say>
+                <Show>True</Show>
+                <Text xml:space="preserve">Object Tests</Text>
               </DialogOption>
             </DialogOptions>
           </Dialog>

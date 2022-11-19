@@ -389,6 +389,10 @@ import function StopTweenTextColor(this ListBox*, TweenStopResult result=Tween_S
 
 import int TweenScaling(this Character*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenScaling(this Character*, TweenStopResult result=Tween_STOP_RESULT);
+#ifdef SCRIPT_API_v360
+import int TweenScaling(this Object*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+import function StopTweenScaling(this Object*, TweenStopResult result=Tween_STOP_RESULT);
+#endif
 
 import int TweenImage(this Object*, Object* objectRef, float timing, int toSprite, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 
