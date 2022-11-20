@@ -8,6 +8,7 @@ Revision History
 - 3.6.0: `Character.Scaling` tween is no longer limited by a range of 5-200 (now supports 1-32767)
 - 3.6.0: Add support for `GUIControl.Transparency` tweens
 - 3.6.0: Add support for `Object.Scaling` tweens
+- 3.6.0: Add support for `Overlay.Width/Height/Size` tweens
 - Internal: Change how managed tweens are created to support Point tweens
 
 2.2.1 / 2.2.2 (October 10, 2021)
