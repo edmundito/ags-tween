@@ -41,7 +41,7 @@
       <GUIAlphaStyle>MultiplyTranslucenceSrcBlend</GUIAlphaStyle>
       <GUIDAsString>{55f183fa-23ea-4173-8402-2762f8778aff}</GUIDAsString>
       <GameFileName>Tween</GameFileName>
-      <GameName xml:space="preserve">Tween 2.3.0-alpha (3.6.0 RC1)</GameName>
+      <GameName xml:space="preserve">Tween 2.3.0-beta (3.6.0 RC1)</GameName>
       <GameTextEncoding>ANSI</GameTextEncoding>
       <Genre>Adventure</Genre>
       <GlobalSpeechAnimationDelay>5</GlobalSpeechAnimationDelay>
@@ -65,7 +65,7 @@
       <RoomTransition>FadeOutAndIn</RoomTransition>
       <RunGameLoopsWhileDialogOptionsDisplayed>False</RunGameLoopsWhileDialogOptionsDisplayed>
       <SaveGameFileExtension />
-      <SaveGameFolderName xml:space="preserve">Tween 2.3.0-alpha (3.6.0 RC1)</SaveGameFolderName>
+      <SaveGameFolderName xml:space="preserve">Tween 2.3.0-beta (3.6.0 RC1)</SaveGameFolderName>
       <SaveScreenshots>False</SaveScreenshots>
       <ScaleMovementSpeedWithMaskResolution>True</ScaleMovementSpeedWithMaskResolution>
       <ScriptAPIVersion>Highest</ScriptAPIVersion>
@@ -4525,7 +4525,7 @@ return
                     <Name>Tween</Name>
                     <Description>In-between ing functions for AGS.</Description>
                     <Author>Edmundo Ruiz Ghanem et al.</Author>
-                    <Version>2.3.0-alpha</Version>
+                    <Version>2.3.0-beta</Version>
                     <Key>1249765699</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
