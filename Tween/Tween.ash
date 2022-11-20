@@ -314,12 +314,18 @@ import int TweenFadeOut(this Overlay*, float timing, TweenEasingType easingType=
 import function StopTweenTransparency(this Overlay*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
+/// Tweens the Transparency property. Note: This will update the Visible property if Transparency starts or ends at 100.
 import int TweenTransparency(this GUI*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+/// Tweens the Transparency property. Note: This will update the Visible property if Transparency starts or ends at 100.
 import int TweenTransparency(this Object*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenTransparency(this Character*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+/// Tweens the Transparency property to 100. Note: This will set the Visible property to false when the tween finishes playing.
 import int TweenFadeOut(this GUI*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+/// Tweens the Transparency property to 0. Note: This will set the Visible property to true if Transparency starts at 100.
 import int TweenFadeIn(this GUI*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+/// Tweens the Transparency property to 100. Note: This will set the Visible property to false when the tween finishes playing.
 import int TweenFadeOut(this Object*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
+/// Tweens the Transparency property to 0. Note: This will set the Visible property to true if Transparency starts at 100.
 import int TweenFadeIn(this Object*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenFadeOut(this Character*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import int TweenFadeIn(this Character*, float timing, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
@@ -327,8 +333,11 @@ import function StopTweenTransparency(this Character*, TweenStopResult result=Tw
 import function StopTweenTransparency(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 import function StopTweenTransparency(this GUI*, TweenStopResult result=Tween_STOP_RESULT);
 #ifdef SCRIPT_API_v360
+/// Tweens the Transparency property. Note: This will update the Visible property if Transparency starts or ends at 100.
 import int TweenTransparency(this GUIControl*, float timing, int toTransparency, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+/// Tweens the Transparency property to 100. This will set the Visible property to false when the tween finishes playing.
 import int TweenFadeOut(this GUIControl*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
+/// Tweens the Transparency property to 0. Note: This will set the Visible property to true if Transparency starts at 100.
 import int TweenFadeIn(this GUIControl*, float timing, TweenEasingType easingType=Tween_EASING_TYPE_GUI, TweenStyle style=Tween_STYLE_GUI, float startDelay=Tween_START_DELAY_GUI, TweenTimingType timingType=Tween_TIMING_GUI);
 import function StopTweenTransparency(this GUIControl*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
@@ -409,13 +418,16 @@ import function StopTweenTextColorRGB(this ListBox*, TweenStopResult result=Twee
 import function StopTweenTextColor(this ListBox*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
+/// Tweens the Scaling property. Note: This will set the ManualScaling property to true.
 import int TweenScaling(this Character*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenScaling(this Character*, TweenStopResult result=Tween_STOP_RESULT);
 #ifdef SCRIPT_API_v360
+/// Tweens the Scaling property. Note: This will set the ManualScaling property to true.
 import int TweenScaling(this Object*, float timing, int toScaling, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 import function StopTweenScaling(this Object*, TweenStopResult result=Tween_STOP_RESULT);
 #endif
 
+// Cross-fades the Graphic from one Sprite to another. Requires an extra dummy object to perform the transition. Note: This will set the Visible property to true.
 import int TweenImage(this Object*, Object* objectRef, float timing, int toSprite, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);
 
 import int TweenAnimationSpeed(this Character*, float timing, int toAnimationSpeed, TweenEasingType easingType=Tween_EASING_TYPE, TweenStyle style=Tween_STYLE, float startDelay=Tween_START_DELAY, TweenTimingType timingType=Tween_TIMING);

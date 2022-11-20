@@ -11,6 +11,7 @@ Revision History
 - 3.6.0: Add support for `Overlay.Width/Height/Size` tweens
 - 3.6.0: Add support for `Overlay.Transparency` tweens
 - Internal: Change how managed tweens are created to support Point and Overlay tweens
+- Add function documentation in places where extra properties such as ManualScaling, Visible are also updated
 
 2.2.1 / 2.2.2 (October 10, 2021)
 - Fixed `Character`.`TweenZ` not applying the correct value (@edmundito)
