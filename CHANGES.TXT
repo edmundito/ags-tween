@@ -2,16 +2,15 @@ Revision History
 ================
 
 2.3.0 (Release Date TBD)
-- Add support for `Overlay.X/Y` tweens
-- 3.5.0: Add support for `Point` tweens
-- 3.6.0: Add support for `Character.AnimationVolume` tweens
-- 3.6.0: `Character.Scaling` tween is no longer limited by a range of 5-200 (now supports 1-32767)
-- 3.6.0: Add support for `GUIControl.Transparency` tweens
-- 3.6.0: Add support for `Object.Scaling` tweens
-- 3.6.0: Add support for `Overlay.Width/Height/Size` tweens
-- 3.6.0: Add support for `Overlay.Transparency` tweens
-- Internal: Change how managed tweens are created to support Point and Overlay tweens
-- Add function documentation in places where extra properties such as ManualScaling, Visible are also updated
+- Added `Overlay` `TweenX`, `TweenY`, `TweenPosition`
+- 3.5.0: Added `Point` `TweenX`, `TweenY`, `TweenPosition`
+- 3.6.0: Added `Character` `TweenAnimationVolume`
+- 3.6.0: `Character.TweenScaling` is no longer limited by a range of 5-200. Now supports 1-32767
+- 3.6.0: Added`GUIControl` `TweenTransparency`
+- 3.6.0: Added `Object` `TweenScaling`
+- 3.6.0: Added `Overlay` `Width`, `Height`, `Size`, `Transparency`
+- Internal: Updated how managed tweens are created to support `Point` and `Overlay` tweens
+- Added function documentation where extra properties such as `ManualScaling`, `Visible` are also updated
 
 2.2.1 / 2.2.2 (October 10, 2021)
 - Fixed `Character`.`TweenZ` not applying the correct value (@edmundito)
