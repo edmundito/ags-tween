@@ -6,7 +6,7 @@ Revision History
 - 3.5.0: Added `Point` `TweenX`, `TweenY`, `TweenPosition`
 - 3.6.0: Added `Character` `TweenAnimationVolume`
 - 3.6.0: `Character.TweenScaling` is no longer limited by a range of 5-200. Now supports 1-32767
-- 3.6.0: Added`GUIControl` `TweenTransparency`
+- 3.6.0: Added `GUIControl` `TweenTransparency`
 - 3.6.0: Added `Object` `TweenScaling`
 - 3.6.0: Added `Overlay` `Width`, `Height`, `Size`, `Transparency`
 - Internal: Updated how managed tweens are created to support `Point` and `Overlay` tweens
