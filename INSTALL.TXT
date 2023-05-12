@@ -4,17 +4,35 @@
 
 Files
 =====
-
-- Tween.scm: The Tween module!
-- Tween1Compatiblity.scm: Module needed if you were already using Tween 1.x in your game.
-- Tween2Compatiblity.scm: Module may be needed if you were already using Tween 2.x viewport or system tweens prior to upgrading to AGS 3.5.0.
+- Tween: Demo game with all modules under Scripts and useful examples and tests.
 - LICENSE: Contains licensing information.
       You may need to include the contents of this file in your commercial game.
 - CHANGES.TXT: The change log.
 - INSTALL.TXT: This file!
 
+Modules in Tween demo game
+==========================
+
+- Tween: The Tween module!
+- Tween1Compatiblity: Module needed if you were already using Tween 1.x in your game.
+- Tween2Compatiblity: Module may be needed if you were already using Tween 2.x viewport or system tweens prior to upgrading to AGS 3.5.0.
+
 How to Install
 ==============
+
+Export the module file
+----------------------
+
+You will need to export the module first in order to import it to your local game.
+
+1. Open the demo game Game.agf in Tween folder.
+2. Under "Explore Projects" expand "Scripts" alongside with the folder "Tween".
+3. Select the "Tween" module that you would like to import to your game.
+4. "Right-click --> Export..." the selected module.
+5. Save it locally and give it the same name as the module indicates, for example "Tween1Compatiblity.scm"
+
+Import the module file previously exported
+------------------------------------------
 
 1. Open the AGS Editor and your game.
 2. Remove the existing Tween module from the AGS Editor: Right-click on it and select "Delete".
@@ -26,6 +44,9 @@ How to Install
       Make sure that it is placed right below the Tween script module.
 6. If you were using some AGS features that have been deprecated, then you can also import Tween2Compatiblity.scm.
       Make sure that it is placed right below the Tween script module.
+
+Note: in order to Move Up / Down modules, you will need first to create a New Folder. Only folders can be moved.
+      Create the folder called "Tween", move de module inside, "right-click" the folder and move it to the top list.
 
 Documentation
 =============
