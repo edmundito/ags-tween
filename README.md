@@ -16,3 +16,7 @@ acceleration/deceleration easing functions.
 - The current module is compatible with AGS 3.4.0 and above
 - Version 2.1.0 is compatible with AGS 3.0 or above
 - Version 1.5.1 is AGS 2.72
+
+## Financial Support
+
+Tips and donations are accepted via Ko-fi: https://ko-fi.com/edmundito
