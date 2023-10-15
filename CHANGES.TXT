@@ -2,7 +2,8 @@ Revision History
 ================
 
 2.4.0 (TBD)
-- Fix all `...TweenColorRGB` tweens to respect non-blocking style for R and G. Previous was set to `eNoBlockTween`
+- Fixed all `...TweenColorRGB` tweens to respect non-blocking style for R and G. Previous was set to `eNoBlockTween`
+- Fixed `GUIControl.StopAllTweens` not stopping GUI control tweens
 
 2.3.0 (April 3, 2023)
 - Added `Overlay` `TweenX`, `TweenY`, `TweenPosition`
