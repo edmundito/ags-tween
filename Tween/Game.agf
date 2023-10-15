@@ -4528,7 +4528,7 @@ return
                     <Name>Tween</Name>
                     <Description>In-between ing functions for AGS.</Description>
                     <Author>Edmundo Ruiz Ghanem et al.</Author>
-                    <Version>2.3.0</Version>
+                    <Version>2.4.0</Version>
                     <Key>1249765699</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
