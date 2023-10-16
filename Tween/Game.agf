@@ -2433,61 +2433,61 @@ return
                 <ID>4</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">GUI Tests</Text>
+                <Text xml:space="preserve">Test GUI Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>5</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">GUI Control Tests</Text>
+                <Text xml:space="preserve">Test GUI Control Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>6</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Tint Tests</Text>
+                <Text xml:space="preserve">Test Tint Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>7</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Viewport and Camera Tests</Text>
+                <Text xml:space="preserve">Test Viewport and Camera Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>8</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Region Tests</Text>
+                <Text xml:space="preserve">Test Region Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>9</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Audio Tests</Text>
+                <Text xml:space="preserve">Test Audio Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>10</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Point Tests</Text>
+                <Text xml:space="preserve">Test Point Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>11</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Character Tests</Text>
+                <Text xml:space="preserve">Test Character Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>12</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Object Tests</Text>
+                <Text xml:space="preserve">Test Object Tweens</Text>
               </DialogOption>
               <DialogOption>
                 <ID>13</ID>
                 <Say>False</Say>
                 <Show>True</Show>
-                <Text xml:space="preserve">Overlay Tests</Text>
+                <Text xml:space="preserve">Test Overlay Tweens</Text>
               </DialogOption>
             </DialogOptions>
           </Dialog>
