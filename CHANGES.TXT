@@ -4,6 +4,8 @@ Revision History
 2.4.0 (TBD)
 - Fixed all `...TweenColorRGB` tweens to respect non-blocking style for R and G. Previous was set to `eNoBlockTween`
 - Fixed `GUIControl.StopAllTweens` not stopping GUI control tweens
+- 3.5.0: Added `Camera.TweenZoom` and `Camera.TweenZoomTo`
+- 3.5.0: Remove clampling camera tweens X and Y to 0 - room width/height
 
 2.3.0 (April 3, 2023)
 - Added `Overlay` `TweenX`, `TweenY`, `TweenPosition`

@@ -742,6 +742,10 @@
                 <Description xml:space="preserve">Overlay tests</Description>
                 <Number>306</Number>
               </UnloadedRoom>
+              <UnloadedRoom>
+                <Description>Sandbox</Description>
+                <Number>307</Number>
+              </UnloadedRoom>
             </UnloadedRooms>
           </UnloadedRoomFolder>
         </SubFolders>
@@ -2292,7 +2296,7 @@
             <SpeechView>0</SpeechView>
             <StartX>160</StartX>
             <StartY>160</StartY>
-            <StartingRoom>99</StartingRoom>
+            <StartingRoom>307</StartingRoom>
             <ThinkingView>0</ThinkingView>
             <TurnBeforeWalking>True</TurnBeforeWalking>
             <UniformMovementSpeed>True</UniformMovementSpeed>
@@ -4537,7 +4541,7 @@ return
                   <Script>
                     <FileName>Tween.asc</FileName>
                     <Name>Tween</Name>
-                    <Description>In-between ing functions for AGS.</Description>
+                    <Description>In-betweening functions for AGS.</Description>
                     <Author>Edmundo Ruiz Ghanem et al.</Author>
                     <Version>2.4.0</Version>
                     <Key>1249765699</Key>
