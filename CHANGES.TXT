@@ -2,7 +2,7 @@ Revision History
 ================
 
 2.4.0 (TBD)
-- Fixed all `...TweenColorRGB` tweens to respect non-blocking style for R and G. Previous was set to `eNoBlockTween`
+- Fixed all `.TweenColorRGB`, `Camera.TweenPosition`, `Camera.TweenSize`, `Viewport.TweenPostition`, `Region.TweenTint`, `Object.TweenImage` to respect non-blocking style. Previously, style was partially set to `eNoBlockTween`
 - Fixed `GUIControl.StopAllTweens` not stopping GUI control tweens
 - 3.5.0: Added `Camera.TweenZoom` and `Camera.TweenZoomTo`
 - 3.5.0: Remove clampling camera tweens X and Y to 0 - room width/height
